@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -34,6 +35,8 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
     UnitData timeData1 = new UnitData(units[1], outputValues[1]);
     UnitData timeData2 = new UnitData(units[2], outputValues[2]);
 
+//    ArrayList<UnitData> timeUnits = new ArrayList<>(Arrays.asList(timeData0,timeData1,timeData2));
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +50,9 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        adapter.addAll(timeData0);
-        adapter.addAll(timeData1);
-        adapter.addAll(timeData2);
+//        adapter.addAll(timeData0);
+//        adapter.addAll(timeData1);
+//        adapter.addAll(timeData2);
         listView.setAdapter(adapter);
 
 
