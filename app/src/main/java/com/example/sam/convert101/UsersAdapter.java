@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 class UsersAdapter extends ArrayAdapter<UnitData> {
@@ -33,8 +34,9 @@ class UsersAdapter extends ArrayAdapter<UnitData> {
         TextView tvUnitValue = convertView.findViewById(R.id.tv_result_value);
         TextView tvUnitType = convertView.findViewById(R.id.tv_result_unit);
         // Populate the data into the template view using the data object
-        tvUnitValue.setText(Double.toString(unit.getUnitValue(position)));
-        tvUnitType.setText(unit.getUnit(position));
+        tvUnitValue.setText((unit.getUnitValue()).toString());
+//        tvUnitValue.setText((unit.getUnitValue()).setScale(4, BigDecimal.ROUND_HALF_UP).toString());
+        tvUnitType.setText(unit.getUnit());
 
 
         // Return the completed view to render on screen

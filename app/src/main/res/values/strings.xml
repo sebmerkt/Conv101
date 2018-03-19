@@ -34,8 +34,13 @@
     </string-array>
 
     <string-array name="time_units">
-        <item>ms</item>
-        <item>s</item>
-        <item>min</item>
+        <item>Nanoseconds</item>
+        <item>Microseconds</item>
+        <item>Miliseconds</item>
+        <item>Seconds</item>
+        <item>Minutes</item>
+        <item>Hours</item>
+        <item>Days</item>
+        <item>Weeks</item>
     </string-array>
 </resources>

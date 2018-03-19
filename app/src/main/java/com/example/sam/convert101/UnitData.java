@@ -1,52 +1,49 @@
 package com.example.sam.convert101;
 
 
+import java.math.BigDecimal;
+
 public class UnitData {
-    private long id;
+//    private long id;
     String unitType;
     String unit;
-    double unitValue;
+    BigDecimal unitValue;
 
-    UnitData (String inputunit, double value ) {
-        unit = inputunit;
-        unitValue = value;
+    UnitData (String inputunit, BigDecimal value ) {
+        this.unit = inputunit;
+        this.unitValue = value;
     }
 
-    UnitData () {
-        this.unit = "";
-        this.unitValue = 0.0;
-    }
-
-    public void setUnitType(String inptunit){
-            this.unitType = inptunit;
+    public void setUnitType(String inputunit){
+            this.unitType = inputunit;
     }
 
     public String getUnitType(){
         return this.unitType;
     }
 
-    public void setUnit(String inptunit){
-            this.unit = inptunit;
+    public void setUnit(String inputunit){
+            this.unit = inputunit;
     }
 
-    public String getUnit(int pos){
+    public String getUnit(){
         return this.unit;
     }
 
-    public void setUnitValue(double value){
+    public void setUnitValue(BigDecimal value){
             this.unitValue = value;
     }
 
-    public double getUnitValue(int pos){
+    public BigDecimal getUnitValue(){
         return this.unitValue;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getId() {
-        return id;
-    }
+//    public void setId(long id) {
+//        this.id = id;
+//    }
+//
+//    public long getId() {
+//        return id;
+//    }
 
 }

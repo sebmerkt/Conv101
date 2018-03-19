@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -12,9 +11,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 
 public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
@@ -22,27 +20,44 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
     UsersAdapter adapter;
     ListView listView;
 
+//    String[] units = {"ns","us","ms","s","min","h","d","w"};   //vector of available units
+    String[] units = {"Nanoseconds","Microseconds","Miliseconds","Seconds","Minutes","Hours","Days","Weeks"};   //vector of available units
+//    String[][] convMatrix = {{"1.","0.001","0.000016666666667"},
+//                                 {"1000.0","1.0","0.016666666667"},
+//                                 {"60000.0","60.0","1.0"}};  //conversion matrix
 
-    String[] units = {"ms","s","min"};   //vector of available units
-    double[][] convMatrix = {{1.,Math.pow(10., -3.),1.66667*Math.pow(10.,-5)},{Math.pow(10., 3.),1,0.0166667},{60000.,60.,1}};  //conversion matrix
-    double inputValue = 1.;
+    String[][] convMatrix = {{"1.0","0.001","1E-06","1E-09","1.66667E-14","2.7777888889E-13","1.15740740740741E-14","1.65343915343915E-15"},
+        {"1000.0","1.0","0.001","1E-06","1.66667E-11","2.7777888889E-10","1.15740740740741E-11","1.65343915343915E-12"},
+        {"1000000.0","1000.0","1.0","0.001","1.66667E-05","2.7777888889E-07","1.15740740740741E-08","1.65343915343915E-09"},
+        {"1000000000.0","1000000.0","1000.0","1.0","0.0166667","0.00027777888889","1.15740740740741E-05","1.65343915343915E-06"},
+        {"60000000000.0","60000000.0","60000.0","60.0","1.0","0.0166667","0.000694444444444","9.92063492063492E-05"},
+        {"3600000000000.0","3600000000.0","3600000.0","3600.0","60.0","1.0","0.041666666666667","0.005952380952381"},
+        {"86400000000000.0","86400000000.0","86400000.0","86400.0","1440.0","24.0","1.0","0.142857142857143"},
+        {"604800000000000.0","604800000000.0","604800000.0","604800.0","10080.0","168.0","7.0","1.0"}};
+
+
+    //TODO: Locale requires different floating point!
+    //TODO: Write formatter class for output:
+    //      - numbers > 10^6? will be displayed as x.xEx
+    //      - numbers < 10^(-6)? will be displayed as x.xE-x
+    //      - keep 6? decimals
+    String inputValue = "1.0";
     int selectedUnit = 0;
-    double[] outputValues = {inputValue*convMatrix[selectedUnit][0],
-           inputValue*convMatrix[selectedUnit][1],
-            inputValue*convMatrix[selectedUnit][2]};
+    BigDecimal[] outputValues = {new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][0]) ),
+            new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][1]) ),
+            new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][2]) ),
+            new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][3]) ),
+            new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][4]) ),
+            new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][5]) ),
+            new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][6]) ),
+            new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][7]) )};
 
-    UnitData timeData0 = new UnitData(units[0], outputValues[0]);
-    UnitData timeData1 = new UnitData(units[1], outputValues[1]);
-    UnitData timeData2 = new UnitData(units[2], outputValues[2]);
-
-//    ArrayList<UnitData> timeUnits = new ArrayList<>(Arrays.asList(timeData0,timeData1,timeData2));
+    UnitData[] timeData = new UnitData[units.length];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.convert_units_base);
-
-
 
         // Construct the data source
         ArrayList<UnitData> arrayOfItems = new ArrayList<>();
@@ -50,15 +65,17 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-//        adapter.addAll(timeData0);
-//        adapter.addAll(timeData1);
-//        adapter.addAll(timeData2);
+
+        for (int i = 0; i<units.length; i++) {
+            timeData[i] = new UnitData(units[i], outputValues[i]);
+            adapter.addAll(timeData[i]);
+        }
         listView.setAdapter(adapter);
 
 
 
         final EditText editText = findViewById(R.id.et_conv_number);
-        editText.setText(Double.toString(inputValue));
+        editText.setText(inputValue);
 
 
         editText.addTextChangedListener(new TextWatcher() {
@@ -66,31 +83,25 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 adapter.clear();
                 if(editText.getText().toString().trim().equals("")) {
-
-                    outputValues = new double[]{0., 0., 0.};
-                    timeData0.setUnitValue(0.);
-                    timeData1.setUnitValue(0.);
-                    timeData2.setUnitValue(0.);
-                    adapter.addAll(timeData0);
-                    adapter.addAll(timeData1);
-                    adapter.addAll(timeData2);
-
+                    outputValues = new BigDecimal[]{new BigDecimal("0.0"),
+                                                    new BigDecimal("0.0"),
+                                                    new BigDecimal("0.0"),
+                                                    new BigDecimal("0.0"),
+                                                    new BigDecimal("0.0"),
+                                                    new BigDecimal("0.0"),
+                                                    new BigDecimal("0.0"),
+                                                    new BigDecimal("0.0")};
                 } else {
-                    inputValue = Double.parseDouble(editText.getText().toString());
-
-
+                    inputValue = editText.getText().toString();
                     for(int i = 0; i<outputValues.length; i++){
-                        outputValues[i] = inputValue*convMatrix[selectedUnit][i];
+                        outputValues[i] = new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][i]) );
                     }
-                    timeData0.setUnitValue(outputValues[0]);
-                    timeData1.setUnitValue(outputValues[1]);
-                    timeData2.setUnitValue(outputValues[2]);
-                    adapter.addAll(timeData0);
-                    adapter.addAll(timeData1);
-                    adapter.addAll(timeData2);
                 }
 
-//                adapter.addAll(timeData1);
+                for (int i = 0; i<units.length; i++) {
+                    timeData[i] = new UnitData(units[i], outputValues[i]);
+                    adapter.addAll(timeData[i]);
+                }
                 listView.setAdapter(adapter);
             }
 
@@ -128,15 +139,12 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         adapter.clear();
         selectedUnit = pos;
         for(int i = 0; i<outputValues.length; i++){
-            outputValues[i] = inputValue*convMatrix[selectedUnit][i];
+            outputValues[i] = new BigDecimal(inputValue).multiply( new BigDecimal(convMatrix[selectedUnit][i]) );
         }
-        timeData0.setUnitValue(outputValues[0]);
-        timeData1.setUnitValue(outputValues[1]);
-        timeData2.setUnitValue(outputValues[2]);
-        adapter.addAll(timeData0);
-        adapter.addAll(timeData1);
-        adapter.addAll(timeData2);
-        listView.setAdapter(adapter);
+        for (int i = 0; i<units.length; i++) {
+            timeData[i] = new UnitData(units[i], outputValues[i]);
+            adapter.addAll(timeData[i]);
+        }
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
