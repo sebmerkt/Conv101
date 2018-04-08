@@ -10,18 +10,22 @@
 
     <TextView
         android:id="@+id/tv_result_value"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:padding="16dp"
+        android:layout_weight="50"
+        android:gravity="right"
+        android:padding="8dp"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tv_result_unit"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:gravity="left"
         android:layout_gravity="center_vertical"
-        android:padding="16dp"
+        android:padding="8dp"
         android:textSize="18sp" />
 
 

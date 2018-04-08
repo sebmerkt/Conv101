@@ -5,12 +5,13 @@
     android:id="@+id/convert_units_base"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="8dp">
 
 
     <EditText
         android:id="@+id/et_conv_number"
-        android:layout_width="150dp"
+        android:layout_width="120dp"
         android:layout_height="55dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
@@ -23,8 +24,8 @@
 
     <Spinner
         android:id="@+id/spinner_select_unit"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
@@ -32,19 +33,22 @@
         app:layout_constraintStart_toEndOf="@+id/et_conv_number"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--TODO: spinner needs custom layout file-->
+
 
     <ListView
         android:id="@+id/lv_convert_units_results"
         android:layout_width="match_parent"
-        android:layout_height="277dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_select_unit" />
+        app:layout_constraintTop_toBottomOf="@+id/et_conv_number" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -1,114 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.sam.convert101.MainActivity"
     tools:showIn="@layout/app_bar_main">
-    <ScrollView
-        android:layout_width="fill_parent"
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="0,1">
 
-            <TableRow
+        <Button
+            android:id="@+id/button_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_length_ruler"
+            android:drawablePadding="16dp"
+            android:text="@string/string_length"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_volume"
+            app:layout_constraintStart_toStartOf="@+id/button_volume"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_area"
+            android:drawablePadding="16dp"
+            android:text="@string/string_area"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/button_length"
+            app:layout_constraintEnd_toEndOf="@+id/button_time"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_length"
+            app:layout_constraintStart_toStartOf="@+id/button_time"
+            app:layout_constraintTop_toTopOf="@+id/button_length" />
+
+        <Button
+            android:id="@+id/button_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_volume"
+            android:drawablePadding="16dp"
+            android:text="@string/string_volume"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_speed"
+            app:layout_constraintStart_toStartOf="@+id/button_speed"
+            app:layout_constraintTop_toBottomOf="@+id/button_length" />
+
+        <Button
+            android:id="@+id/button_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_clock"
+            android:drawablePadding="16dp"
+            android:text="@string/string_time"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/button_volume"
+            app:layout_constraintEnd_toEndOf="@+id/button_temperature"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_volume"
+            app:layout_constraintStart_toStartOf="@+id/button_temperature"
+            app:layout_constraintTop_toTopOf="@+id/button_volume" />
+
+
+        <Button
+            android:id="@+id/button_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_speed"
+            android:drawablePadding="16dp"
+            android:text="@string/string_speed"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_temperature"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_volume" />
+
+        <Button
+            android:id="@+id/button_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_temp"
+            android:drawablePadding="16dp"
+            android:text="@string/string_temperature"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_speed"
+            app:layout_constraintTop_toBottomOf="@+id/button_time" />
+
+        <!--TODO: click effekt-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="1dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_speed">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_area"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Volume"
+                android:textColor="@color/white"
+                android:textSize="25dp" />
 
-                <Button
-                    android:id="@+id/button_length"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_length_ruler_foreground"
-                    android:text="@string/string_length"
-                    android:textColor="@color/white" />
 
-                <Button
-                    android:id="@+id/button_area"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_foreground"
-                    android:text="@string/string_area"
-                    android:textColor="@color/white" />
+        </LinearLayout> />
 
-            </TableRow>
+    </android.support.constraint.ConstraintLayout>
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/button_volume"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_foreground"
-                    android:text="@string/string_volume"
-                    android:textColor="@color/white" />
+</ScrollView>
 
-                <Button
-                    android:id="@+id/button_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_time_clock_foreground"
-                    android:text="@string/string_time"
-                    android:elevation="50dp"
-                    android:textColor="@color/white" />
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <Button
-                    android:id="@+id/button_speed"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_foreground"
-                    android:text="@string/string_speed"
-                    android:textColor="@color/white" />
-
-                <Button
-                    android:id="@+id/button_temperature"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_foreground"
-                    android:text="@string/string_temperature"
-                    android:textColor="@color/white" />
-
-            </TableRow>
-
-        </TableLayout>
-    </ScrollView>
-
-</LinearLayout>
