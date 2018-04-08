@@ -5,7 +5,8 @@
     android:id="@+id/convert_units_base"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:padding="8dp">
 
 
     <EditText
@@ -24,13 +25,15 @@
     <Spinner
         android:id="@+id/spinner_select_unit"
         android:layout_width="180dp"
-        android:layout_height="55dp"
+        android:layout_height="60dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_conv_number"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--TODO: spinner needs custom layout file-->
 
 
     <ListView

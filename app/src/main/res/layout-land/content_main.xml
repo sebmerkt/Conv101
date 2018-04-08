@@ -1,107 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.sam.convert101.MainActivity"
     tools:showIn="@layout/app_bar_main">
-    <ScrollView
-        android:layout_width="fill_parent"
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:stretchColumns="0,1,3">
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/button_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_length_ruler"
+            android:text="@string/string_length"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_time"
+            app:layout_constraintEnd_toStartOf="@+id/button_area"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/button_length"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_length_ruler_foreground"
-                    android:text="@string/string_length"
-                    android:textColor="@color/white" />
+        <Button
+            android:id="@+id/button_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_menu_camera"
+            android:text="@string/string_area"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_speed"
+            app:layout_constraintEnd_toStartOf="@+id/button_volume"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_length"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/button_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_time_clock_foreground"
-                    android:text="@string/string_time"
-                    android:textColor="@color/white" />
+        <Button
+            android:id="@+id/button_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_volume"
+            android:text="@string/string_volume"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_temperature"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_area"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/button_area"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_background"
-                    android:text="@string/string_area"
-                    android:textColor="@color/white" />
+        <Button
+            android:id="@+id/button_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_clock"
+            android:text="@string/string_time"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_speed"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_length" />
 
-            </TableRow>
 
-            <TableRow
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+        <Button
+            android:id="@+id/button_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_menu_camera"
+            android:text="@string/string_speed"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_temperature"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_time"
+            app:layout_constraintTop_toBottomOf="@+id/button_area" />
 
-                <Button
-                    android:id="@+id/button_volume"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_background"
-                    android:text="@string/string_volume"
-                    android:textColor="@color/white" />
+        <Button
+            android:id="@+id/button_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:drawableTop="@drawable/ic_menu_camera"
+            android:text="@string/string_temperature"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_speed"
+            app:layout_constraintTop_toBottomOf="@+id/button_volume" />
 
-                <Button
-                    android:id="@+id/button_temperature"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_background"
-                    android:text="@string/string_temperature"
-                    android:textColor="@color/white" />
 
-                <Button
-                    android:id="@+id/button_speed"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:drawableTint="@color/white"
-                    android:drawableTop="@drawable/ic_launcher_background"
-                    android:text="@string/string_speed"
-                    android:textColor="@color/white" />
+        <!--TODO: Angles-->
 
-            </TableRow>
+    </android.support.constraint.ConstraintLayout>
 
-        </TableLayout>
-    </ScrollView>
 
-</LinearLayout>
+</ScrollView>

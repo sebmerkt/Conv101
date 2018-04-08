@@ -11,10 +11,11 @@
     <string name="string_length">Length</string>
     <string name="string_area">Area</string>
     <string name="string_volume">Volume</string>
-    <string name="string_temperature">Temperature</string>
+    <string name="string_temperature">Temp</string>
     <string name="string_speed">Speed</string>
     <string name="string_conversion_table">Conversion table</string>
     <string name="string_settings">Settings</string>
+    <!--TODO: change Temp string, once button size is solved-->
 
     <string name="string_length_table">
         <![CDATA[
