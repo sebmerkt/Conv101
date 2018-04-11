@@ -13,135 +13,79 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/button_length"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:drawableTop="@drawable/ic_length_ruler"
-            android:drawablePadding="16dp"
-            android:text="@string/string_length"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/button_volume"
-            app:layout_constraintStart_toStartOf="@+id/button_volume"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button_area"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:drawableTop="@drawable/ic_area"
-            android:drawablePadding="16dp"
-            android:text="@string/string_area"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/button_length"
-            app:layout_constraintEnd_toEndOf="@+id/button_time"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_length"
-            app:layout_constraintStart_toStartOf="@+id/button_time"
-            app:layout_constraintTop_toTopOf="@+id/button_length" />
-
-        <Button
-            android:id="@+id/button_volume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableTop="@drawable/ic_volume"
-            android:drawablePadding="16dp"
-            android:text="@string/string_volume"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/button_speed"
-            app:layout_constraintStart_toStartOf="@+id/button_speed"
-            app:layout_constraintTop_toBottomOf="@+id/button_length" />
-
-        <Button
-            android:id="@+id/button_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:drawableTop="@drawable/ic_clock"
-            android:drawablePadding="16dp"
-            android:text="@string/string_time"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/button_volume"
-            app:layout_constraintEnd_toEndOf="@+id/button_temperature"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_volume"
-            app:layout_constraintStart_toStartOf="@+id/button_temperature"
-            app:layout_constraintTop_toTopOf="@+id/button_volume" />
-
-
-        <Button
-            android:id="@+id/button_speed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:drawableTop="@drawable/ic_speed"
-            android:drawablePadding="16dp"
-            android:text="@string/string_speed"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button_temperature"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_volume" />
-
-        <Button
-            android:id="@+id/button_temperature"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:layout_marginTop="16dp"
-            android:drawableTop="@drawable/ic_temp"
-            android:drawablePadding="16dp"
-            android:text="@string/string_temperature"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_speed"
-            app:layout_constraintTop_toBottomOf="@+id/button_time" />
 
         <!--TODO: click effekt-->
         <LinearLayout
+            android:id="@+id/button_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
             android:layout_margin="20dp"
-            android:layout_marginBottom="32dp"
-            android:layout_marginTop="32dp"
             android:background="@color/colorPrimary"
             android:clickable="true"
-            android:elevation="1dp"
+            android:elevation="5dp"
             android:focusable="true"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/button_length"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_speed">
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_length"
+            app:layout_constraintTop_toTopOf="@+id/button_length">
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/ic_area"
+                android:background="@drawable/ic_clock"
                 android:textColor="@color/white"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Volume"
+                android:text="@string/string_time"
                 android:textColor="@color/white"
-                android:textSize="25dp" />
+                android:textSize="25sp" />
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/button_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/button_time"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        </LinearLayout> />
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_length_ruler"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_length"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
 

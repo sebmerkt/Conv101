@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         // Conversion table
 
-        Button lengthButton = findViewById(R.id.button_length);
+        LinearLayout lengthButton = findViewById(R.id.button_length);
         lengthButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        Button timeButton = findViewById(R.id.button_time);
+        LinearLayout timeButton = findViewById(R.id.button_time);
         timeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

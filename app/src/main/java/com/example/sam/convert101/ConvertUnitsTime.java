@@ -1,5 +1,6 @@
 package com.example.sam.convert101;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.text.Editable;
@@ -20,7 +21,15 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
     UsersAdapter adapter;
     ListView listView;
 
-    String[] units = {"Nanoseconds","Microseconds","Miliseconds","Seconds","Minutes","Hours","Days","Weeks"};   //vector of available units
+//    String[] units = new String[]{getString(R.string.string_nanosecond),
+//            getString(R.string.string_microsecond),
+//            getString(R.string.string_millisecond),
+//            getString(R.string.string_second),
+//            getString(R.string.string_minute),
+//            getString(R.string.string_hour),
+//            getString(R.string.string_day),
+//            getString(R.string.string_week)};   //vector of available units
+
 
     //Conversion factors to go from {ns -> us, us -> ms, ms -> s, s -> min, min -> hours, hours -> days, days -> weeks}
     double[] convFactors = {1000.0,1000.0,1000.0,60.0,60.0,24.0,7.0};
@@ -86,13 +95,17 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
                              inputValue*convMatrix[selectedUnit][6],
                              inputValue*convMatrix[selectedUnit][7]};
 
-    UnitData[] timeData = new UnitData[units.length];
+    UnitData[] timeData;
+    String[] units = new String[]{""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.convert_units_base);
 
+        Resources res = getResources();
+        units = res.getStringArray(R.array.time_units);
+        timeData = new UnitData[units.length];
         fillMatrix ();
 
         // Construct the data source
@@ -118,7 +131,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 adapter.clear();
-                if(editText.getText().toString().trim().equals("")) {
+                if(editText.getText().toString().trim().equals("") || editText.getText().toString().trim().equals(".") || editText.getText().toString().trim().equals(",")) {
                     outputValues = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
                 } else {
                     inputValue = Double.valueOf(editText.getText().toString());
@@ -159,8 +172,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         spinner.setAdapter(spinneradapter);
 
 
-        spinner.setSelection(getIndex(spinner, "Seconds"));
-        //TODO: Don't use string (localization issue)
+        spinner.setSelection(getIndex(spinner, getString(R.string.string_second)));
         spinner.setOnItemSelectedListener(this);
 
 

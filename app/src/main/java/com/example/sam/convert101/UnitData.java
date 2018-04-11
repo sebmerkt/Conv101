@@ -51,18 +51,57 @@ public class UnitData {
 
     public String roundUnitValue(double value){
         BigDecimal bigValue = new BigDecimal(value);
-        if(bigValue.compareTo(new BigDecimal("100000.0"))==1){
+        if(bigValue.compareTo(new BigDecimal("10000.0"))==1){   //TODO: String -> localization!
 //            Formatter formatter = new Formatter();
+            double tmp = value;
+            int counter = 0;
+            while (tmp>=10){
+                tmp= tmp / 10;
+                counter++;
+            }
 
-            return String.format("%09.4f", bigValue);
+            BigDecimal output = new BigDecimal(tmp).setScale(4, BigDecimal.ROUND_HALF_UP);
+            String returnVal = removeZeros(output.toString()) + "E" + String.valueOf(counter);
+
+            return returnVal;
         }
-        else if(bigValue.compareTo(new BigDecimal("0.00001"))==-1){
+        else if(bigValue.compareTo(new BigDecimal("0.0001"))==-1){
+            double tmp = value;
+            int counter = 0;
+            while (tmp<1){
+                tmp= tmp * 10;
+                counter++;
+                if (counter>50){
+                    return "0";
+                }
+            }
 
-            return String.format("%09.4f", bigValue);
+            BigDecimal output = new BigDecimal(tmp).setScale(4, BigDecimal.ROUND_HALF_UP);
+            String returnVal = removeZeros(output.toString()) + "E-" + String.valueOf(counter);
+
+            return returnVal;
         }
         else{
-            return "0.0";
+//            return "0.0";
+            BigDecimal output = new BigDecimal(value).setScale(4, BigDecimal.ROUND_HALF_UP);
+            return removeZeros(output.toString());
         }
     }
+
+
+    public String removeZeros( String str ){
+        if (str == null){
+            return null;
+        }
+        char[] chars = str.toCharArray();
+        int index  = str.length() -1;
+        for (; index >=0;index--) {
+            if (chars[index] != '0'){
+                break;
+            }
+        }
+        return (index == str.length()-1) ? str : str.substring(0,index+1);
+    }
+
 
 }

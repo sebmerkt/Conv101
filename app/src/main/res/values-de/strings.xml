@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Convert 101</string>
+
+    <string name="navigation_drawer_open">Öffne Navigation</string>
+    <string name="navigation_drawer_close">Schließe Navigation</string>
+
+    <string name="action_settings">Einstellungen</string>
+    <string name="string_unit_converter">Unit converter</string>
+    <string name="string_email">sam@android.com</string>
+    <string name="string_time">Zeit</string>
+    <string name="string_length">Länge</string>
+    <string name="string_area">Fläche</string>
+    <string name="string_volume">Volumen</string>
+    <string name="string_temperature">Temperatur</string>
+    <string name="string_speed">Geschwindigkeit</string>
+    <string name="string_conversion_table">Umrechnungstable</string>
+    <string name="string_settings">Einstellungen</string>
+
+    <string name="string_nanosecond">Nanosekunde</string>
+    <string name="string_microsecond">Microsekunde</string>
+    <string name="string_millisecond">Millisekunde</string>
+    <string name="string_second">Sekunde</string>
+    <string name="string_minute">Minute</string>
+    <string name="string_hour">Stunde</string>
+    <string name="string_day">Tag</string>
+    <string name="string_week">Woche</string>
+
+
+    <string name="string_length_table">
+        <![CDATA[
+            <<table></table><tbody><tr><td> </td><td>mm</td><td>m</td><td>km</td></tr>
+            <tr><td>mm</td><td>1.0</td><td>0.001</td><td>0.000001</td></tr>
+            <tr><td>m</td><td>1000.0</td><td>1.0</td><td>0.001</td></tr>
+            <tr><td>km</td><td>1000000.0</td><td>1000.0</td><td>1.0</td></tr>
+            </tbody></table>
+        ]]>
+    </string>
+
+
+    <string-array name="length_units">
+        <item>mm</item>
+        <item>m</item>
+        <item>km</item>
+    </string-array>
+
+    <string-array name="time_units">
+        <item>Nanosekunde</item>
+        <item>Microsekunde</item>
+        <item>Millisekunde</item>
+        <item>Sekunde</item>
+        <item>Minute</item>
+        <item>Stunde</item>
+        <item>Tag</item>
+        <item>Woche</item>
+    </string-array>
+</resources>
