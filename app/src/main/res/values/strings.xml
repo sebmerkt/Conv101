@@ -24,6 +24,8 @@
     <string name="string_hour">Hour</string>
     <string name="string_day">Day</string>
     <string name="string_week">Week</string>
+    <string name="string_month">Month</string>
+    <string name="string_year">Year</string>
 
 
     <string name="string_length_table">
@@ -52,5 +54,7 @@
         <item>Hour</item>
         <item>Day</item>
         <item>Week</item>
+        <item>Month</item>
+        <item>Year</item>
     </string-array>
 </resources>

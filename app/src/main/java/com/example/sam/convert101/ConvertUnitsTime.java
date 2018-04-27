@@ -21,62 +21,11 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
     UsersAdapter adapter;
     ListView listView;
 
-//    String[] units = new String[]{getString(R.string.string_nanosecond),
-//            getString(R.string.string_microsecond),
-//            getString(R.string.string_millisecond),
-//            getString(R.string.string_second),
-//            getString(R.string.string_minute),
-//            getString(R.string.string_hour),
-//            getString(R.string.string_day),
-//            getString(R.string.string_week)};   //vector of available units
+    //Conversion factors to go from {ns -> us, us -> ms, ms -> s, s -> min, min -> hours, hours -> days, days -> weeks, weeks -> months}
+    double[] convFactors = {1000.0, 1000.0, 1000.0, 60.0, 60.0, 24.0, 7.0, 4.34524, 12};
 
-
-    //Conversion factors to go from {ns -> us, us -> ms, ms -> s, s -> min, min -> hours, hours -> days, days -> weeks}
-    double[] convFactors = {1000.0,1000.0,1000.0,60.0,60.0,24.0,7.0};
-
-    double[][] convMatrix = new double[8][8];
-
-
-    public void fillMatrix () {
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                int chk = j-i;
-                if (chk==0)
-                        convMatrix[i][j] = 1.0;
-                else if (chk==1)
-                        convMatrix[i][j] = 1./convFactors[j-1];
-                else if (chk==2)
-                        convMatrix[i][j] = 1./(convFactors[j-1]*convFactors[j-2]);
-                else if (chk==3)
-                        convMatrix[i][j] = 1./(convFactors[j-1]*convFactors[j-2]*convFactors[j-3]);
-                else if (chk==4)
-                        convMatrix[i][j] = 1./(convFactors[j-1]*convFactors[j-2]*convFactors[j-3]*convFactors[j-4]);
-                else if (chk==5)
-                        convMatrix[i][j] = 1./(convFactors[j-1]*convFactors[j-2]*convFactors[j-3]*convFactors[j-4]*convFactors[j-5]);
-                else if (chk==6)
-                        convMatrix[i][j] = 1./(convFactors[j-1]*convFactors[j-2]*convFactors[j-3]*convFactors[j-4]*convFactors[j-5]*convFactors[j-6]);
-                else if (chk==7)
-                        convMatrix[i][j] = 1./(convFactors[j-1]*convFactors[j-2]*convFactors[j-3]*convFactors[j-4]*convFactors[j-5]*convFactors[j-6]*convFactors[j-7]);
-                else if (chk==-1)
-                        convMatrix[i][j] = convFactors[i-1];
-                else if (chk==-2)
-                        convMatrix[i][j] = convFactors[i-1]*convFactors[i-2];
-                else if (chk==-3)
-                        convMatrix[i][j] = convFactors[i-1]*convFactors[i-2]*convFactors[i-3];
-                else if (chk==-4)
-                        convMatrix[i][j] = convFactors[i-1]*convFactors[i-2]*convFactors[i-3]*convFactors[i-4];
-                else if (chk==-5)
-                        convMatrix[i][j] = convFactors[i-1]*convFactors[i-2]*convFactors[i-3]*convFactors[i-4]*convFactors[i-5];
-                else if (chk==-6)
-                        convMatrix[i][j] = convFactors[i-1]*convFactors[i-2]*convFactors[i-3]*convFactors[i-4]*convFactors[i-5]*convFactors[i-6];
-                else if (chk==-7)
-                        convMatrix[i][j] = convFactors[i-1]*convFactors[i-2]*convFactors[i-3]*convFactors[i-4]*convFactors[i-5]*convFactors[i-6]*convFactors[i-7];
-                else
-                    convMatrix[i][j] = 0.0;
-            }
-        }
-    }
-
+    int convMatrixDim = 10;
+    double[][] convMatrix = new double[convMatrixDim][convMatrixDim];
 
 
     //TODO: Locale requires different floating point!
@@ -93,7 +42,9 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
                              inputValue*convMatrix[selectedUnit][4],
                              inputValue*convMatrix[selectedUnit][5],
                              inputValue*convMatrix[selectedUnit][6],
-                             inputValue*convMatrix[selectedUnit][7]};
+                             inputValue*convMatrix[selectedUnit][7],
+                             inputValue*convMatrix[selectedUnit][8],
+                             inputValue*convMatrix[selectedUnit][9]};
 
     UnitData[] timeData;
     String[] units = new String[]{""};
@@ -106,7 +57,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         Resources res = getResources();
         units = res.getStringArray(R.array.time_units);
         timeData = new UnitData[units.length];
-        fillMatrix ();
+        fillMatrix (convMatrix, convFactors);
 
         // Construct the data source
         ArrayList<UnitData> arrayOfItems = new ArrayList<>();
@@ -132,7 +83,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 adapter.clear();
                 if(editText.getText().toString().trim().equals("") || editText.getText().toString().trim().equals(".") || editText.getText().toString().trim().equals(",")) {
-                    outputValues = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+                    outputValues = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
                 } else {
                     inputValue = Double.valueOf(editText.getText().toString());
                     //Number of decimal points of the input
@@ -165,9 +116,10 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         Spinner spinner = findViewById(R.id.spinner_select_unit);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> spinneradapter = ArrayAdapter.createFromResource(this,
-                R.array.time_units, android.R.layout.simple_spinner_item);
+                R.array.time_units, R.layout.unit_spinner_item);
         // Specify the layout to use when the list of choices appears
-        spinneradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinneradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinneradapter.setDropDownViewResource(R.layout.unit_spinner_dropdown_item);
         // Apply the adapter to the spinner
         spinner.setAdapter(spinneradapter);
 

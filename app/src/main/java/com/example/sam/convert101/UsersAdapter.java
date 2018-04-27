@@ -35,7 +35,7 @@ class UsersAdapter extends ArrayAdapter<UnitData> {
         TextView tvUnitType = convertView.findViewById(R.id.tv_result_unit);
         // Populate the data into the template view using the data object
         tvUnitValue.setText(unit.roundUnitValue(unit.getUnitValue()));
-//      tvUnitType.setText(unit.getUnit());
+        tvUnitType.setText(unit.getUnit());
 
 
         // Return the completed view to render on screen

@@ -24,6 +24,7 @@
     <string name="string_hour">Stunde</string>
     <string name="string_day">Tag</string>
     <string name="string_week">Woche</string>
+    <string name="string_year">Jahr</string>
 
 
     <string name="string_length_table">
@@ -52,5 +53,7 @@
         <item>Stunde</item>
         <item>Tag</item>
         <item>Woche</item>
+        <item>Monat</item>
+        <item>Jahr</item>
     </string-array>
 </resources>

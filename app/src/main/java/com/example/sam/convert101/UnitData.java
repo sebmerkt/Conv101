@@ -1,10 +1,8 @@
 package com.example.sam.convert101;
 
 
-import android.support.design.widget.Snackbar;
 
 import java.math.BigDecimal;
-import java.util.Formatter;
 
 public class UnitData {
 //    private long id;
@@ -52,7 +50,6 @@ public class UnitData {
     public String roundUnitValue(double value){
         BigDecimal bigValue = new BigDecimal(value);
         if(bigValue.compareTo(new BigDecimal("10000.0"))==1){   //TODO: String -> localization!
-//            Formatter formatter = new Formatter();
             double tmp = value;
             int counter = 0;
             while (tmp>=10){
@@ -60,7 +57,7 @@ public class UnitData {
                 counter++;
             }
 
-            BigDecimal output = new BigDecimal(tmp).setScale(4, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + "E" + String.valueOf(counter);
 
             return returnVal;
@@ -76,14 +73,14 @@ public class UnitData {
                 }
             }
 
-            BigDecimal output = new BigDecimal(tmp).setScale(4, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + "E-" + String.valueOf(counter);
 
             return returnVal;
         }
         else{
 //            return "0.0";
-            BigDecimal output = new BigDecimal(value).setScale(4, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(value).setScale(6, BigDecimal.ROUND_HALF_UP);
             return removeZeros(output.toString());
         }
     }
