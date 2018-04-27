@@ -22,7 +22,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
     ListView listView;
 
     //Conversion factors to go from {nm -> um, um -> mm, mm -> cm, cm -> m, m -> km, km -> in, in -> ft, ft -> yd, yd -> mi}
-    double[] convFactors = {1000.0, 1000.0, 10.0, 100.0, 1000.0, 0.0000254, 12.0, 3.0, 1760};
+    double[] convFactors = {1000.0, 1000.0, 10.0, 100.0, 1000.0, 0.0000254, 12.0, 3.0, 1760.0};
 
     //Size of conversion matrix
     int convMatrixDim = 10;
@@ -49,7 +49,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         //Initialize length units
         lengthData = new UnitData[units.length];
         //Initialize conversion
-        fillOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
+        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
         fillMatrix (convMatrix, convFactors);
 
 
@@ -59,10 +59,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        for (int i = 0; i<units.length; i++) {
-            lengthData[i] = new UnitData(units[i], outputValues[i]);
-            adapter.addAll(lengthData[i]);
-        }
+        updateUnitData(units, lengthData);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
@@ -79,20 +76,14 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
                 // If EditText is empty, display zero
                 // If EditText is not empty, calculate new result and fill list of results
                 if(editText.getText().toString().trim().equals("") || editText.getText().toString().trim().equals(".") || editText.getText().toString().trim().equals(",")) {
-                    outputValues = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+                    outputValues = resetOutputValues(outputValues, convMatrixDim);
                 } else {
                     // Get value of EditText
                     inputValue = Double.valueOf(editText.getText().toString());
                     // Update all result values
-                    for(int i = 0; i<outputValues.length; i++){
-                        outputValues[i] = inputValue*convMatrix[selectedUnit][i];
-                    }
+                    updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
                 }
-                // Update length data
-                for (int i = 0; i<units.length; i++) {
-                    lengthData[i] = new UnitData(units[i], outputValues[i]);
-                    adapter.addAll(lengthData[i]);
-                }
+                updateUnitData(units, lengthData);
                 listView.setAdapter(adapter);
             }
 
@@ -108,19 +99,22 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 
         });
 
+        int stringArrayUnits = R.array.length_units;
+        int stringTimeDefault = R.string.string_meter;
+
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> spinneradapter = ArrayAdapter.createFromResource(this,
-                R.array.length_units, R.layout.unit_spinner_item);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
+                stringArrayUnits, R.layout.unit_spinner_item);
         // Specify the layout to use when the list of choices appears
-//        spinneradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinneradapter.setDropDownViewResource(R.layout.unit_spinner_dropdown_item);
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAdapter.setDropDownViewResource(R.layout.unit_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinner.setAdapter(spinneradapter);
+        spinner.setAdapter(spinnerAdapter);
 
 
-        spinner.setSelection(getIndex(spinner, getString(R.string.string_meter)));
+        spinner.setSelection(getIndex(spinner, getString(stringTimeDefault)));
         spinner.setOnItemSelectedListener(this);
 
 
@@ -133,17 +127,22 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         // Update selected unit
         selectedUnit = pos;
         // Update results list
-        for(int i = 0; i<outputValues.length; i++){
-            outputValues[i] = inputValue*convMatrix[selectedUnit][i];
-        }
-        for (int i = 0; i<units.length; i++) {
-            lengthData[i] = new UnitData(units[i], outputValues[i]);
-            adapter.addAll(lengthData[i]);
-        }
+        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
+        updateUnitData(units, lengthData);
+    }
+
+    public void onNothingSelected(AdapterView<?> parent) {
     }
 
 
-    public void onNothingSelected(AdapterView<?> parent) {
+
+
+
+    public void updateUnitData(String[] unitNames, UnitData[] data){
+        for (int i = 0; i<unitNames.length; i++) {
+            data[i] = new UnitData(unitNames[i], outputValues[i]);
+            adapter.addAll(data[i]);
+        }
     }
 }
 

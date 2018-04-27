@@ -49,7 +49,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         //Initialize time units
         timeData = new UnitData[units.length];
         //Initialize conversion
-        fillOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
+        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
         fillMatrix (convMatrix, convFactors);
 
 
@@ -59,10 +59,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        for (int i = 0; i<units.length; i++) {
-            timeData[i] = new UnitData(units[i], outputValues[i]);
-            adapter.addAll(timeData[i]);
-        }
+        updateUnitData(units, timeData);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
@@ -79,20 +76,14 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
                 // If EditText is empty, display zero
                 // If EditText is not empty, calculate new result and fill list of results
                 if(editText.getText().toString().trim().equals("") || editText.getText().toString().trim().equals(".") || editText.getText().toString().trim().equals(",")) {
-                    outputValues = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+                    outputValues = resetOutputValues(outputValues, convMatrixDim);
                 } else {
                     // Get value of EditText
                     inputValue = Double.valueOf(editText.getText().toString());
                     // Update all result values
-                    for(int i = 0; i<outputValues.length; i++){
-                        outputValues[i] = inputValue*convMatrix[selectedUnit][i];
-                    }
+                    updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
                 }
-                // Update time data
-                for (int i = 0; i<units.length; i++) {
-                    timeData[i] = new UnitData(units[i], outputValues[i]);
-                    adapter.addAll(timeData[i]);
-                }
+                updateUnitData(units, timeData);
                 listView.setAdapter(adapter);
             }
 
@@ -108,19 +99,21 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
 
         });
 
+        int stringArrayUnits = R.array.time_units;
+        int stringTimeDefault = R.string.string_second;
+
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
         // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> spinneradapter = ArrayAdapter.createFromResource(this,
-                R.array.time_units, R.layout.unit_spinner_item);
+        ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,
+                stringArrayUnits, R.layout.unit_spinner_item);
         // Specify the layout to use when the list of choices appears
-//        spinneradapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinneradapter.setDropDownViewResource(R.layout.unit_spinner_dropdown_item);
+//        spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerAdapter.setDropDownViewResource(R.layout.unit_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinner.setAdapter(spinneradapter);
+        spinner.setAdapter(spinnerAdapter);
 
-
-        spinner.setSelection(getIndex(spinner, getString(R.string.string_second)));
+        spinner.setSelection(getIndex(spinner, getString(stringTimeDefault)));
         spinner.setOnItemSelectedListener(this);
 
 
@@ -133,17 +126,24 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         // Update selected unit
         selectedUnit = pos;
         // Update results list
-        for(int i = 0; i<outputValues.length; i++){
-            outputValues[i] = inputValue*convMatrix[selectedUnit][i];
-        }
-        for (int i = 0; i<units.length; i++) {
-            timeData[i] = new UnitData(units[i], outputValues[i]);
-            adapter.addAll(timeData[i]);
-        }
+        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
+        updateUnitData(units, timeData);
     }
-
 
     public void onNothingSelected(AdapterView<?> parent) {
     }
+
+
+
+
+
+
+    public void updateUnitData(String[] unitNames, UnitData[] data){
+        for (int i = 0; i<unitNames.length; i++) {
+            data[i] = new UnitData(unitNames[i], outputValues[i]);
+            adapter.addAll(data[i]);
+        }
+    }
+
 }
 
