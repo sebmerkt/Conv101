@@ -16,6 +16,7 @@
     <string name="string_conversion_table">Umrechnungstable</string>
     <string name="string_settings">Einstellungen</string>
 
+    <!--ConvertUnitTime-->
     <string name="string_nanosecond">Nanosekunde</string>
     <string name="string_microsecond">Microsekunde</string>
     <string name="string_millisecond">Millisekunde</string>
@@ -26,6 +27,17 @@
     <string name="string_week">Woche</string>
     <string name="string_year">Jahr</string>
 
+    <!--ConvertUnitLength-->
+    <string name="string_nanometer">Nanometer</string>
+    <string name="string_mircometer">Mikrometer</string>
+    <string name="string_millimeter">Millimeter</string>
+    <string name="string_centimeter">Zentimeter</string>
+    <string name="string_meter">Meter</string>
+    <string name="string_kilometer">Kilometer</string>
+    <string name="string_mile">Meile</string>
+    <string name="string_yard">Yard</string>
+    <string name="string_foot">Fuß</string>
+    <string name="string_inch">Zoll</string>
 
     <string name="string_length_table">
         <![CDATA[
@@ -39,9 +51,16 @@
 
 
     <string-array name="length_units">
-        <item>mm</item>
-        <item>m</item>
-        <item>km</item>
+        <item>Nanometer</item>
+        <item>Mikrometer</item>
+        <item>Millimeter</item>
+        <item>Zentimeter</item>
+        <item>Meter</item>
+        <item>Kilometer</item>
+        <item>Zoll</item>
+        <item>Fuß</item>
+        <item>Yard</item>
+        <item>Meile</item>
     </string-array>
 
     <string-array name="time_units">

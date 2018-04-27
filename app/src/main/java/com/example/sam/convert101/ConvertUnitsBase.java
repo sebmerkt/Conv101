@@ -3,7 +3,10 @@ package com.example.sam.convert101;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Spinner;
+
+import java.util.ArrayList;
 
 
 public abstract class ConvertUnitsBase extends AppCompatActivity {
@@ -25,6 +28,11 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
         return 0;
     }
 
+    public void fillOutputValues(double[] out, double in, double[][] mat, int unit){
+        for( int i = 0; i < mat.length; i++ ){
+            out[i]=in*mat[unit][i];
+        }
+    }
 
     public void fillMatrix (double[][] mat, double[] fac) {
         for (int i = 0; i < mat.length; i++) {
