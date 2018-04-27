@@ -96,6 +96,12 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
         return out;
     }
 
+    public void updateUnitData(String[] unitNames, UnitData[] data, UsersAdapter adapter, double[] out){
+        for (int i = 0; i<unitNames.length; i++) {
+            data[i] = new UnitData(unitNames[i], out[i]);
+            adapter.addAll(data[i]);
+        }
+    }
 
 
 }

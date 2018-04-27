@@ -59,7 +59,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        updateUnitData(units, timeData);
+        updateUnitData(units, timeData, adapter, outputValues);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
@@ -83,7 +83,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
                     // Update all result values
                     updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
                 }
-                updateUnitData(units, timeData);
+                updateUnitData(units, timeData, adapter, outputValues);
                 listView.setAdapter(adapter);
             }
 
@@ -119,6 +119,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
 
     }
 
+    //Update spinner information:
     // User selects different unit
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         // Clear results list
@@ -127,7 +128,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         selectedUnit = pos;
         // Update results list
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        updateUnitData(units, timeData);
+        updateUnitData(units, timeData, adapter, outputValues);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
@@ -138,12 +139,6 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
 
 
 
-    public void updateUnitData(String[] unitNames, UnitData[] data){
-        for (int i = 0; i<unitNames.length; i++) {
-            data[i] = new UnitData(unitNames[i], outputValues[i]);
-            adapter.addAll(data[i]);
-        }
-    }
 
 }
 
