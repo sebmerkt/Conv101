@@ -12,7 +12,9 @@
     <string name="string_area">Fläche</string>
     <string name="string_volume">Volumen</string>
     <string name="string_temperature">Temperatur</string>
+    <string name="string_temp">Temp.</string>
     <string name="string_speed">Geschwindigkeit</string>
+    <string name="string_speed_short">Geschw.</string>
     <string name="string_conversion_table">Umrechnungstable</string>
     <string name="string_settings">Einstellungen</string>
 
@@ -38,6 +40,20 @@
     <string name="string_yard">Yard</string>
     <string name="string_foot">Fuß</string>
     <string name="string_inch">Zoll</string>
+
+    <!--ConvertUnitArea-->
+    <!--<string name="string_squaremillimeter">Quadratmillimeter</string>-->
+    <string name="string_squaremeter">Quadratmeter</string>
+    <string name="string_squarekilometer">Quadratkilometer</string>
+    <string name="string_squarecentimeter">Quadratzentimeter</string>
+    <string name="string_are">Ar</string>
+    <string name="string_hectare">Hektar</string>
+    <string name="string_squareinch">Quadratzoll</string>
+    <string name="string_squarefoot">Quadratfuß</string>
+    <string name="string_squareyard">Quadratyard</string>
+    <string name="string_acre">Acre</string>
+    <string name="string_squaremile">Quadratmeile</string>
+
 
     <string name="string_length_table">
         <![CDATA[
@@ -74,5 +90,18 @@
         <item>Woche</item>
         <item>Monat</item>
         <item>Jahr</item>
+    </string-array>
+
+    <string-array name="area_units">
+        <item>Quadratzentimeter</item>
+        <item>Quadratmeter</item>
+        <item>Ar</item>
+        <item>Hektar</item>
+        <item>Quadratkilometer</item>
+        <item>Quadratzoll</item>
+        <item>Quadratfuß</item>
+        <item>Quadratyard</item>
+        <item>Acre</item>
+        <item>Quadratmeile</item>
     </string-array>
 </resources>

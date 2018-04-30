@@ -58,7 +58,7 @@ public class UnitData {
             }
 
             BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
-            String returnVal = removeZeros(output.toString()) + "E" + String.valueOf(counter);
+            String returnVal = removeZeros(output.toString()) + " E " + String.valueOf(counter);
 
             return returnVal;
         }
@@ -68,13 +68,13 @@ public class UnitData {
             while (tmp<1){
                 tmp= tmp * 10;
                 counter++;
-                if (counter>50){
+                if (counter>100){
                     return "0";
                 }
             }
 
             BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
-            String returnVal = removeZeros(output.toString()) + "E-" + String.valueOf(counter);
+            String returnVal = removeZeros(output.toString()) + " E -" + String.valueOf(counter);
 
             return returnVal;
         }

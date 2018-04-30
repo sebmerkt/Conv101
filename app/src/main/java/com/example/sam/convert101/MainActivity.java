@@ -55,6 +55,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        LinearLayout areaButton = findViewById(R.id.button_area);
+        areaButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mTimeIntent = new Intent(MainActivity.this, ConvertUnitsArea.class);
+                MainActivity.this.startActivity(mTimeIntent);
+            }
+        });
+
     }
 
     @Override

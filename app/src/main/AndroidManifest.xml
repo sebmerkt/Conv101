@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".ConversionTable"
-            android:label="Convertion Table"
+            android:label="Conversion Table"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConvertUnitsLength"
@@ -32,6 +32,10 @@
         <activity
             android:name=".ConvertUnitsTime"
             android:label="Time"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConvertUnitsArea"
+            android:label="Area"
             android:parentActivityName=".MainActivity" />
     </application>
 

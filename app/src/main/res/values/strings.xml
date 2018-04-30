@@ -12,7 +12,9 @@
     <string name="string_area">Area</string>
     <string name="string_volume">Volume</string>
     <string name="string_temperature">Temperature</string>
+    <string name="string_temp">Temp.</string>
     <string name="string_speed">Speed</string>
+    <string name="string_speed_short">Speed</string>
     <string name="string_conversion_table">Conversion table</string>
     <string name="string_settings">Settings</string>
 
@@ -40,6 +42,18 @@
     <string name="string_foot">Foot</string>
     <string name="string_inch">Inch</string>
 
+    <!--ConvertUnitArea-->
+    <!--<string name="string_squaremillimeter">Square millimeter</string>-->
+    <string name="string_squaremeter">Square meter</string>
+    <string name="string_squarekilometer">Square kilometer</string>
+    <string name="string_squarecentimeter">Square centimeter</string>
+    <string name="string_are">Are</string>
+    <string name="string_hectare">Hectare</string>
+    <string name="string_squareinch">Square inch</string>
+    <string name="string_squarefoot">Square foot</string>
+    <string name="string_squareyard">Square yard</string>
+    <string name="string_acre">Acre</string>
+    <string name="string_squaremile">Square mile</string>
 
     <string name="string_length_table">
         <![CDATA[
@@ -76,5 +90,18 @@
         <item>Week</item>
         <item>Month</item>
         <item>Year</item>
+    </string-array>
+
+    <string-array name="area_units">
+        <item>Square centimeter</item>
+        <item>Square meter</item>
+        <item>Are</item>
+        <item>Hectare</item>
+        <item>Square kilometer</item>
+        <item>Square inch</item>
+        <item>Square foot</item>
+        <item>Square yard</item>
+        <item>Acre</item>
+        <item>Square mile</item>
     </string-array>
 </resources>
