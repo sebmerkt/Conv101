@@ -27,15 +27,19 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConvertUnitsLength"
-            android:label="Length"
+            android:label="@string/string_length"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConvertUnitsTime"
-            android:label="Time"
+            android:label="@string/string_time"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConvertUnitsArea"
-            android:label="Area"
+            android:label="@string/string_area"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConvertUnitsTemp"
+            android:label="@string/string_temperature"
             android:parentActivityName=".MainActivity" />
     </application>
 

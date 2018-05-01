@@ -64,6 +64,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        LinearLayout tempButton = findViewById(R.id.button_temp);
+        tempButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mTimeIntent = new Intent(MainActivity.this, ConvertUnitsTemp.class);
+                MainActivity.this.startActivity(mTimeIntent);
+            }
+        });
+
     }
 
     @Override

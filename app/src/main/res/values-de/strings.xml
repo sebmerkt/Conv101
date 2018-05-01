@@ -18,6 +18,8 @@
     <string name="string_conversion_table">Umrechnungstable</string>
     <string name="string_settings">Einstellungen</string>
 
+    <string name="string_kelvinwarning">Einheit Kelvin ist positiv definiert.</string>
+
     <!--ConvertUnitTime-->
     <string name="string_nanosecond">Nanosekunde</string>
     <string name="string_microsecond">Microsekunde</string>
@@ -54,6 +56,10 @@
     <string name="string_acre">Acre</string>
     <string name="string_squaremile">Quadratmeile</string>
 
+    <!--ConvertUnitTemp-->
+    <string name="string_kelvin">Kelvin</string>
+    <string name="string_celsius">Celsius</string>
+    <string name="string_fahrenheit">Fahrenheit</string>
 
     <string name="string_length_table">
         <![CDATA[
@@ -103,5 +109,11 @@
         <item>Quadratyard</item>
         <item>Acre</item>
         <item>Quadratmeile</item>
+    </string-array>
+
+    <string-array name="temp_units">
+        <item>Kelvin</item>
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
     </string-array>
 </resources>

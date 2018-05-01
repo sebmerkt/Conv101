@@ -48,7 +48,11 @@ public class UnitData {
 //    }
 
     public String roundUnitValue(double value){
-        BigDecimal bigValue = new BigDecimal(value);
+        boolean neg = false;
+        if(value<0){
+            neg = true;
+        }
+        BigDecimal bigValue = new BigDecimal(Math.abs(value));
         if(bigValue.compareTo(new BigDecimal("10000.0"))==1){   //TODO: String -> localization!
             double tmp = value;
             int counter = 0;
@@ -60,7 +64,12 @@ public class UnitData {
             BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + " E " + String.valueOf(counter);
 
-            return returnVal;
+            if(neg) {
+                return "-" + returnVal;
+            }
+            else {
+                return returnVal;
+            }
         }
         else if(bigValue.compareTo(new BigDecimal("0.0001"))==-1){
             double tmp = value;
@@ -76,12 +85,23 @@ public class UnitData {
             BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + " E -" + String.valueOf(counter);
 
-            return returnVal;
+            if(neg) {
+                return "-" + returnVal;
+            }
+            else {
+                return returnVal;
+            }
         }
         else{
 //            return "0.0";
-            BigDecimal output = new BigDecimal(value).setScale(6, BigDecimal.ROUND_HALF_UP);
-            return removeZeros(output.toString());
+            BigDecimal output = new BigDecimal(Math.abs(value)).setScale(6, BigDecimal.ROUND_HALF_UP);
+
+            if(neg) {
+                return "-" + removeZeros(output.toString());
+            }
+            else {
+                return removeZeros(output.toString());
+            }
         }
     }
 

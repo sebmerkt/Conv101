@@ -75,7 +75,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
                 adapter.clear();
                 // If EditText is empty, display zero
                 // If EditText is not empty, calculate new result and fill list of results
-                if(editText.getText().toString().trim().equals("") || editText.getText().toString().trim().equals(".") || editText.getText().toString().trim().equals(",")) {
+                if(editText.getText().toString().trim().equals("") || editText.getText().toString().trim().equals(".") || editText.getText().toString().trim().equals(",") || editText.getText().toString().trim().equals("-")) {
                     outputValues = resetOutputValues(outputValues, convMatrixDim);
                 } else {
                     // Get value of EditText

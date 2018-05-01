@@ -2,6 +2,7 @@ package com.example.sam.convert101;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -14,31 +15,24 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 
-public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
+public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
 
     UsersAdapter adapter;
     ListView listView;
 
-//    TODO: Put mm^2 back in
-    //Conversion factors to go from {mm^2 -> cm^2, cm^2 -> m^2, m^2 -> are, are -> ha, ha -> km^2, km^2 -> in^2, in^2 -> ft^2, ft^2 -> yd^2, yd^2 -> ac, ac -> mi^2}
-//    double[] convFactors = {100.0, 10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
-
-//    Conversion factors to go from {mm^2 -> cm^2, cm^2 -> m^2, m^2 -> are, are -> ha, ha -> km^2, km^2 -> in^2, in^2 -> ft^2, ft^2 -> yd^2, yd^2 -> ac, ac -> mi^2}
-    double[] convFactors = {10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
-
     //Size of conversion matrix
-    int convMatrixDim = 10;
+    int convMatrixDim = 3;
     double[][] convMatrix = new double[convMatrixDim][convMatrixDim];
 
     //Default EditText value
-    double inputValue = 1.0;
+    double inputValue = 0.0;
     //Default output unit
     int selectedUnit = 0;
     //Results to be displayed
     double[] outputValues = new double[convMatrixDim];
 
     //Initialize unit data
-    UnitData[] areaData;
+    UnitData[] tempData;
     String[] units = new String[]{""};
 
     @Override
@@ -47,12 +41,12 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.area_units);
-        //Initialize area units
-        areaData = new UnitData[units.length];
+        units = res.getStringArray(R.array.temp_units);
+        //Initialize temp units
+        tempData = new UnitData[units.length];
         //Initialize conversion
-        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        fillMatrix (convMatrix, convFactors);
+        updateTempOutputValues(outputValues, convMatrix, selectedUnit);
+        fillTmpMatrix (convMatrix);
 
 
         // Construct the data source
@@ -61,7 +55,7 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        updateUnitData(units, areaData, adapter, outputValues);
+        updateUnitData(units, tempData, adapter, outputValues);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
@@ -83,9 +77,10 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
                     // Get value of EditText
                     inputValue = Double.valueOf(editText.getText().toString());
                     // Update all result values
-                    updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
+                    fillTmpMatrix (convMatrix);
+                    updateTempOutputValues(outputValues, convMatrix, selectedUnit);
                 }
-                updateUnitData(units, areaData, adapter, outputValues);
+                updateUnitData(units, tempData, adapter, outputValues);
                 listView.setAdapter(adapter);
             }
 
@@ -101,8 +96,8 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
 
         });
 
-        int stringArrayUnits = R.array.area_units;
-        int stringTimeDefault = R.string.string_squaremeter;
+        int stringArrayUnits = R.array.temp_units;
+        int stringTempDefault = R.string.string_celsius;
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -115,8 +110,7 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         // Apply the adapter to the spinner
         spinner.setAdapter(spinnerAdapter);
 
-
-        spinner.setSelection(getIndex(spinner, getString(stringTimeDefault)));
+        spinner.setSelection(getIndex(spinner, getString(stringTempDefault)));
         spinner.setOnItemSelectedListener(this);
 
 
@@ -130,13 +124,43 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         // Update selected unit
         selectedUnit = pos;
         // Update results list
-        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        updateUnitData(units, areaData, adapter, outputValues);
+        fillTmpMatrix (convMatrix);
+        updateTempOutputValues(outputValues, convMatrix, selectedUnit);
+        updateUnitData(units, tempData, adapter, outputValues);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
+
+
+
+    public void fillTmpMatrix (double[][] mat) {
+        mat[0][0] = inputValue;
+        mat[1][1] = inputValue;
+        mat[2][2] = inputValue;
+        mat[0][1] = inputValue-273.15;
+        mat[1][0] = inputValue+273.15;
+        mat[0][2] = inputValue*1.8-459.67;
+        mat[2][0] = (inputValue + 459.67)*5/9;
+        mat[1][2] = inputValue*1.8 + 32.;
+        mat[2][1] = (inputValue-32)*5/9;
+    }
+
+    public void updateTempOutputValues(double[] out, double[][] mat, int unit){
+        if((unit==0 && inputValue<0.) || (unit==1 && inputValue<-273.15) || (unit==2 && inputValue<-459.67)){
+            Snackbar snackbar = Snackbar.make(findViewById(R.id.convert_units_base), R.string.string_kelvinwarning, Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
+        for( int i = 0; i < mat.length; i++ ){
+            if((unit==0 && inputValue<0.) || (unit==1 && inputValue<-273.15) || (unit==2 && inputValue<-459.67)){
+                out[i] = 0;
+            }
+            else {
+                out[i] = mat[unit][i];
+            }
+        }
+    }
 
 
 }
