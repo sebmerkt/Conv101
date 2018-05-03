@@ -19,15 +19,11 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
     UsersAdapter adapter;
     ListView listView;
 
-//    TODO: Put mm^2 back in
     //Conversion factors to go from {mm^2 -> cm^2, cm^2 -> m^2, m^2 -> are, are -> ha, ha -> km^2, km^2 -> in^2, in^2 -> ft^2, ft^2 -> yd^2, yd^2 -> ac, ac -> mi^2}
-//    double[] convFactors = {100.0, 10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
-
-//    Conversion factors to go from {mm^2 -> cm^2, cm^2 -> m^2, m^2 -> are, are -> ha, ha -> km^2, km^2 -> in^2, in^2 -> ft^2, ft^2 -> yd^2, yd^2 -> ac, ac -> mi^2}
-    double[] convFactors = {10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
+    double[] convFactors = {100.0, 10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
 
     //Size of conversion matrix
-    int convMatrixDim = 10;
+    int convMatrixDim = convFactors.length+1;
     double[][] convMatrix = new double[convMatrixDim][convMatrixDim];
 
     //Default EditText value

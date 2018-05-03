@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".ConversionTable"
-            android:label="Conversion Table"
+            android:label="@string/string_conversion_table"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConvertUnitsLength"
@@ -40,6 +40,10 @@
         <activity
             android:name=".ConvertUnitsTemp"
             android:label="@string/string_temperature"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConvertUnitsVolume"
+            android:label="@string/string_volume"
             android:parentActivityName=".MainActivity" />
     </application>
 

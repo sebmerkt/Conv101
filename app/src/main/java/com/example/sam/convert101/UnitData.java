@@ -54,7 +54,7 @@ public class UnitData {
         }
         BigDecimal bigValue = new BigDecimal(Math.abs(value));
         if(bigValue.compareTo(new BigDecimal("10000.0"))==1){   //TODO: String -> localization!
-            double tmp = value;
+            double tmp = Math.abs(value);
             int counter = 0;
             while (tmp>=10){
                 tmp= tmp / 10;
@@ -72,7 +72,7 @@ public class UnitData {
             }
         }
         else if(bigValue.compareTo(new BigDecimal("0.0001"))==-1){
-            double tmp = value;
+            double tmp = Math.abs(value);
             int counter = 0;
             while (tmp<1){
                 tmp= tmp * 10;

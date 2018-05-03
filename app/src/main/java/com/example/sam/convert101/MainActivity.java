@@ -73,6 +73,15 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        LinearLayout volumeButton = findViewById(R.id.button_volume);
+        volumeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mTimeIntent = new Intent(MainActivity.this, ConvertUnitsVolume.class);
+                MainActivity.this.startActivity(mTimeIntent);
+            }
+        });
+
     }
 
     @Override

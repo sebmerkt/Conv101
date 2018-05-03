@@ -25,7 +25,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
     double[] convFactors = {1000.0, 1000.0, 1000.0, 60.0, 60.0, 24.0, 7.0, 4.34524, 12};
 
     //Size of conversion matrix
-    int convMatrixDim = 10;
+    int convMatrixDim = convFactors.length+1;
     double[][] convMatrix = new double[convMatrixDim][convMatrixDim];
 
     //Default EditText value

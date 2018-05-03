@@ -57,6 +57,30 @@
     <string name="string_acre">Acre</string>
     <string name="string_squaremile">Square mile</string>
 
+
+    <!--ConvertUnitVolume-->
+    <string name="string_cubiccentimeter">Cubic centimeter</string>
+    <string name="string_milliliter">Milliliter</string>
+    <string name="string_liter">Liter</string>
+    <string name="string_cubicmeter">Cubic meter</string>
+    <string name="string_cubicinch">Cubic inch</string>
+    <string name="string_cubicfoot">Cubic foot</string>
+    <string name="string_cubicyard">Cubic yard</string>
+    <string name="string_usliquidgallon">US liquid gallon</string>
+    <string name="string_usliquidquart">US liquid quart</string>
+    <string name="string_usliquidpint">US liquid pint</string>
+    <string name="string_uslegalcup">US legal cup</string>
+    <string name="string_usfluidounce">US fluid ounce</string>
+    <string name="string_ustablespoon">US tablespoon</string>
+    <string name="string_usteaspoon">Imperial teaspoon</string>
+    <string name="string_imperialgallon">Imperial gallon</string>
+    <string name="string_imperialquart">Imperial quart</string>
+    <string name="string_imperialpint">Imperial pint</string>
+    <string name="string_imperialcup">Imperial cup</string>
+    <string name="string_imperialfluidounce">Imperial fluid ounce</string>
+    <string name="string_imperialtablespoon">Imperial tablespoon</string>
+    <string name="string_imperialteaspoon">Imperial teaspoon</string>
+
     <!--ConvertUnitTemp-->
     <string name="string_kelvin">Kelvin</string>
     <string name="string_celsius">Celsius</string>
@@ -110,6 +134,30 @@
         <item>Square yard</item>
         <item>Acre</item>
         <item>Square mile</item>
+    </string-array>
+
+    <string-array name="volume_units">
+        <item>Cubic centimeter</item>
+        <item>Milliliter</item>
+        <item>Liter</item>
+        <item>Cubic meter</item>
+        <item>Cubic inch</item>
+        <item>Cubic foot</item>
+        <item>Cubic yard</item>
+        <item>US teaspoon</item>
+        <item>US tablespoon</item>
+        <item>US fluid ounce</item>
+        <item>US legal cup</item>
+        <item>US liquid pint</item>
+        <item>US liquid quart</item>
+        <item>US liquid gallon</item>
+        <item>Imperial teaspoon</item>
+        <item>Imperial tablespoon</item>
+        <item>Imperial fluid ounce</item>
+        <item>Imperial cup</item>
+        <item>Imperial pint</item>
+        <item>Imperial quart</item>
+        <item>Imperial gallon</item>
     </string-array>
 
     <string-array name="temp_units">

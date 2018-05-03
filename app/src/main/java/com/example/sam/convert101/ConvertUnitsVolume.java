@@ -2,7 +2,6 @@ package com.example.sam.convert101;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -12,17 +11,16 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 
-public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
+public class ConvertUnitsVolume extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
 
     UsersAdapter adapter;
     ListView listView;
 
-    //Conversion factors to go from {nm -> um, um -> mm, mm -> cm, cm -> m, m -> km, km -> in, in -> ft, ft -> yd, yd -> mi}
-    double[] convFactors = {1000.0, 1000.0, 10.0, 100.0, 1000.0, 0.0000254, 12.0, 3.0, 1760.0};
+//    Conversion factors to go from {cm^2 -> ml, ml -> l, l -> m^3}
+    double[] convFactors = {1.0, 1000.0, 1000.0, 0.000016387, 1728.0, 27.0, 0.0000064468, 3.0, 2.0, 8.11537, 1.97157, 2.0, 4.0, 0.00156374, 3.0, 1.6, 10.0, 2.0, 2.0, 4.0};
 
     //Size of conversion matrix
     int convMatrixDim = convFactors.length+1;
@@ -36,7 +34,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
     double[] outputValues = new double[convMatrixDim];
 
     //Initialize unit data
-    UnitData[] lengthData;
+    UnitData[] volumeData;
     String[] units = new String[]{""};
 
     @Override
@@ -45,9 +43,9 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.length_units);
-        //Initialize length units
-        lengthData = new UnitData[units.length];
+        units = res.getStringArray(R.array.volume_units);
+        //Initialize volume units
+        volumeData = new UnitData[units.length];
         //Initialize conversion
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
         fillMatrix (convMatrix, convFactors);
@@ -59,7 +57,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        updateUnitData(units, lengthData, adapter, outputValues);
+        updateUnitData(units, volumeData, adapter, outputValues);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
@@ -83,7 +81,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
                     // Update all result values
                     updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
                 }
-                updateUnitData(units, lengthData, adapter, outputValues);
+                updateUnitData(units, volumeData, adapter, outputValues);
                 listView.setAdapter(adapter);
             }
 
@@ -99,8 +97,8 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 
         });
 
-        int stringArrayUnits = R.array.length_units;
-        int stringTimeDefault = R.string.string_meter;
+        int stringArrayUnits = R.array.volume_units;
+        int stringTimeDefault = R.string.string_liter;
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -129,7 +127,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         selectedUnit = pos;
         // Update results list
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        updateUnitData(units, lengthData, adapter, outputValues);
+        updateUnitData(units, volumeData, adapter, outputValues);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {

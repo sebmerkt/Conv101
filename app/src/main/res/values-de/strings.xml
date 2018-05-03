@@ -56,6 +56,29 @@
     <string name="string_acre">Acre</string>
     <string name="string_squaremile">Quadratmeile</string>
 
+    <!--ConvertUnitVolume-->
+    <string name="string_cubiccentimeter">Kubikzentimeter</string>
+    <string name="string_milliliter">Milliliter</string>
+    <string name="string_liter">Liter</string>
+    <string name="string_cubicmeter">Kubikmeter</string>
+    <string name="string_cubicinch">Kubikzoll</string>
+    <string name="string_cubicfoot">Kubikfuß</string>
+    <string name="string_cubicyard">Kubikyard</string>
+    <string name="string_usliquidgallon">US Liquid Gallone</string>
+    <string name="string_usliquidquart">US Liquid Quart</string>
+    <string name="string_usliquidpint">US Liquid Pint</string>
+    <string name="string_uslegalcup">US Cup</string>
+    <string name="string_usfluidounce">US Flüssigunze</string>
+    <string name="string_ustablespoon">US Esslöffel</string>
+    <string name="string_usteaspoon">US Teelöffel</string>
+    <string name="string_imperialliquidgallon">Imperial Gallone</string>
+    <string name="string_imperialliquidquart">Imperial Quart</string>
+    <string name="string_imperialliquidpint">Imperial Pint</string>
+    <string name="string_imperiallegalcup">Imperial Cup</string>
+    <string name="string_imperialfluidounce">Imperial Flüssigunze</string>
+    <string name="string_imperialtablespoon">Imperial Esslöffel</string>
+    <string name="string_imperialteaspoon">Imperial Teelöffel</string>
+
     <!--ConvertUnitTemp-->
     <string name="string_kelvin">Kelvin</string>
     <string name="string_celsius">Celsius</string>
@@ -109,6 +132,30 @@
         <item>Quadratyard</item>
         <item>Acre</item>
         <item>Quadratmeile</item>
+    </string-array>
+
+    <string-array name="volume_units">
+        <item>Kubikzentimeter</item>
+        <item>Milliliter</item>
+        <item>Liter</item>
+        <item>Kubikmeter</item>
+        <item>Kubikzoll</item>
+        <item>Kubikfuß</item>
+        <item>Kubikyard</item>
+        <item>US Teelöffel</item>
+        <item>US Esslöffel</item>
+        <item>US Flüssigunze</item>
+        <item>US Cup</item>
+        <item>US Liquid Pint</item>
+        <item>US Liquid Quart</item>
+        <item>US Liquid Gallone</item>
+        <item>Imperial Teelöffel</item>
+        <item>Imperial Esslöffel</item>
+        <item>Imperial Flüssigunze</item>
+        <item>Imperial Cup</item>
+        <item>Imperial Pint</item>
+        <item>Imperial Quart</item>
+        <item>Imperial Gallone</item>
     </string-array>
 
     <string-array name="temp_units">
