@@ -10,8 +10,8 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 7;
-    private String tabTitles[] = new String[] { "m", "m^2", "m^3", "s", "m/s", "kg", "C" };
+    final int PAGE_COUNT = 8;
+    private String tabTitles[] = new String[] { "Length", "Area", "Volume", "Time", "Speed", "Temperature", "Weight", "Storage" };
     private Context context;
 
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {

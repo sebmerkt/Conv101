@@ -45,6 +45,26 @@
             android:name=".ConvertUnitsVolume"
             android:label="@string/string_volume"
             android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConvertUnitsSpeed"
+            android:label="@string/string_speed"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConvertUnitsWeight"
+            android:label="@string/string_weight"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ConvertUnitsStorage"
+            android:label="@string/string_storage"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sam.convert101.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -2,6 +2,7 @@ package com.example.sam.convert101;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -63,6 +64,7 @@ public class ConvertUnitsVolume extends ConvertUnitsBase implements AdapterView.
         //Initialize EditText; to input values
         final EditText editText = findViewById(R.id.et_conv_number);
         editText.setText(String.valueOf(inputValue));
+        editText.setSelection(editText.getText().length());
 
 
         // EditText: Listen for user input of the EditText and update the results list
@@ -98,7 +100,16 @@ public class ConvertUnitsVolume extends ConvertUnitsBase implements AdapterView.
         });
 
         int stringArrayUnits = R.array.volume_units;
-        int stringTimeDefault = R.string.string_liter;
+        String unitSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConvertUnitsVolume.this)
+                        .getString("default_units", "Metric");
+        int stringVolumeDefault;
+        if(unitSelector.equals("Metric")){
+            stringVolumeDefault = R.string.string_liter;
+        }
+        else {
+            stringVolumeDefault = R.string.string_usfluidounce;
+        }
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -112,7 +123,7 @@ public class ConvertUnitsVolume extends ConvertUnitsBase implements AdapterView.
         spinner.setAdapter(spinnerAdapter);
 
 
-        spinner.setSelection(getIndex(spinner, getString(stringTimeDefault)));
+        spinner.setSelection(getIndex(spinner, getString(stringVolumeDefault)));
         spinner.setOnItemSelectedListener(this);
 
 

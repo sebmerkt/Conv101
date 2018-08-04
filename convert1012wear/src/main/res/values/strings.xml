@@ -7,4 +7,30 @@
     <string name="string_speed">Speed</string>
     <string name="string_time">Time</string>
     <string name="string_temp">Temp.</string>
+
+
+    <!--ConvertUnitLength-->
+    <string name="string_nanometer">Nanometer</string>
+    <string name="string_mircometer">Micrometer</string>
+    <string name="string_millimeter">Millimeter</string>
+    <string name="string_centimeter">Centimeter</string>
+    <string name="string_meter">Meter</string>
+    <string name="string_kilometer">Kilometer</string>
+    <string name="string_mile">Mile</string>
+    <string name="string_yard">Yard</string>
+    <string name="string_foot">Foot</string>
+    <string name="string_inch">Inch</string>
+
+    <string-array name="length_units">
+        <item>Nanometer</item>
+        <item>Micrometer</item>
+        <item>Millimeter</item>
+        <item>Centimeter</item>
+        <item>Meter</item>
+        <item>Kilometer</item>
+        <item>Inch</item>
+        <item>Foot</item>
+        <item>Yard</item>
+        <item>Mile</item>
+    </string-array>
 </resources>

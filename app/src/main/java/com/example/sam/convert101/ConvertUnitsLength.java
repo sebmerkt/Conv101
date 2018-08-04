@@ -1,8 +1,11 @@
 package com.example.sam.convert101;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -11,8 +14,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 
@@ -42,7 +46,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.convert_units_base);
+//        setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
         units = res.getStringArray(R.array.length_units);
@@ -51,7 +55,6 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         //Initialize conversion
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
         fillMatrix (convMatrix, convFactors);
-
 
         // Construct the data source
         ArrayList<UnitData> arrayOfItems = new ArrayList<>();
@@ -65,6 +68,8 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         //Initialize EditText; to input values
         final EditText editText = findViewById(R.id.et_conv_number);
         editText.setText(String.valueOf(inputValue));
+        editText.setSelection(editText.getText().length());
+
 
 
         // EditText: Listen for user input of the EditText and update the results list
@@ -100,7 +105,18 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         });
 
         int stringArrayUnits = R.array.length_units;
-        int stringTimeDefault = R.string.string_meter;
+
+        String unitSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConvertUnitsLength.this)
+                        .getString("default_units", "Metric");
+
+        int stringLengthDefault;
+        if(unitSelector.equals("Metric")){
+            stringLengthDefault = R.string.string_meter;
+        }
+        else {
+            stringLengthDefault = R.string.string_foot;
+        }
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -114,9 +130,8 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         spinner.setAdapter(spinnerAdapter);
 
 
-        spinner.setSelection(getIndex(spinner, getString(stringTimeDefault)));
+        spinner.setSelection(getIndex(spinner, getString(stringLengthDefault)));
         spinner.setOnItemSelectedListener(this);
-
 
     }
 

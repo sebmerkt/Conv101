@@ -16,21 +16,21 @@
 
         <!--TODO: click effekt-->
         <LinearLayout
-            android:id="@+id/button_time"
+            android:id="@+id/button_area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="150dp"
-            android:minWidth="150dp"
             android:layout_margin="20dp"
             android:background="@color/colorPrimary"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
             android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
             app:layout_constraintBottom_toBottomOf="@+id/button_length"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_volume"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_length"
             app:layout_constraintTop_toTopOf="@+id/button_length">
@@ -38,7 +38,7 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/ic_clock"
+                android:background="@drawable/ic_area_white"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/string_time"
+                android:text="@string/string_area"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
         </LinearLayout>
@@ -66,7 +66,7 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/button_time"
+            app:layout_constraintEnd_toStartOf="@+id/button_area"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -74,7 +74,7 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="@drawable/ic_length_ruler"
+                android:background="@drawable/ic_length_ruler_white"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -83,6 +83,226 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/string_length"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/button_volume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_area"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_area"
+            app:layout_constraintTop_toTopOf="@+id/button_area">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_volume_white"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_volume"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/button_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_speed"
+            app:layout_constraintEnd_toStartOf="@+id/button_speed"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_speed">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_clock_white"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_time"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/button_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_temp"
+            app:layout_constraintEnd_toStartOf="@+id/button_temp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_time"
+            app:layout_constraintTop_toTopOf="@+id/button_temp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_speed_white"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_speed_short"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/button_temp"
+            android:layout_width="wrap_content"
+            android:layout_height="153dp"
+            android:layout_margin="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_speed"
+            app:layout_constraintTop_toBottomOf="@+id/button_volume">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_temp_white"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_temp"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/button_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/button_time"
+            app:layout_constraintStart_toStartOf="@+id/button_time"
+            app:layout_constraintTop_toBottomOf="@+id/button_time">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_weight_white"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_weight"
+                android:textColor="@color/white"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/button_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimary"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:focusable="true"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/button_speed"
+            app:layout_constraintStart_toStartOf="@+id/button_speed"
+            app:layout_constraintTop_toBottomOf="@+id/button_speed">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/ic_storage_white"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="@string/string_storage_short"
                 android:textColor="@color/white"
                 android:textSize="25sp" />
         </LinearLayout>

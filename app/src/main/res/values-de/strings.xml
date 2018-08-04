@@ -15,8 +15,13 @@
     <string name="string_temp">Temp.</string>
     <string name="string_speed">Geschwindigkeit</string>
     <string name="string_speed_short">Geschw.</string>
+    <string name="string_weight">Gewicht</string>
+    <string name="string_weight_short">Gewicht</string>
+    <string name="string_storage">Datenspeicher</string>
+    <string name="string_storage_short">Speicher</string>
     <string name="string_conversion_table">Umrechnungstable</string>
     <string name="string_settings">Einstellungen</string>
+    <string name="string_color_scheme">Farbschema</string>
 
     <string name="string_kelvinwarning">Einheit Kelvin ist positiv definiert.</string>
 
@@ -64,25 +69,59 @@
     <string name="string_cubicinch">Kubikzoll</string>
     <string name="string_cubicfoot">Kubikfuß</string>
     <string name="string_cubicyard">Kubikyard</string>
-    <string name="string_usliquidgallon">US Liquid Gallone</string>
-    <string name="string_usliquidquart">US Liquid Quart</string>
-    <string name="string_usliquidpint">US Liquid Pint</string>
-    <string name="string_uslegalcup">US Cup</string>
-    <string name="string_usfluidounce">US Flüssigunze</string>
-    <string name="string_ustablespoon">US Esslöffel</string>
-    <string name="string_usteaspoon">US Teelöffel</string>
-    <string name="string_imperialliquidgallon">Imperial Gallone</string>
-    <string name="string_imperialliquidquart">Imperial Quart</string>
-    <string name="string_imperialliquidpint">Imperial Pint</string>
-    <string name="string_imperiallegalcup">Imperial Cup</string>
-    <string name="string_imperialfluidounce">Imperial Flüssigunze</string>
-    <string name="string_imperialtablespoon">Imperial Esslöffel</string>
-    <string name="string_imperialteaspoon">Imperial Teelöffel</string>
+    <string name="string_usliquidgallon">Gallone (US)</string>
+    <string name="string_usliquidquart">Quart (US)</string>
+    <string name="string_usliquidpint">Pint (US)</string>
+    <string name="string_uslegalcup">Cup (US)</string>
+    <string name="string_usfluidounce">Flüssigunze (US)</string>
+    <string name="string_ustablespoon">Esslöffel (US)</string>
+    <string name="string_usteaspoon">Teelöffel (US)</string>
+    <string name="string_imperialliquidgallon">Gallone (Imperial)</string>
+    <string name="string_imperialliquidquart">Quart (Imperial)</string>
+    <string name="string_imperialliquidpint">Pint (Imperial)</string>
+    <string name="string_imperiallegalcup">Cup (Imperial)</string>
+    <string name="string_imperialfluidounce">Flüssigunze (Imperial)</string>
+    <string name="string_imperialtablespoon">Esslöffel (Imperial)</string>
+    <string name="string_imperialteaspoon">Teelöffel (Imperial)</string>
 
     <!--ConvertUnitTemp-->
     <string name="string_kelvin">Kelvin</string>
     <string name="string_celsius">Celsius</string>
     <string name="string_fahrenheit">Fahrenheit</string>
+
+    <!--ConvertUnitSpeed-->
+    <string name="string_mps">Meter pro Sekunde</string>
+    <string name="string_kmph">Kilometer pro Stunde</string>
+    <string name="string_mph">Meile pro Stunde</string>
+    <string name="string_fps">Fuß pro Sekunde</string>
+    <string name="string_kn">Knoten</string>
+
+    <!--ConvertUnitWeight-->
+    <string name="string_microgram">Mikrogramm</string>
+    <string name="string_milligram">Milligramm</string>
+    <string name="string_gram">Gramm</string>
+    <string name="string_kilogram">Kilogramm</string>
+    <string name="string_metricton">Metrische Tonne</string>
+    <string name="string_ounce">Unze</string>
+    <string name="string_pound">Pfund</string>
+    <string name="string_stone">Stone</string>
+    <string name="string_uston">US ton</string>
+    <string name="string_imperialton">Imperial ton</string>
+
+    <!--ConvertUnitStorage-->
+    <string name="string_byte">Byte</string>
+    <string name="string_kilobyte">Kilobyte</string>
+    <string name="string_megabyte">Megabyte</string>
+    <string name="string_gigabyte">Gigabyte</string>
+    <string name="string_terabyte">Terabyte</string>
+    <string name="string_petabyte">Petabyte</string>
+    <string name="string_bit">Bit</string>
+    <string name="string_kilobit">Kilobit</string>
+    <string name="string_megabit">Megabit</string>
+    <string name="string_gigabit">Gigabit</string>
+    <string name="string_terabit">Terabit</string>
+    <string name="string_petabit">Petabit</string>
+
 
     <string name="string_length_table">
         <![CDATA[
@@ -162,5 +201,41 @@
         <item>Kelvin</item>
         <item>Celsius</item>
         <item>Fahrenheit</item>
+    </string-array>
+
+    <string-array name="speed_units">
+        <item>Meter pro Sekunde</item>
+        <item>Kilometer pro Stunde</item>
+        <item>Fuß pro Sekunde</item>
+        <item>Meile pro Stunde</item>
+        <item>Knoten</item>
+    </string-array>
+
+    <string-array name="weight_units">
+        <item>Mikrogramm</item>
+        <item>Milligramm</item>
+        <item>Gramm</item>
+        <item>Kilogramm</item>
+        <item>Metrische Tonne</item>
+        <item>Unze</item>
+        <item>Pfund</item>
+        <item>Stone</item>
+        <item>US ton</item>
+        <item>Imperial ton</item>
+    </string-array>
+
+    <string-array name="storage_units">
+        <item>Byte</item>
+        <item>Kilobyte</item>
+        <item>Megabyte</item>
+        <item>Gigabyte</item>
+        <item>Terabyte</item>
+        <item>Petabyte</item>
+        <item>Bit</item>
+        <item>Kilobit</item>
+        <item>Megabit</item>
+        <item>Gigabit</item>
+        <item>Terabit</item>
+        <item>Petabit</item>
     </string-array>
 </resources>

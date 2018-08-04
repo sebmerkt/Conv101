@@ -2,6 +2,7 @@ package com.example.sam.convert101;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -63,6 +64,7 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         //Initialize EditText; to input values
         final EditText editText = findViewById(R.id.et_conv_number);
         editText.setText(String.valueOf(inputValue));
+        editText.setSelection(editText.getText().length());
 
 
         // EditText: Listen for user input of the EditText and update the results list
@@ -98,7 +100,17 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         });
 
         int stringArrayUnits = R.array.area_units;
-        int stringTimeDefault = R.string.string_squaremeter;
+        String unitSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConvertUnitsArea.this)
+                        .getString("default_units", "Metric");
+
+        int stringAreaDefault;
+        if(unitSelector.equals("Metric")){
+            stringAreaDefault = R.string.string_squaremeter;
+        }
+        else {
+            stringAreaDefault = R.string.string_squarefoot;
+        }
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -112,7 +124,7 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         spinner.setAdapter(spinnerAdapter);
 
 
-        spinner.setSelection(getIndex(spinner, getString(stringTimeDefault)));
+        spinner.setSelection(getIndex(spinner, getString(stringAreaDefault)));
         spinner.setOnItemSelectedListener(this);
 
 

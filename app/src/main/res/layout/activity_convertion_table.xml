@@ -13,7 +13,7 @@
         android:id="@+id/tl_conv_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:tabMode="fixed" />
+        app:tabMode="scrollable" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_conv_table"

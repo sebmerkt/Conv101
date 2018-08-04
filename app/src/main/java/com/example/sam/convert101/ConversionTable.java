@@ -1,15 +1,33 @@
 package com.example.sam.convert101;
 
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 public class ConversionTable extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String colorSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConversionTable.this)
+                        .getString("pref_color_scheme", "Blue");
+
+        if (colorSelector.equals("Blue")) {
+            setTheme(R.style.AppThemeBase);
+        }
+        else if (colorSelector.equals("Yellow")) {
+            setTheme(R.style.AppThemeYellowBase);
+        }
+        else if (colorSelector.equals("Dark")) {
+            setTheme(R.style.AppThemeDarkBase);
+        }
+        else {
+            setTheme(R.style.AppThemeBase);
+        }
         setContentView(R.layout.activity_convertion_table);
 
 

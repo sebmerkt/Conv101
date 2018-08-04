@@ -2,6 +2,7 @@ package com.example.sam.convert101;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -61,6 +62,7 @@ public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.On
         //Initialize EditText; to input values
         final EditText editText = findViewById(R.id.et_conv_number);
         editText.setText(String.valueOf(inputValue));
+        editText.setSelection(editText.getText().length());
 
 
         // EditText: Listen for user input of the EditText and update the results list
@@ -97,7 +99,16 @@ public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.On
         });
 
         int stringArrayUnits = R.array.temp_units;
-        int stringTempDefault = R.string.string_celsius;
+        String unitSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConvertUnitsTemp.this)
+                        .getString("default_units", "Metric");
+        int stringTempDefault;
+        if(unitSelector.equals("Metric")){
+            stringTempDefault = R.string.string_celsius;
+        }
+        else {
+            stringTempDefault = R.string.string_fahrenheit;
+        }
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);

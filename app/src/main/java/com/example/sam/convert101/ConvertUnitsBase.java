@@ -1,25 +1,66 @@
 package com.example.sam.convert101;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ListView;
+import android.support.v7.widget.Toolbar;
+import android.widget.EditText;
 import android.widget.Spinner;
-
-import java.util.ArrayList;
+import android.widget.Toast;
 
 
 public abstract class ConvertUnitsBase extends AppCompatActivity {
 
-    int stringarray_units;
-    int string_timedefault;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String colorSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConvertUnitsBase.this)
+                        .getString("pref_color_scheme", "Blue");
+
+        if (colorSelector.equals("Blue")) {
+            setTheme(R.style.AppThemeBase);
+        }
+        else if (colorSelector.equals("Yellow")) {
+            setTheme(R.style.AppThemeYellowBase);
+        }
+        else if (colorSelector.equals("Dark")) {
+            setTheme(R.style.AppThemeDarkBase);
+        }
+        else {
+            setTheme(R.style.AppThemeBase);
+        }
+
         setContentView(R.layout.convert_units_base);
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+
+        EditText editText = findViewById(R.id.et_conv_number);
+        String unitValue = editText.getText().toString();
+        savedInstanceState.putString("unitValue", unitValue);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        // Restore UI state from the savedInstanceState.
+        // This bundle has also been passed to onCreate.
+
+        String unitValue = savedInstanceState.getString("unitValue");
+
+        EditText editText = findViewById(R.id.et_conv_number);
+        editText.setText(unitValue);
+        editText.setSelection(editText.getText().length());
 
     }
 
@@ -66,7 +107,6 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
 
 
     public double[] resetOutputValues(double[] out, int dim){
-        out = new double[dim];
         for(int i = 0; i<dim; i++) {
             out[i] = 0.0;
         }

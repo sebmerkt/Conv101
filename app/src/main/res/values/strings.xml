@@ -15,8 +15,13 @@
     <string name="string_temp">Temp.</string>
     <string name="string_speed">Speed</string>
     <string name="string_speed_short">Speed</string>
+    <string name="string_weight">Weight</string>
+    <string name="string_weight_short">Weight</string>
+    <string name="string_storage">Data Storage</string>
+    <string name="string_storage_short">Storage</string>
     <string name="string_conversion_table">Conversion table</string>
     <string name="string_settings">Settings</string>
+    <string name="string_color_scheme">Color Scheme</string>
 
     <string name="string_kelvinwarning">Unit Kelvin is defined positive.</string>
 
@@ -86,6 +91,39 @@
     <string name="string_celsius">Celsius</string>
     <string name="string_fahrenheit">Fahrenheit</string>
 
+    <!--ConvertUnitSpeed-->
+    <string name="string_mps">Meter per second</string>
+    <string name="string_kmph">Kilometer per hour</string>
+    <string name="string_fps">Foot per second</string>
+    <string name="string_mph">Mile per hour</string>
+    <string name="string_kn">Knot</string>
+
+    <!--ConvertUnitWeight-->
+    <string name="string_microgram">Microgram</string>
+    <string name="string_milligram">Milligram</string>
+    <string name="string_gram">Gram</string>
+    <string name="string_kilogram">Kilogram</string>
+    <string name="string_metricton">Metric ton</string>
+    <string name="string_ounce">Ounce</string>
+    <string name="string_pound">Pound</string>
+    <string name="string_stone">Stone</string>
+    <string name="string_uston">US ton</string>
+    <string name="string_imperialton">Imperial ton</string>
+
+    <!--ConvertUnitStorage-->
+    <string name="string_byte">Byte</string>
+    <string name="string_kilobyte">Kilobyte</string>
+    <string name="string_megabyte">Megabyte</string>
+    <string name="string_gigabyte">Gigabyte</string>
+    <string name="string_terabyte">Terabyte</string>
+    <string name="string_petabyte">Petabyte</string>
+    <string name="string_bit">Bit</string>
+    <string name="string_kilobit">Kilobit</string>
+    <string name="string_megabit">Megabit</string>
+    <string name="string_gigabit">Gigabit</string>
+    <string name="string_terabit">Terabit</string>
+    <string name="string_petabit">Petabit</string>
+
     <string name="string_length_table">
         <![CDATA[
             <<table></table><tbody><tr><td> </td><td>mm</td><td>m</td><td>km</td></tr>
@@ -95,6 +133,12 @@
             </tbody></table>
         ]]>
     </string>
+    <string name="string_preference_key">com.example.convert1012.PREFERENCE_FILE_KEY</string>
+    <string name="testsomething">testsomething</string>
+    <string name="string_preference_test1">Test?</string>
+    <string name="string_preference_test2">Success!</string>
+    <string name="string_sharedPreference_test">testkeyLength</string>
+
 
 
     <string-array name="length_units">
@@ -166,4 +210,126 @@
         <item>Fahrenheit</item>
     </string-array>
 
+    <string-array name="speed_units">
+        <item>Meter per second</item>
+        <item>Kilometer per hour</item>
+        <item>Foot per second</item>
+        <item>Mile per hour</item>
+        <item>Knot</item>
+    </string-array>
+
+    <string-array name="weight_units">
+        <item>Microgram</item>
+        <item>Milligram</item>
+        <item>Gram</item>
+        <item>Kilogram</item>
+        <item>Metric ton</item>
+        <item>Ounce</item>
+        <item>Pound</item>
+        <item>Stone</item>
+        <item>US ton</item>
+        <item>Imperial ton</item>
+    </string-array>
+
+    <string-array name="storage_units">
+        <item>Byte</item>
+        <item>Kilobyte</item>
+        <item>Megabyte</item>
+        <item>Gigabyte</item>
+        <item>Terabyte</item>
+        <item>Petabyte</item>
+        <item>Bit</item>
+        <item>Kilobit</item>
+        <item>Megabit</item>
+        <item>Gigabit</item>
+        <item>Terabit</item>
+        <item>Petabit</item>
+    </string-array>
+
+    <string name="color_scheme_title">Choose color scheme</string>
+    <string-array name="color_scheme_options">
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="color_scheme_options_values">
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Dark</item>
+    </string-array>
+
+    <string name="string_choose_default_units">Choose the default units</string>
+    <string-array name="default_units_options">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </string-array>
+    <string-array name="default_units_options_values">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </string-array>
+
+
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string-array name="list_preference_entries">
+        <item>Entry 1</item>
+        <item>Entry 2</item>
+        <item>Entry 3</item>
+    </string-array>
+
+    <string-array name="list_preference_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="multi_select_list_preference_default_value" />
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_units">Conversions and units</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.example.sam.convert101;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -7,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by sam on 3/11/18.
@@ -47,7 +50,7 @@ public class PageFragment extends Fragment {
 //            getString(R.string.string_length_table);
         } else if (mPage == 2) {
             TextView textView = (TextView) view;
-            textView.setText("Area");
+            textView.setText("Test?");
         } else if (mPage == 3) {
             TextView textView = (TextView) view;
             textView.setText("Volume");

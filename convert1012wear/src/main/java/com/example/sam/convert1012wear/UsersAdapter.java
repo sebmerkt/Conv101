@@ -1,4 +1,4 @@
-package com.example.sam.convert101;
+package com.example.sam.convert1012wear;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

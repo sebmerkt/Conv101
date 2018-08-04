@@ -1,6 +1,29 @@
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#27df27</color>
+    <color name="colorPrimary">#424242</color>
+    <color name="colorPrimaryDark">#212121</color>
+    <color name="colorAccent">#BDBDBD</color>
+
+    <color name="colorPrimaryBlue">#3F51B5</color>
+    <color name="colorPrimaryDarkBlue">#303F9F</color>
+    <color name="colorAccentBlue">#9FA8DA</color>
+
+    <color name="colorPrimaryGreen">#4CAF50</color>
+    <color name="colorPrimaryDarkGreen">#388E3C</color>
+    <color name="colorAccentGreen">#A5D6A7</color>
+
+    <color name="colorPrimaryRed">#F44336</color>
+    <color name="colorPrimaryDarkRed">#D32F2F</color>
+    <color name="colorAccentRed">#EF9A9A</color>
+
+    <color name="colorPrimaryYellow">#FFEB3B</color>
+    <color name="colorPrimaryDarkYellow">#FBC02D</color>
+    <color name="colorAccentYellow">#FFF59D</color>
+
+    <color name="colorPrimaryDarkTheme">#424242</color>
+    <color name="colorPrimaryDarkDarkTheme">#212121</color>
+    <color name="colorAccentDarkTheme">#BDBDBD</color>
+    <color name="colorBackgroundDarkTheme">#757575</color>
+
     <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

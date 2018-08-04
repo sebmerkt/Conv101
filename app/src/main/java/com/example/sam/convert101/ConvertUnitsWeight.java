@@ -2,6 +2,7 @@ package com.example.sam.convert101;
 
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -14,13 +15,13 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 
 
-public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
+public class ConvertUnitsWeight extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
 
     UsersAdapter adapter;
     ListView listView;
 
-    //Conversion factors to go from {ns -> us, us -> ms, ms -> s, s -> min, min -> hours, hours -> days, days -> weeks, weeks -> months}
-    double[] convFactors = {1000.0, 1000.0, 1000.0, 60.0, 60.0, 24.0, 7.0, 4.34524, 12};
+//    Conversion factors to go from {}
+    double[] convFactors = {1000.0, 1000.0, 1000.0, 1000.0, 0.00002835, 16.0, 14.0, 142.857, 1.12};
 
     //Size of conversion matrix
     int convMatrixDim = convFactors.length+1;
@@ -34,7 +35,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
     double[] outputValues = new double[convMatrixDim];
 
     //Initialize unit data
-    UnitData[] timeData;
+    UnitData[] weightData;
     String[] units = new String[]{""};
 
     @Override
@@ -43,9 +44,9 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.time_units);
-        //Initialize time units
-        timeData = new UnitData[units.length];
+        units = res.getStringArray(R.array.weight_units);
+        //Initialize weight units
+        weightData = new UnitData[units.length];
         //Initialize conversion
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
         fillMatrix (convMatrix, convFactors);
@@ -57,7 +58,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        updateUnitData(units, timeData, adapter, outputValues);
+        updateUnitData(units, weightData, adapter, outputValues);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
@@ -82,7 +83,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
                     // Update all result values
                     updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
                 }
-                updateUnitData(units, timeData, adapter, outputValues);
+                updateUnitData(units, weightData, adapter, outputValues);
                 listView.setAdapter(adapter);
             }
 
@@ -98,8 +99,17 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
 
         });
 
-        int stringArrayUnits = R.array.time_units;
-        int stringTimeDefault = R.string.string_second;
+        int stringArrayUnits = R.array.weight_units;
+        String unitSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConvertUnitsWeight.this)
+                        .getString("default_units", "Metric");
+        int stringWeightDefault;
+        if(unitSelector.equals("Metric")){
+            stringWeightDefault = R.string.string_kilogram;
+        }
+        else {
+            stringWeightDefault = R.string.string_pound;
+        }
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -112,7 +122,8 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         // Apply the adapter to the spinner
         spinner.setAdapter(spinnerAdapter);
 
-        spinner.setSelection(getIndex(spinner, getString(stringTimeDefault)));
+
+        spinner.setSelection(getIndex(spinner, getString(stringWeightDefault)));
         spinner.setOnItemSelectedListener(this);
 
 
@@ -127,15 +138,11 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         selectedUnit = pos;
         // Update results list
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        updateUnitData(units, timeData, adapter, outputValues);
+        updateUnitData(units, weightData, adapter, outputValues);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
     }
-
-
-
-
 
 
 
