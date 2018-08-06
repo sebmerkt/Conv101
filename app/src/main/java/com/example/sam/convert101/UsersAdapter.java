@@ -1,6 +1,7 @@
 package com.example.sam.convert101;
 
 import android.content.Context;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +30,7 @@ class UsersAdapter extends ArrayAdapter<UnitData> {
         TextView tvUnitValue = convertView.findViewById(R.id.tv_result_value);
         TextView tvUnitType = convertView.findViewById(R.id.tv_result_unit);
         // Populate the data into the template view using the data object
-        tvUnitValue.setText(unit.roundUnitValue(unit.getUnitValue()));
+        tvUnitValue.setText(unit.roundUnitValue(unit.getUnitValue(),unit.getPrecisionValue()));
         tvUnitType.setText(unit.getUnit());
 
 

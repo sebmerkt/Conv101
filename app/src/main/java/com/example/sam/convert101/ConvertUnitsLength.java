@@ -118,6 +118,8 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
             stringLengthDefault = R.string.string_foot;
         }
 
+
+
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
         // Create an ArrayAdapter using the string array and a default spinner layout

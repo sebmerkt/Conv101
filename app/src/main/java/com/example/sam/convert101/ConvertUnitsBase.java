@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 public abstract class ConvertUnitsBase extends AppCompatActivity {
 
+    int precision;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +37,10 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
         }
 
         setContentView(R.layout.convert_units_base);
+
+        precision =
+                Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(ConvertUnitsBase.this)
+                        .getString("unit_precision", "6"));
 
     }
 
@@ -115,10 +121,9 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
 
     public void updateUnitData(String[] unitNames, UnitData[] data, UsersAdapter adapter, double[] out){
         for (int i = 0; i<unitNames.length; i++) {
-            data[i] = new UnitData(unitNames[i], out[i]);
+            data[i] = new UnitData(unitNames[i], out[i], precision);
             adapter.addAll(data[i]);
         }
     }
-
 
 }

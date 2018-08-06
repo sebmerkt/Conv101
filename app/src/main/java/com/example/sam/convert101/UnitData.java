@@ -2,6 +2,9 @@ package com.example.sam.convert101;
 
 
 
+import android.content.Context;
+import android.preference.PreferenceManager;
+
 import java.math.BigDecimal;
 
 public class UnitData {
@@ -9,10 +12,12 @@ public class UnitData {
     String unitType;
     String unit;
     double unitValue;
+    int precisionValue = 6;
 
-    UnitData (String inputunit, double value ) {
+    UnitData (String inputunit, double value, int prec) {
         this.unit = inputunit;
         this.unitValue = value;
+        this.precisionValue = prec;
     }
 
     public void setUnitType(String inputunit){
@@ -39,21 +44,21 @@ public class UnitData {
         return this.unitValue;
     }
 
-//    public void setId(long id) {
-//        this.id = id;
-//    }
-//
-//    public long getId() {
-//        return id;
-//    }
+    public void setPrecisionValue(int value){
+        this.precisionValue = value;
+    }
 
-    public String roundUnitValue(double value){
+    public int getPrecisionValue(){
+        return this.precisionValue;
+    }
+
+    public String roundUnitValue(double value, int precision){
         boolean neg = false;
         if(value<0){
             neg = true;
         }
         BigDecimal bigValue = new BigDecimal(Math.abs(value));
-        if(bigValue.compareTo(new BigDecimal("10000.0"))==1){   //TODO: String -> localization!
+        if(bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,precision-3))))==1){   //TODO: String -> localization!
             double tmp = Math.abs(value);
             int counter = 0;
             while (tmp>=10){
@@ -61,7 +66,7 @@ public class UnitData {
                 counter++;
             }
 
-            BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(tmp).setScale(precision, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + " E " + String.valueOf(counter);
 
             if(neg) {
@@ -71,7 +76,7 @@ public class UnitData {
                 return returnVal;
             }
         }
-        else if(bigValue.compareTo(new BigDecimal("0.0001"))==-1){
+        else if(bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,3-precision))))==-1){
             double tmp = Math.abs(value);
             int counter = 0;
             while (tmp<1){
@@ -82,7 +87,7 @@ public class UnitData {
                 }
             }
 
-            BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(tmp).setScale(precision, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + " E -" + String.valueOf(counter);
 
             if(neg) {
@@ -93,8 +98,7 @@ public class UnitData {
             }
         }
         else{
-//            return "0.0";
-            BigDecimal output = new BigDecimal(Math.abs(value)).setScale(6, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(Math.abs(value)).setScale(precision, BigDecimal.ROUND_HALF_UP);
 
             if(neg) {
                 return "-" + removeZeros(output.toString());
@@ -119,6 +123,7 @@ public class UnitData {
         }
         return (index == str.length()-1) ? str : str.substring(0,index+1);
     }
+
 
 
 }
