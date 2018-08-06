@@ -1,5 +1,6 @@
 package com.example.sam.convert101;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
