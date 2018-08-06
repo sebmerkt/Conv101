@@ -323,22 +323,19 @@
 
     <string name="pref_title_system_sync_settings">System sync settings</string>
 
-    <!-- Example settings for Notifications -->
-    <string name="pref_header_units">Conversions and units</string>
+    <!-- Example settings for Units and conversion -->
+    <string name="pref_header_units">Unit conversion</string>
 
-    <string name="pref_title_new_message_notifications">New message notifications</string>
 
-    <string name="pref_unit_precision">Unit precision</string>
+    <string name="pref_unit_precision">Result precision</string>
 
     <string-array name="default_precision_options">
-        <item>0 digits</item>
         <item>2 digits</item>
         <item>4 digits</item>
         <item>6 digits</item>
     </string-array>
 
     <string-array name="default_precision_options_values">
-        <item>0</item>
         <item>2</item>
         <item>4</item>
         <item>6</item>

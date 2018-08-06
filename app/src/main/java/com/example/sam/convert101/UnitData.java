@@ -12,7 +12,7 @@ public class UnitData {
     String unitType;
     String unit;
     double unitValue;
-    int precisionValue = 6;
+    int precisionValue;
 
     UnitData (String inputunit, double value, int prec) {
         this.unit = inputunit;
@@ -58,7 +58,7 @@ public class UnitData {
             neg = true;
         }
         BigDecimal bigValue = new BigDecimal(Math.abs(value));
-        if(bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,precision-3))))==1){   //TODO: String -> localization!
+        if( bigValue.compareTo(new BigDecimal("1000"))==1 ){   //TODO: String -> localization!
             double tmp = Math.abs(value);
             int counter = 0;
             while (tmp>=10){
@@ -76,7 +76,7 @@ public class UnitData {
                 return returnVal;
             }
         }
-        else if(bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,3-precision))))==-1){
+        else if( bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,-precision))))==-1 ){
             double tmp = Math.abs(value);
             int counter = 0;
             while (tmp<1){
