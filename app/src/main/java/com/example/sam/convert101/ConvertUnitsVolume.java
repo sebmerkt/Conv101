@@ -44,7 +44,11 @@ public class ConvertUnitsVolume extends ConvertUnitsBase implements AdapterView.
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.volume_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.volume_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.volume_units);
+        }
         //Initialize volume units
         volumeData = new UnitData[units.length];
         //Initialize conversion
@@ -99,16 +103,30 @@ public class ConvertUnitsVolume extends ConvertUnitsBase implements AdapterView.
 
         });
 
-        int stringArrayUnits = R.array.volume_units;
+        int stringArrayUnits;
+        if(useAbbrev) {
+            stringArrayUnits = R.array.volume_units_abbrev;
+        } else{
+            stringArrayUnits = R.array.volume_units;
+        }
+
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsVolume.this)
                         .getString("default_units", "Metric");
         int stringVolumeDefault;
         if(unitSelector.equals("Metric")){
-            stringVolumeDefault = R.string.string_liter;
+            if (useAbbrev) {
+                stringVolumeDefault = R.string.string_liter_abbrev;
+            } else {
+                stringVolumeDefault = R.string.string_liter;
+            }
         }
         else {
-            stringVolumeDefault = R.string.string_usfluidounce;
+            if (useAbbrev){
+                stringVolumeDefault = R.string.string_usfluidounce_abbrev;
+            } else {
+                stringVolumeDefault = R.string.string_usfluidounce;
+            }
         }
 
         // Spinner for base unit selection

@@ -6,28 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_conversion_table"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_info_outline_black_24dp"
             android:title="@string/string_conversion_table" />
         <item
             android:id="@+id/nav_settings"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_settings_black_24dp"
             android:title="@string/string_settings" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_feedback"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/nav_info"
+                android:icon="@drawable/ic_open_in_browser_black_24dp"
+                android:title="@string/string_info" />
             <item
                 android:id="@+id/nav_rate"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Rate" />
+                android:icon="@drawable/ic_rate_review_black_24dp"
+                android:title="@string/string_rate_this_app" />
         </menu>
     </item>
 

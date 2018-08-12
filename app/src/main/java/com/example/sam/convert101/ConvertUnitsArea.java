@@ -44,7 +44,11 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.area_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.area_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.area_units);
+        }
         //Initialize area units
         areaData = new UnitData[units.length];
         //Initialize conversion
@@ -99,17 +103,31 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
 
         });
 
-        int stringArrayUnits = R.array.area_units;
+        int stringArrayUnits;
+        if(useAbbrev) {
+            stringArrayUnits = R.array.area_units_abbrev;
+        } else{
+            stringArrayUnits = R.array.area_units;
+        }
+
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsArea.this)
                         .getString("default_units", "Metric");
 
         int stringAreaDefault;
         if(unitSelector.equals("Metric")){
-            stringAreaDefault = R.string.string_squaremeter;
+            if (useAbbrev) {
+                stringAreaDefault = R.string.string_squaremeter_abbrev;
+            } else {
+                stringAreaDefault = R.string.string_squaremeter;
+            }
         }
         else {
-            stringAreaDefault = R.string.string_squarefoot;
+            if (useAbbrev){
+                stringAreaDefault = R.string.string_squarefoot_abbrev;
+            } else {
+                stringAreaDefault = R.string.string_squarefoot;
+            }
         }
 
         // Spinner for base unit selection

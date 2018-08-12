@@ -42,7 +42,11 @@ public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.On
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.temp_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.temp_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.temp_units);
+        }
         //Initialize temp units
         tempData = new UnitData[units.length];
         //Initialize conversion
@@ -98,17 +102,32 @@ public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.On
 
         });
 
-        int stringArrayUnits = R.array.temp_units;
+        int stringArrayUnits;
+        if(useAbbrev) {
+            stringArrayUnits = R.array.temp_units_abbrev;
+        } else{
+            stringArrayUnits = R.array.temp_units;
+        }
+
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsTemp.this)
                         .getString("default_units", "Metric");
         int stringTempDefault;
         if(unitSelector.equals("Metric")){
-            stringTempDefault = R.string.string_celsius;
+            if (useAbbrev) {
+                stringTempDefault = R.string.string_celsius_abbrev;
+            } else {
+                stringTempDefault = R.string.string_celsius;
+            }
         }
         else {
-            stringTempDefault = R.string.string_fahrenheit;
+            if (useAbbrev){
+                stringTempDefault = R.string.string_fahrenheit_abbrev;
+            } else {
+                stringTempDefault = R.string.string_fahrenheit;
+            }
         }
+
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);

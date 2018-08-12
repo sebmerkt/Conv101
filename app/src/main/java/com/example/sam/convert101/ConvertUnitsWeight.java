@@ -44,7 +44,11 @@ public class ConvertUnitsWeight extends ConvertUnitsBase implements AdapterView.
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.weight_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.weight_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.weight_units);
+        }
         //Initialize weight units
         weightData = new UnitData[units.length];
         //Initialize conversion
@@ -99,16 +103,30 @@ public class ConvertUnitsWeight extends ConvertUnitsBase implements AdapterView.
 
         });
 
-        int stringArrayUnits = R.array.weight_units;
+        int stringArrayUnits;
+        if(useAbbrev) {
+            stringArrayUnits = R.array.weight_units_abbrev;
+        } else{
+            stringArrayUnits = R.array.weight_units;
+        }
+
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsWeight.this)
                         .getString("default_units", "Metric");
         int stringWeightDefault;
         if(unitSelector.equals("Metric")){
-            stringWeightDefault = R.string.string_kilogram;
+            if (useAbbrev) {
+                stringWeightDefault = R.string.string_kilogram_abbrev;
+            } else {
+                stringWeightDefault = R.string.string_kilogram;
+            }
         }
         else {
-            stringWeightDefault = R.string.string_pound;
+            if (useAbbrev){
+                stringWeightDefault = R.string.string_pound_abbrev;
+            } else {
+                stringWeightDefault = R.string.string_pound;
+            }
         }
 
         // Spinner for base unit selection

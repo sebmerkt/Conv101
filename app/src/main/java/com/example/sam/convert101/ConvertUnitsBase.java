@@ -14,6 +14,7 @@ import android.widget.Toast;
 public abstract class ConvertUnitsBase extends AppCompatActivity {
 
     int precision;
+    boolean useAbbrev = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,13 +22,19 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
 
         String colorSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsBase.this)
-                        .getString("pref_color_scheme", "Blue");
+                        .getString("pref_color_scheme", "Green");
 
         if (colorSelector.equals("Blue")) {
             setTheme(R.style.AppThemeBase);
         }
         else if (colorSelector.equals("Yellow")) {
             setTheme(R.style.AppThemeYellowBase);
+        }
+        else if (colorSelector.equals("Red")) {
+            setTheme(R.style.AppThemeRedBase);
+        }
+        else if (colorSelector.equals("Green")) {
+            setTheme(R.style.AppThemeGreenBase);
         }
         else if (colorSelector.equals("Dark")) {
             setTheme(R.style.AppThemeDarkBase);
@@ -41,6 +48,12 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
         precision =
                 Integer.valueOf(PreferenceManager.getDefaultSharedPreferences(ConvertUnitsBase.this)
                         .getString("unit_precision", "6"));
+
+        if (PreferenceManager.getDefaultSharedPreferences(ConvertUnitsBase.this).getBoolean("use_abbreviations", true)){
+            useAbbrev=true;
+        } else {
+            useAbbrev=false;
+        }
 
     }
 

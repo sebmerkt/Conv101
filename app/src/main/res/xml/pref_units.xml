@@ -18,4 +18,9 @@
         android:positiveButtonText="@null"
         android:title="@string/string_choose_default_units"/>
 
+    <SwitchPreference
+        android:key="use_abbreviations"
+        android:title="@string/string_use_abbreviations"
+        android:defaultValue="true"/>
+
 </PreferenceScreen>

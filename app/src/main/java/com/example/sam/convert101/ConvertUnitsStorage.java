@@ -43,7 +43,11 @@ public class ConvertUnitsStorage extends ConvertUnitsBase implements AdapterView
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.storage_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.storage_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.storage_units);
+        }
         //Initialize storage units
         storageData = new UnitData[units.length];
         //Initialize conversion
@@ -98,8 +102,15 @@ public class ConvertUnitsStorage extends ConvertUnitsBase implements AdapterView
 
         });
 
-        int stringArrayUnits = R.array.storage_units;
-        int stringTimeDefault = R.string.string_megabyte;
+        int stringArrayUnits;
+        int stringTimeDefault;
+        if (useAbbrev){
+            stringArrayUnits = R.array.storage_units_abbrev;
+            stringTimeDefault = R.string.string_megabyte_abbrev;
+        } else {
+            stringArrayUnits = R.array.storage_units;
+            stringTimeDefault = R.string.string_megabyte;
+        }
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);

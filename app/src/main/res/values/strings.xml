@@ -30,6 +30,7 @@
     <string name="string_microsecond">Microsecond</string>
     <string name="string_millisecond">Millisecond</string>
     <string name="string_second">Second</string>
+    <string name="string_second_abbrev">s</string>
     <string name="string_minute">Minute</string>
     <string name="string_hour">Hour</string>
     <string name="string_day">Day</string>
@@ -43,21 +44,25 @@
     <string name="string_millimeter">Millimeter</string>
     <string name="string_centimeter">Centimeter</string>
     <string name="string_meter">Meter</string>
+    <string name="string_meter_abbrev">m</string>
     <string name="string_kilometer">Kilometer</string>
     <string name="string_mile">Mile</string>
     <string name="string_yard">Yard</string>
     <string name="string_foot">Foot</string>
+    <string name="string_foot_abbrev">ft</string>
     <string name="string_inch">Inch</string>
 
     <!--ConvertUnitArea-->
     <!--<string name="string_squaremillimeter">Square millimeter</string>-->
     <string name="string_squaremeter">Square meter</string>
+    <string name="string_squaremeter_abbrev">m^2</string>
     <string name="string_squarekilometer">Square kilometer</string>
     <string name="string_squarecentimeter">Square centimeter</string>
     <string name="string_are">Are</string>
     <string name="string_hectare">Hectare</string>
     <string name="string_squareinch">Square inch</string>
     <string name="string_squarefoot">Square foot</string>
+    <string name="string_squarefoot_abbrev">sq ft</string>
     <string name="string_squareyard">Square yard</string>
     <string name="string_acre">Acre</string>
     <string name="string_squaremile">Square mile</string>
@@ -67,6 +72,7 @@
     <string name="string_cubiccentimeter">Cubic centimeter</string>
     <string name="string_milliliter">Milliliter</string>
     <string name="string_liter">Liter</string>
+    <string name="string_liter_abbrev">L</string>
     <string name="string_cubicmeter">Cubic meter</string>
     <string name="string_cubicinch">Cubic inch</string>
     <string name="string_cubicfoot">Cubic foot</string>
@@ -76,6 +82,7 @@
     <string name="string_usliquidpint">US liquid pint</string>
     <string name="string_uslegalcup">US legal cup</string>
     <string name="string_usfluidounce">US fluid ounce</string>
+    <string name="string_usfluidounce_abbrev">US fl oz</string>
     <string name="string_ustablespoon">US tablespoon</string>
     <string name="string_usteaspoon">Imperial teaspoon</string>
     <string name="string_imperialgallon">Imperial gallon</string>
@@ -90,12 +97,16 @@
     <string name="string_kelvin">Kelvin</string>
     <string name="string_celsius">Celsius</string>
     <string name="string_fahrenheit">Fahrenheit</string>
+    <string name="string_celsius_abbrev">\u00B0C</string>
+    <string name="string_fahrenheit_abbrev">\u00B0F</string>
 
     <!--ConvertUnitSpeed-->
     <string name="string_mps">Meter per second</string>
     <string name="string_kmph">Kilometer per hour</string>
+    <string name="string_kmph_abbrev">kph</string>
     <string name="string_fps">Foot per second</string>
     <string name="string_mph">Mile per hour</string>
+    <string name="string_mph_abbrev">mph</string>
     <string name="string_kn">Knot</string>
 
     <!--ConvertUnitWeight-->
@@ -103,9 +114,11 @@
     <string name="string_milligram">Milligram</string>
     <string name="string_gram">Gram</string>
     <string name="string_kilogram">Kilogram</string>
+    <string name="string_kilogram_abbrev">kg</string>
     <string name="string_metricton">Metric ton</string>
     <string name="string_ounce">Ounce</string>
     <string name="string_pound">Pound</string>
+    <string name="string_pound_abbrev">lb</string>
     <string name="string_stone">Stone</string>
     <string name="string_uston">US ton</string>
     <string name="string_imperialton">Imperial ton</string>
@@ -114,6 +127,7 @@
     <string name="string_byte">Byte</string>
     <string name="string_kilobyte">Kilobyte</string>
     <string name="string_megabyte">Megabyte</string>
+    <string name="string_megabyte_abbrev">MB</string>
     <string name="string_gigabyte">Gigabyte</string>
     <string name="string_terabyte">Terabyte</string>
     <string name="string_petabyte">Petabyte</string>
@@ -153,6 +167,18 @@
         <item>Yard</item>
         <item>Mile</item>
     </string-array>
+    <string-array name="length_units_abbrev">
+        <item>nm</item>
+        <item>\u00B5m</item>
+        <item>mm</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+        <item>in</item>
+        <item>ft</item>
+        <item>yd</item>
+        <item>mi</item>
+    </string-array>
 
     <string-array name="time_units">
         <item>Nanosecond</item>
@@ -166,6 +192,18 @@
         <item>Month</item>
         <item>Year</item>
     </string-array>
+    <string-array name="time_units_abbrev">
+        <item>ns</item>
+        <item>\u00B5s</item>
+        <item>ms</item>
+        <item>s</item>
+        <item>min</item>
+        <item>h</item>
+        <item>d</item>
+        <item>wk</item>
+        <item>mo</item>
+        <item>yr</item>
+    </string-array>
 
     <string-array name="area_units">
         <item>Square centimeter</item>
@@ -178,6 +216,18 @@
         <item>Square yard</item>
         <item>Acre</item>
         <item>Square mile</item>
+    </string-array>
+    <string-array name="area_units_abbrev">
+        <item>cm^2</item>
+        <item>m^2</item>
+        <item>a</item>
+        <item>ha</item>
+        <item>km^2</item>
+        <item>sq in</item>
+        <item>sq ft</item>
+        <item>sq yd</item>
+        <item>ac</item>
+        <item>sq mi</item>
     </string-array>
 
     <string-array name="volume_units">
@@ -203,11 +253,39 @@
         <item>Imperial quart</item>
         <item>Imperial gallon</item>
     </string-array>
+    <string-array name="volume_units_abbrev">
+        <item>cm^3</item>
+        <item>ml</item>
+        <item>L</item>
+        <item>m^3</item>
+        <item>cu in</item>
+        <item>cu ft</item>
+        <item>cu yd</item>
+        <item>US tsp</item>
+        <item>US Tbsp</item>
+        <item>US fl oz</item>
+        <item>US cp</item>
+        <item>US pt</item>
+        <item>US qt</item>
+        <item>US gal</item>
+        <item>Imp. tsp</item>
+        <item>Imp. Tbsp</item>
+        <item>Imp. fl oz</item>
+        <item>Imp. cp</item>
+        <item>Imp. pt</item>
+        <item>Imp. qt</item>
+        <item>Imp. gal</item>
+    </string-array>
 
     <string-array name="temp_units">
         <item>Kelvin</item>
         <item>Celsius</item>
         <item>Fahrenheit</item>
+    </string-array>
+    <string-array name="temp_units_abbrev">
+        <item>K</item>
+        <item>\u00B0C</item>
+        <item>\u00B0F</item>
     </string-array>
 
     <string-array name="speed_units">
@@ -216,6 +294,13 @@
         <item>Foot per second</item>
         <item>Mile per hour</item>
         <item>Knot</item>
+    </string-array>
+    <string-array name="speed_units_abbrev">
+        <item>mps</item>
+        <item>kph</item>
+        <item>fps</item>
+        <item>mph</item>
+        <item>kn</item>
     </string-array>
 
     <string-array name="weight_units">
@@ -229,6 +314,18 @@
         <item>Stone</item>
         <item>US ton</item>
         <item>Imperial ton</item>
+    </string-array>
+    <string-array name="weight_units_abbrev">
+        <item>\u00B5g</item>
+        <item>mg</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>t</item>
+        <item>oz</item>
+        <item>lb</item>
+        <item>st</item>
+        <item>US ton</item>
+        <item>Imp. ton</item>
     </string-array>
 
     <string-array name="storage_units">
@@ -245,17 +342,35 @@
         <item>Terabit</item>
         <item>Petabit</item>
     </string-array>
+    <string-array name="storage_units_abbrev">
+        <item>B</item>
+        <item>kB</item>
+        <item>MB</item>
+        <item>GB</item>
+        <item>TB</item>
+        <item>PB</item>
+        <item>bit</item>
+        <item>kbit</item>
+        <item>Mbit</item>
+        <item>Git</item>
+        <item>Tbit</item>
+        <item>Pbit</item>
+    </string-array>
 
     <string name="color_scheme_title">Choose color scheme</string>
     <string-array name="color_scheme_options">
         <item>Blue</item>
-        <item>Yellow</item>
+        <item>Green</item>
         <item>Dark</item>
+        <item>Red</item>
+        <item>Yellow</item>
     </string-array>
     <string-array name="color_scheme_options_values">
         <item>Blue</item>
-        <item>Yellow</item>
+        <item>Green</item>
         <item>Dark</item>
+        <item>Red</item>
+        <item>Yellow</item>
     </string-array>
 
     <string name="string_choose_default_units">Choose the default units</string>
@@ -268,7 +383,8 @@
         <item>Imperial</item>
     </string-array>
 
-
+    <string name="string_info">Find info on the web</string>
+    <string name="string_rate_this_app">Rate this app</string>
 
     <string name="title_activity_settings">Settings</string>
 
@@ -277,55 +393,8 @@
     <!-- Example General settings -->
     <string name="pref_header_general">General</string>
 
-    <string name="pref_title_social_recommendations">Enable social recommendations</string>
-    <string name="pref_description_social_recommendations">Recommendations for people to contact
-        based on your message history
-    </string>
-
-    <string name="pref_title_display_name">Display name</string>
-    <string name="pref_default_display_name">John Smith</string>
-
-
-    <!-- Example settings for Data & Sync -->
-    <string name="pref_header_data_sync">Data &amp; sync</string>
-
-    <string name="pref_title_sync_frequency">Sync frequency</string>
-    <string-array name="pref_sync_frequency_titles">
-        <item>15 minutes</item>
-        <item>30 minutes</item>
-        <item>1 hour</item>
-        <item>3 hours</item>
-        <item>6 hours</item>
-        <item>Never</item>
-    </string-array>
-    <string-array name="pref_sync_frequency_values">
-        <item>15</item>
-        <item>30</item>
-        <item>60</item>
-        <item>180</item>
-        <item>360</item>
-        <item>-1</item>
-    </string-array>
-
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
-
-    <string-array name="list_preference_entry_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="multi_select_list_preference_default_value" />
-
-    <string name="pref_title_system_sync_settings">System sync settings</string>
-
     <!-- Example settings for Units and conversion -->
     <string name="pref_header_units">Unit conversion</string>
-
 
     <string name="pref_unit_precision">Result precision</string>
 
@@ -340,5 +409,7 @@
         <item>4</item>
         <item>6</item>
     </string-array>
+
+    <string name="string_use_abbreviations">Use abbreviations for units</string>
 
 </resources>

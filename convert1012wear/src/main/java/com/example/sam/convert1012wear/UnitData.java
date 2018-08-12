@@ -61,7 +61,7 @@ public class UnitData {
                 counter++;
             }
 
-            BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(tmp).setScale(2, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + " E " + String.valueOf(counter);
 
             if(neg) {
@@ -82,7 +82,7 @@ public class UnitData {
                 }
             }
 
-            BigDecimal output = new BigDecimal(tmp).setScale(6, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(tmp).setScale(2, BigDecimal.ROUND_HALF_UP);
             String returnVal = removeZeros(output.toString()) + " E -" + String.valueOf(counter);
 
             if(neg) {
@@ -94,7 +94,7 @@ public class UnitData {
         }
         else{
 //            return "0.0";
-            BigDecimal output = new BigDecimal(Math.abs(value)).setScale(6, BigDecimal.ROUND_HALF_UP);
+            BigDecimal output = new BigDecimal(Math.abs(value)).setScale(2, BigDecimal.ROUND_HALF_UP);
 
             if(neg) {
                 return "-" + removeZeros(output.toString());

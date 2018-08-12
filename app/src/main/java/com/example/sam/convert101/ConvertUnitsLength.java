@@ -49,7 +49,11 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 //        setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.length_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.length_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.length_units);
+        }
         //Initialize length units
         lengthData = new UnitData[units.length];
         //Initialize conversion
@@ -104,7 +108,12 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 
         });
 
-        int stringArrayUnits = R.array.length_units;
+        int stringArrayUnits;
+        if(useAbbrev) {
+            stringArrayUnits = R.array.length_units_abbrev;
+        } else{
+            stringArrayUnits = R.array.length_units;
+        }
 
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsLength.this)
@@ -112,10 +121,20 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 
         int stringLengthDefault;
         if(unitSelector.equals("Metric")){
-            stringLengthDefault = R.string.string_meter;
+            if(useAbbrev) {
+                stringLengthDefault = R.string.string_meter_abbrev;
+            }
+            else {
+                stringLengthDefault = R.string.string_meter;
+            }
         }
         else {
-            stringLengthDefault = R.string.string_foot;
+            if(useAbbrev) {
+                stringLengthDefault = R.string.string_foot_abbrev;
+            }
+            else {
+                stringLengthDefault = R.string.string_foot;
+            }
         }
 
 

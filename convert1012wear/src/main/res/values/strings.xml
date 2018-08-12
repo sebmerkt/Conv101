@@ -22,15 +22,15 @@
     <string name="string_inch">Inch</string>
 
     <string-array name="length_units">
-        <item>Nanometer</item>
-        <item>Micrometer</item>
-        <item>Millimeter</item>
-        <item>Centimeter</item>
-        <item>Meter</item>
-        <item>Kilometer</item>
-        <item>Inch</item>
-        <item>Foot</item>
-        <item>Yard</item>
-        <item>Mile</item>
+        <item>nm</item>
+        <item>um</item>
+        <item>mm</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+        <item>in</item>
+        <item>ft</item>
+        <item>yd</item>
+        <item>mi</item>
     </string-array>
 </resources>

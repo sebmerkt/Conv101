@@ -52,13 +52,19 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
     public void setContentView(@LayoutRes int layoutResID) {
         String colorSelector =
                 PreferenceManager.getDefaultSharedPreferences(AppCompatPreferenceActivity.this)
-                        .getString("pref_color_scheme", "Blue");
+                        .getString("pref_color_scheme", "Green");
 
         if (colorSelector.equals("Blue")) {
             setTheme(R.style.AppThemeBase);
         }
         else if (colorSelector.equals("Yellow")) {
             setTheme(R.style.AppThemeYellowBase);
+        }
+        else if (colorSelector.equals("Red")) {
+            setTheme(R.style.AppThemeRedBase);
+        }
+        else if (colorSelector.equals("Green")) {
+            setTheme(R.style.AppThemeGreenBase);
         }
         else if (colorSelector.equals("Dark")) {
             setTheme(R.style.AppThemeDarkBase);

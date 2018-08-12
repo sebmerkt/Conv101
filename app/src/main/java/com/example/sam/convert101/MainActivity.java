@@ -1,8 +1,10 @@
 package com.example.sam.convert101;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
@@ -32,13 +34,19 @@ public class MainActivity extends AppCompatActivity
 
         String colorSelector =
                 PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
-                        .getString("pref_color_scheme", "Blue");
+                        .getString("pref_color_scheme", "Green");
 
         if (colorSelector.equals("Blue")) {
             setTheme(R.style.AppTheme);
         }
         else if (colorSelector.equals("Yellow")) {
             setTheme(R.style.AppThemeYellow);
+        }
+        else if (colorSelector.equals("Red")) {
+            setTheme(R.style.AppThemeRed);
+        }
+        else if (colorSelector.equals("Green")) {
+            setTheme(R.style.AppThemeGreen);
         }
         else if (colorSelector.equals("Dark")) {
             setTheme(R.style.AppThemeDark);
@@ -201,6 +209,26 @@ public class MainActivity extends AppCompatActivity
             for(TextView tv : unitsTextView){
                 tv.setTextColor(ContextCompat.getColor(this, R.color.black));
             }
+        } else if (colorSelector.equals("Red")) {
+            for(int i = 0; i<unitsImageView.length; i++){
+                unitsImageView[i].setBackgroundResource(unitsDrawableWhite[i]);
+            }
+            for(LinearLayout ll : unitsButton){
+                ll.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimaryRed));
+            }
+            for(TextView tv : unitsTextView){
+                tv.setTextColor(ContextCompat.getColor(this, R.color.white));
+            }
+        } else if (colorSelector.equals("Green")) {
+            for(int i = 0; i<unitsImageView.length; i++){
+                unitsImageView[i].setBackgroundResource(unitsDrawableWhite[i]);
+            }
+            for(LinearLayout ll : unitsButton){
+                ll.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimaryGreen));
+            }
+            for(TextView tv : unitsTextView){
+                tv.setTextColor(ContextCompat.getColor(this, R.color.white));
+            }
         } else {
             for(int i = 0; i<unitsImageView.length; i++){
                 unitsImageView[i].setBackgroundResource(unitsDrawableWhite[i]);
@@ -262,12 +290,18 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
             Intent mSettingsActivityIntent = new Intent(MainActivity.this, SettingsActivity.class);
             MainActivity.this.startActivity(mSettingsActivityIntent);
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_feedback) {
-
+        } else if (id == R.id.nav_info) {
+            try {
+                Intent intent = new Intent(Intent.ACTION_VIEW,
+                        Uri.parse("https://sebmerkt.github.io"));
+                startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(this, "No application can handle this request."
+                        + " Please install a webbrowser",  Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
         } else if (id == R.id.nav_rate) {
-
+            //TODO: Add info
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

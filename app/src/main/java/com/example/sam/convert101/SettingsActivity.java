@@ -193,7 +193,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             // to their values. When their values change, their summaries are
             // updated to reflect the new value, per the Android Design
             // guidelines.
-            bindPreferenceSummaryToValue(findPreference("example_text"));
             bindPreferenceSummaryToValue(findPreference("pref_color_scheme"));
 
         }
@@ -227,6 +226,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             // guidelines.
             bindPreferenceSummaryToValue(findPreference("unit_precision"));
             bindPreferenceSummaryToValue(findPreference("default_units"));
+//            bindPreferenceSummaryToValue(findPreference("use_abbreviations"));
         }
 
         @Override

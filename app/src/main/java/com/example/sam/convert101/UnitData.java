@@ -58,7 +58,7 @@ public class UnitData {
             neg = true;
         }
         BigDecimal bigValue = new BigDecimal(Math.abs(value));
-        if( bigValue.compareTo(new BigDecimal("1000"))==1 ){   //TODO: String -> localization!
+        if( bigValue.compareTo(new BigDecimal("1000"))==1 ){
             double tmp = Math.abs(value);
             int counter = 0;
             while (tmp>=10){

@@ -32,7 +32,6 @@
         app:layout_constraintStart_toEndOf="@+id/et_conv_number"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--TODO: spinner needs custom layout file-->
 
 
     <ListView

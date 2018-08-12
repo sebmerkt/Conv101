@@ -44,7 +44,11 @@ public class ConvertUnitsSpeed extends ConvertUnitsBase implements AdapterView.O
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.speed_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.speed_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.speed_units);
+        }
         //Initialize speed units
         speedData = new UnitData[units.length];
         //Initialize conversion
@@ -99,16 +103,30 @@ public class ConvertUnitsSpeed extends ConvertUnitsBase implements AdapterView.O
 
         });
 
-        int stringArrayUnits = R.array.speed_units;
+        int stringArrayUnits;
+        if(useAbbrev) {
+            stringArrayUnits = R.array.speed_units_abbrev;
+        } else{
+            stringArrayUnits = R.array.speed_units;
+        }
+
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsSpeed.this)
                         .getString("default_units", "Metric");
         int stringSpeedDefault;
         if(unitSelector.equals("Metric")){
-            stringSpeedDefault = R.string.string_kmph;
+            if (useAbbrev) {
+                stringSpeedDefault = R.string.string_kmph_abbrev;
+            } else {
+                stringSpeedDefault = R.string.string_kmph;
+            }
         }
         else {
-            stringSpeedDefault = R.string.string_mph;
+            if (useAbbrev){
+                stringSpeedDefault = R.string.string_mph_abbrev;
+            } else {
+                stringSpeedDefault = R.string.string_mph;
+            }
         }
 
         // Spinner for base unit selection

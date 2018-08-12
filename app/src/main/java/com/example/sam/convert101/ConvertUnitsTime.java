@@ -43,7 +43,11 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
         setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.time_units);
+        if(useAbbrev) {
+            units = res.getStringArray(R.array.time_units_abbrev);
+        } else {
+            units = res.getStringArray(R.array.time_units);
+        }
         //Initialize time units
         timeData = new UnitData[units.length];
         //Initialize conversion
@@ -98,8 +102,15 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
 
         });
 
-        int stringArrayUnits = R.array.time_units;
-        int stringTimeDefault = R.string.string_second;
+        int stringArrayUnits;
+        int stringTimeDefault;
+        if(useAbbrev) {
+            stringArrayUnits = R.array.time_units_abbrev;
+            stringTimeDefault = R.string.string_second_abbrev;
+        } else{
+            stringArrayUnits = R.array.time_units;
+            stringTimeDefault = R.string.string_second;
+        }
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
