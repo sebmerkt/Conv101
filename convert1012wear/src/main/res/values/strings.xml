@@ -23,7 +23,7 @@
 
     <string-array name="length_units">
         <item>nm</item>
-        <item>um</item>
+        <item>\u00B5m</item>
         <item>mm</item>
         <item>cm</item>
         <item>m</item>
