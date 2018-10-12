@@ -1,8 +1,5 @@
 package com.example.sam.convert1012wear;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -14,19 +11,17 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
 
-public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
+public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
 
     UsersAdapter adapter;
     ListView listView;
 
-    //Conversion factors to go from {nm -> um, um -> mm, mm -> cm, cm -> m, m -> km, km -> in, in -> ft, ft -> yd, yd -> mi}
-    double[] convFactors = {1000.0, 1000.0, 10.0, 100.0, 1000.0, 0.0000254, 12.0, 3.0, 1760.0};
+    //Conversion factors to go from {mm^2 -> cm^2, cm^2 -> m^2, m^2 -> are, are -> ha, ha -> km^2, km^2 -> in^2, in^2 -> ft^2, ft^2 -> yd^2, yd^2 -> ac, ac -> mi^2}
+    double[] convFactors = {100.0, 10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
 
     //Size of conversion matrix
     int convMatrixDim = convFactors.length+1;
@@ -40,22 +35,23 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
     double[] outputValues = new double[convMatrixDim];
 
     //Initialize unit data
-    UnitData[] lengthData;
+    UnitData[] areaData;
     String[] units = new String[]{""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.convert_units_base);
+        setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.length_units);
+        units = res.getStringArray(R.array.area_units);
 
-        //Initialize length units
-        lengthData = new UnitData[units.length];
+        //Initialize area units
+        areaData = new UnitData[units.length];
         //Initialize conversion
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
         fillMatrix (convMatrix, convFactors);
+
 
         // Construct the data source
         ArrayList<UnitData> arrayOfItems = new ArrayList<>();
@@ -63,14 +59,13 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        updateUnitData(units, lengthData, adapter, outputValues);
+        updateUnitData(units, areaData, adapter, outputValues);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
         final EditText editText = findViewById(R.id.et_conv_number);
         editText.setText(String.valueOf(inputValue));
         editText.setSelection(editText.getText().length());
-
 
 
         // EditText: Listen for user input of the EditText and update the results list
@@ -89,7 +84,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
                     // Update all result values
                     updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
                 }
-                updateUnitData(units, lengthData, adapter, outputValues);
+                updateUnitData(units, areaData, adapter, outputValues);
                 listView.setAdapter(adapter);
             }
 
@@ -105,8 +100,8 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 
         });
 
-        int stringArrayUnits = R.array.length_units;
-        int stringLengthDefault = R.string.string_meter_abbrev;
+        int stringArrayUnits = R.array.area_units;
+        int stringAreaDefault = R.string.string_squaremeter_abbrev;
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -120,8 +115,9 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         spinner.setAdapter(spinnerAdapter);
 
 
-        spinner.setSelection(getIndex(spinner, getString(stringLengthDefault)));
+        spinner.setSelection(getIndex(spinner, getString(stringAreaDefault)));
         spinner.setOnItemSelectedListener(this);
+
 
     }
 
@@ -134,7 +130,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         selectedUnit = pos;
         // Update results list
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        updateUnitData(units, lengthData, adapter, outputValues);
+        updateUnitData(units, areaData, adapter, outputValues);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {

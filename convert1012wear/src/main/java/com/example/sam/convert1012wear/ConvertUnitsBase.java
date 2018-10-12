@@ -7,8 +7,7 @@ import android.widget.Spinner;
 
 public abstract class ConvertUnitsBase extends WearableActivity {
 
-    int stringarray_units;
-    int string_timedefault;
+    int precision = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +68,7 @@ public abstract class ConvertUnitsBase extends WearableActivity {
 
     public void updateUnitData(String[] unitNames, UnitData[] data, UsersAdapter adapter, double[] out){
         for (int i = 0; i<unitNames.length; i++) {
-            data[i] = new UnitData(unitNames[i], out[i]);
+            data[i] = new UnitData(unitNames[i], out[i], precision);
             adapter.addAll(data[i]);
         }
     }

@@ -28,22 +28,6 @@
         app:layout_constraintStart_toEndOf="@+id/et_conv_number"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--TODO: spinner needs custom layout file-->
-
-
-    <ListView
-        android:id="@+id/lv_convert_units_results"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
@@ -52,6 +36,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_select_unit" />
+
+
+    <ListView
+        android:id="@+id/lv_convert_units_results"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
 
 
 </android.support.constraint.ConstraintLayout>

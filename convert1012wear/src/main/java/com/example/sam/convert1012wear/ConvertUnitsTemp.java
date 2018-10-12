@@ -1,11 +1,9 @@
 package com.example.sam.convert1012wear;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+//import android.support.design.widget.Snackbar;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -14,48 +12,44 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
 
-public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
+public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.OnItemSelectedListener {
 
     UsersAdapter adapter;
     ListView listView;
 
-    //Conversion factors to go from {nm -> um, um -> mm, mm -> cm, cm -> m, m -> km, km -> in, in -> ft, ft -> yd, yd -> mi}
-    double[] convFactors = {1000.0, 1000.0, 10.0, 100.0, 1000.0, 0.0000254, 12.0, 3.0, 1760.0};
-
     //Size of conversion matrix
-    int convMatrixDim = convFactors.length+1;
+    int convMatrixDim = 3;
     double[][] convMatrix = new double[convMatrixDim][convMatrixDim];
 
     //Default EditText value
-    double inputValue = 1.0;
+    double inputValue = 0.0;
     //Default output unit
     int selectedUnit = 0;
     //Results to be displayed
     double[] outputValues = new double[convMatrixDim];
 
     //Initialize unit data
-    UnitData[] lengthData;
+    UnitData[] tempData;
     String[] units = new String[]{""};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.convert_units_base);
+        setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
-        units = res.getStringArray(R.array.length_units);
+        units = res.getStringArray(R.array.temp_units);
 
-        //Initialize length units
-        lengthData = new UnitData[units.length];
+        //Initialize temp units
+        tempData = new UnitData[units.length];
         //Initialize conversion
-        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        fillMatrix (convMatrix, convFactors);
+        updateTempOutputValues(outputValues, convMatrix, selectedUnit);
+        fillTmpMatrix (convMatrix);
+
 
         // Construct the data source
         ArrayList<UnitData> arrayOfItems = new ArrayList<>();
@@ -63,14 +57,13 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         adapter = new UsersAdapter(this, arrayOfItems);
         // Attach the adapter to a ListView
         listView = findViewById(R.id.lv_convert_units_results);
-        updateUnitData(units, lengthData, adapter, outputValues);
+        updateUnitData(units, tempData, adapter, outputValues);
         listView.setAdapter(adapter);
 
         //Initialize EditText; to input values
         final EditText editText = findViewById(R.id.et_conv_number);
         editText.setText(String.valueOf(inputValue));
         editText.setSelection(editText.getText().length());
-
 
 
         // EditText: Listen for user input of the EditText and update the results list
@@ -87,9 +80,10 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
                     // Get value of EditText
                     inputValue = Double.valueOf(editText.getText().toString());
                     // Update all result values
-                    updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
+                    fillTmpMatrix (convMatrix);
+                    updateTempOutputValues(outputValues, convMatrix, selectedUnit);
                 }
-                updateUnitData(units, lengthData, adapter, outputValues);
+                updateUnitData(units, tempData, adapter, outputValues);
                 listView.setAdapter(adapter);
             }
 
@@ -105,8 +99,9 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 
         });
 
-        int stringArrayUnits = R.array.length_units;
-        int stringLengthDefault = R.string.string_meter_abbrev;
+        int stringArrayUnits = R.array.temp_units;
+        int stringTempDefault = R.string.string_celsius_abbrev;
+
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -119,9 +114,9 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         // Apply the adapter to the spinner
         spinner.setAdapter(spinnerAdapter);
 
-
-        spinner.setSelection(getIndex(spinner, getString(stringLengthDefault)));
+        spinner.setSelection(getIndex(spinner, getString(stringTempDefault)));
         spinner.setOnItemSelectedListener(this);
+
 
     }
 
@@ -133,13 +128,43 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         // Update selected unit
         selectedUnit = pos;
         // Update results list
-        updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
-        updateUnitData(units, lengthData, adapter, outputValues);
+        fillTmpMatrix (convMatrix);
+        updateTempOutputValues(outputValues, convMatrix, selectedUnit);
+        updateUnitData(units, tempData, adapter, outputValues);
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
+
+
+
+    public void fillTmpMatrix (double[][] mat) {
+        mat[0][0] = inputValue;
+        mat[1][1] = inputValue;
+        mat[2][2] = inputValue;
+        mat[0][1] = inputValue-273.15;
+        mat[1][0] = inputValue+273.15;
+        mat[0][2] = inputValue*1.8-459.67;
+        mat[2][0] = (inputValue + 459.67)*5/9;
+        mat[1][2] = inputValue*1.8 + 32.;
+        mat[2][1] = (inputValue-32)*5/9;
+    }
+
+    public void updateTempOutputValues(double[] out, double[][] mat, int unit){
+//        if((unit==0 && inputValue<0.) || (unit==1 && inputValue<-273.15) || (unit==2 && inputValue<-459.67)){
+//            Snackbar snackbar = Snackbar.make(findViewById(R.id.convert_units_base), R.string.string_kelvinwarning, Snackbar.LENGTH_LONG);
+//            snackbar.show();
+//        }
+        for( int i = 0; i < mat.length; i++ ){
+            if((unit==0 && inputValue<0.) || (unit==1 && inputValue<-273.15) || (unit==2 && inputValue<-459.67)){
+                out[i] = 0;
+            }
+            else {
+                out[i] = mat[unit][i];
+            }
+        }
+    }
 
 
 }

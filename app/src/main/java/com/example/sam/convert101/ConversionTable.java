@@ -46,6 +46,7 @@ public class ConversionTable extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_conv_table);
         tabLayout.setupWithViewPager(viewPager);
 
+        //TODO: Info icon in app bar with explanation: "Due to the limited screen size of the Wear OS app only abbreviated units can be displayed. Here is a list of the full names of all units."
 
     }
 }

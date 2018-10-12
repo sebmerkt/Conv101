@@ -67,7 +67,6 @@
     <string name="string_acre">Acre</string>
     <string name="string_squaremile">Square mile</string>
 
-
     <!--ConvertUnitVolume-->
     <string name="string_cubiccentimeter">Cubic centimeter</string>
     <string name="string_milliliter">Milliliter</string>
@@ -138,22 +137,233 @@
     <string name="string_terabit">Terabit</string>
     <string name="string_petabit">Petabit</string>
 
-    <string name="string_length_table">
+    <string name="string_length_text">
         <![CDATA[
-            <<table></table><tbody><tr><td> </td><td>mm</td><td>m</td><td>km</td></tr>
-            <tr><td>mm</td><td>1.0</td><td>0.001</td><td>0.000001</td></tr>
-            <tr><td>m</td><td>1000.0</td><td>1.0</td><td>0.001</td></tr>
-            <tr><td>km</td><td>1000000.0</td><td>1000.0</td><td>1.0</td></tr>
-            </tbody></table>
+            <h1>Unit description for length units</h1>
+            <table style="width:100%">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                </tr>
+            </table>
         ]]>
     </string>
+
+    <string name="string_volume_text">
+        <![CDATA[
+            <h1>Unit description for volume units</h1>
+            <div>
+                <b>cm\u00B3 = Cubic centimeter</b><br>
+                <b>ml = Milliliter</b><br>
+                <b>L = Liter</b><br>
+                <b>m\u00B3 = Cubic meter</b><br>
+                <b>cu in = Cubic inch</b><br>
+                <b>cu ft = Cubic foot</b><br>
+                <b>cu yd = Cubic yard</b><br>
+                <b>US tsp = US teaspoon</b><br>
+                <b>US Tbsp = US tablespoon</b><br>
+                <b>US fl oz = US fluid ounce</b><br>
+                <b>US cp = US legal cup</b><br>
+                <b>US pt = US liquid pint</b><br>
+                <b>US qt = US liquid quart</b><br>
+                <b>US gal = US liquid gallon</b><br>
+                <b>Imp. tsp = Imperial teaspoon</b><br>
+                <b>Imp. Tbsp = Imperial tablespoon</b><br>
+                <b>Imp. fl oz = Imperial fluid ounce</b><br>
+                <b>Imp. cp = Imperial cup</b><br>
+                <b>Imp. pt = Imperial pint</b><br>
+                <b>Imp. qt = Imperial quart</b><br>
+                <b>Imp. gal = Imperial gallon</b>
+            </div>
+        ]]>
+    </string>
+
+    <string name="string_temp_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of Temperature</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Kelvin</td>
+                    <td>K</td>
+                </tr>
+                <tr>
+                    <td>Celsius</td>
+                    <td>\u00B0C</td>
+                </tr>
+                <tr>
+                    <td>Fahrenheit</td>
+                    <td>\u00B0F</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_speed_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of speed</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Meter per second</td>
+                    <td>mps</td>
+                </tr>
+                <tr>
+                    <td>Kilometer per hour</td>
+                    <td>kph</td>
+                </tr>
+                <tr>
+                    <td>Foot per second</td>
+                    <td>fps</td>
+                </tr>
+                <tr>
+                    <td>Mile per hour</td>
+                    <td>mph</td>
+                </tr>
+                <tr>
+                    <td>Knot</td>
+                    <td>kn</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+
+
+    <string name="string_area_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of area</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Square centimeter</td>
+                    <td>cm\u00B2</td>
+                </tr>
+                <tr>
+                    <td>Square meter</td>
+                    <td>m\u00B2</td>
+                </tr>
+                <tr>
+                    <td>Are</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>Hectare</td>
+                    <td>ha</td>
+                </tr>
+                <tr>
+                    <td>Square kilometer</td>
+                    <td>km\u00B2</td>
+                </tr>
+                <tr>
+                    <td>Square inch</td>
+                    <td>sq in</td>
+                </tr>
+                <tr>
+                    <td>Square foot</td>
+                    <td>sq ft</td>
+                </tr>
+                <tr>
+                    <td>Square yard</td>
+                    <td>sq yd</td>
+                </tr>
+                <tr>
+                    <td>Acre</td>
+                    <td>ac</td>
+                </tr>
+                <tr>
+                    <td>Square mile</td>
+                    <td>sq mi</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
     <string name="string_preference_key">com.example.convert1012.PREFERENCE_FILE_KEY</string>
     <string name="testsomething">testsomething</string>
     <string name="string_preference_test1">Test?</string>
     <string name="string_preference_test2">Success!</string>
     <string name="string_sharedPreference_test">testkeyLength</string>
-
-
 
     <string-array name="length_units">
         <item>Nanometer</item>
@@ -192,6 +402,7 @@
         <item>Month</item>
         <item>Year</item>
     </string-array>
+
     <string-array name="time_units_abbrev">
         <item>ns</item>
         <item>\u00B5s</item>
@@ -217,12 +428,13 @@
         <item>Acre</item>
         <item>Square mile</item>
     </string-array>
+
     <string-array name="area_units_abbrev">
-        <item>cm^2</item>
-        <item>m^2</item>
+        <item>cm\u00B2</item>
+        <item>m\u00B2</item>
         <item>a</item>
         <item>ha</item>
-        <item>km^2</item>
+        <item>km\u00B2</item>
         <item>sq in</item>
         <item>sq ft</item>
         <item>sq yd</item>
@@ -253,11 +465,12 @@
         <item>Imperial quart</item>
         <item>Imperial gallon</item>
     </string-array>
+
     <string-array name="volume_units_abbrev">
-        <item>cm^3</item>
+        <item>cm\u00B3</item>
         <item>ml</item>
         <item>L</item>
-        <item>m^3</item>
+        <item>m\u00B3</item>
         <item>cu in</item>
         <item>cu ft</item>
         <item>cu yd</item>
@@ -295,6 +508,7 @@
         <item>Mile per hour</item>
         <item>Knot</item>
     </string-array>
+
     <string-array name="speed_units_abbrev">
         <item>mps</item>
         <item>kph</item>
@@ -315,6 +529,7 @@
         <item>US ton</item>
         <item>Imperial ton</item>
     </string-array>
+
     <string-array name="weight_units_abbrev">
         <item>\u00B5g</item>
         <item>mg</item>
@@ -342,6 +557,7 @@
         <item>Terabit</item>
         <item>Petabit</item>
     </string-array>
+
     <string-array name="storage_units_abbrev">
         <item>B</item>
         <item>kB</item>
@@ -352,7 +568,7 @@
         <item>bit</item>
         <item>kbit</item>
         <item>Mbit</item>
-        <item>Git</item>
+        <item>Gbit</item>
         <item>Tbit</item>
         <item>Pbit</item>
     </string-array>
