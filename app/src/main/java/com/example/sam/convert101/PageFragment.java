@@ -53,7 +53,7 @@ public class PageFragment extends Fragment {
             WebView webView = view.findViewById(R.id.wv_unit_description);
             webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
         }else if (mPage == 4) { //Time
-            String str = getResources().getString(R.string.string_length_text);
+            String str = getResources().getString(R.string.string_time_text);
             WebView webView = view.findViewById(R.id.wv_unit_description);
             webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
         }else if (mPage == 5) { //Speed
@@ -65,11 +65,11 @@ public class PageFragment extends Fragment {
             WebView webView = view.findViewById(R.id.wv_unit_description);
             webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
         }else if (mPage == 7) { //Weight
-            String str = getResources().getString(R.string.string_length_text);
+            String str = getResources().getString(R.string.string_weight_text);
             WebView webView = view.findViewById(R.id.wv_unit_description);
             webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
         }else if (mPage == 8) { //Storage
-            String str = getResources().getString(R.string.string_length_text);
+            String str = getResources().getString(R.string.string_storage_text);
             WebView webView = view.findViewById(R.id.wv_unit_description);
             webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
         }else {

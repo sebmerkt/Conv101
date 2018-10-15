@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".ConversionTable"
-            android:label="@string/string_conversion_table"
+            android:label="@string/string_unit_description"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ConvertUnitsLength"

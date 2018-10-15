@@ -7,7 +7,7 @@
         <item
             android:id="@+id/nav_conversion_table"
             android:icon="@drawable/ic_info_outline_black_24dp"
-            android:title="@string/string_conversion_table" />
+            android:title="@string/string_unit_description" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings_black_24dp"

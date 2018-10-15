@@ -20,6 +20,7 @@
     <string name="string_storage">Data Storage</string>
     <string name="string_storage_short">Storage</string>
     <string name="string_conversion_table">Conversion table</string>
+    <string name="string_unit_description">Unit description</string>
     <string name="string_settings">Settings</string>
     <string name="string_color_scheme">Color Scheme</string>
 
@@ -139,19 +140,72 @@
 
     <string name="string_length_text">
         <![CDATA[
-            <h1>Unit description for length units</h1>
-            <table style="width:100%">
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of Length</h2>
+            <table style="width:100%" id="t01">
                 <tr>
                     <th>Unit</th>
                     <th>Abbreviation</th>
                 </tr>
                 <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
+                    <td>Nanometer</td>
+                    <td>nm</td>
                 </tr>
                 <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
+                    <td>Micrometer</td>
+                    <td>\u00B5m</td>
+                </tr>
+                <tr>
+                    <td>Millimeter</td>
+                    <td>mm</td>
+                </tr>
+                <tr>
+                    <td>Centimeter</td>
+                    <td>cm</td>
+                </tr>
+                <tr>
+                    <td>Meter</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>Kilometer</td>
+                    <td>km</td>
+                </tr>
+                <tr>
+                    <td>Inch</td>
+                    <td>in</td>
+                </tr>
+                <tr>
+                    <td>Foot</td>
+                    <td>ft</td>
+                </tr>
+                <tr>
+                    <td>Yard</td>
+                    <td>yd</td>
+                </tr>
+                <tr>
+                    <td>Mile</td>
+                    <td>mi</td>
                 </tr>
             </table>
         ]]>
@@ -159,30 +213,191 @@
 
     <string name="string_volume_text">
         <![CDATA[
-            <h1>Unit description for volume units</h1>
-            <div>
-                <b>cm\u00B3 = Cubic centimeter</b><br>
-                <b>ml = Milliliter</b><br>
-                <b>L = Liter</b><br>
-                <b>m\u00B3 = Cubic meter</b><br>
-                <b>cu in = Cubic inch</b><br>
-                <b>cu ft = Cubic foot</b><br>
-                <b>cu yd = Cubic yard</b><br>
-                <b>US tsp = US teaspoon</b><br>
-                <b>US Tbsp = US tablespoon</b><br>
-                <b>US fl oz = US fluid ounce</b><br>
-                <b>US cp = US legal cup</b><br>
-                <b>US pt = US liquid pint</b><br>
-                <b>US qt = US liquid quart</b><br>
-                <b>US gal = US liquid gallon</b><br>
-                <b>Imp. tsp = Imperial teaspoon</b><br>
-                <b>Imp. Tbsp = Imperial tablespoon</b><br>
-                <b>Imp. fl oz = Imperial fluid ounce</b><br>
-                <b>Imp. cp = Imperial cup</b><br>
-                <b>Imp. pt = Imperial pint</b><br>
-                <b>Imp. qt = Imperial quart</b><br>
-                <b>Imp. gal = Imperial gallon</b>
-            </div>
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of Volume</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Cubic centimeter</td>
+                    <td>cm\u00B3</td>
+                </tr>
+                <tr>
+                    <td>Milliliter</td>
+                    <td>ml</td>
+                </tr>
+                <tr>
+                    <td>Liter</td>
+                    <td>L</td>
+                </tr>
+                <tr>
+                    <td>Cubic meter</td>
+                    <td>m\u00B3</td>
+                </tr>
+                <tr>
+                    <td>Cubic inch</td>
+                    <td>cu in</td>
+                </tr>
+                <tr>
+                    <td>Cubic foot</td>
+                    <td>cu ft</td>
+                </tr>
+                <tr>
+                    <td>Cubic yard</td>
+                    <td>cu yd</td>
+                </tr>
+                <tr>
+                    <td>US teaspoon</td>
+                    <td>US tsp</td>
+                </tr>
+                <tr>
+                    <td>US tablespoon</td>
+                    <td>US Tbsp</td>
+                </tr>
+                <tr>
+                    <td>US fluid ounce</td>
+                    <td>US fl oz</td>
+                </tr>
+                <tr>
+                    <td>US legal cup</td>
+                    <td>US cp</td>
+                </tr>
+                <tr>
+                    <td>US liquid pint</td>
+                    <td>US pt</td>
+                </tr>
+                <tr>
+                    <td>US liquid quart</td>
+                    <td>US qt</td>
+                </tr>
+                <tr>
+                    <td>US liquid gallon</td>
+                    <td>US gal</td>
+                </tr>
+                <tr>
+                    <td>Imperial teaspoon</td>
+                    <td>Imp. tsp</td>
+                </tr>
+                <tr>
+                    <td>Imperial tablespoon</td>
+                    <td>Imp. Tbsp</td>
+                </tr>
+                <tr>
+                    <td>Imperial fluid ounce</td>
+                    <td>Imp. fl oz</td>
+                </tr>
+                <tr>
+                    <td>Imperial cup</td>
+                    <td>Imp. cp</td>
+                </tr>
+                <tr>
+                    <td>Imperial pint</td>
+                    <td>Imp. pt</td>
+                </tr>
+                <tr>
+                    <td>Imperial quart</td>
+                    <td>Imp. qt</td>
+                </tr>
+                <tr>
+                    <td>Imperial gallon</td>
+                    <td>Imp. gal</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_time_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of Time</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Nanosecond</td>
+                    <td>ns</td>
+                </tr>
+                <tr>
+                    <td>Microsecond</td>
+                    <td>\u00B5s</td>
+                </tr>
+                <tr>
+                    <td>Millisecond</td>
+                    <td>ms</td>
+                </tr>
+                <tr>
+                    <td>Second</td>
+                    <td>s</td>
+                </tr>
+                <tr>
+                    <td>Minute</td>
+                    <td>min</td>
+                </tr>
+                <tr>
+                    <td>Hour</td>
+                    <td>h</td>
+                </tr>
+                <tr>
+                    <td>Day</td>
+                    <td>d</td>
+                </tr>
+                <tr>
+                    <td>Week</td>
+                    <td>wk</td>
+                </tr>
+                <tr>
+                    <td>Month</td>
+                    <td>mo</td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>yr</td>
+                </tr>
+            </table>
         ]]>
     </string>
 
@@ -254,7 +469,7 @@
                 }
                 </style>
             </head>
-            <h2>Units of speed</h2>
+            <h2>Units of Speed</h2>
             <table style="width:100%" id="t01">
                 <tr>
                     <th>Unit</th>
@@ -309,7 +524,7 @@
                 }
                 </style>
             </head>
-            <h2>Units of area</h2>
+            <h2>Units of Area</h2>
             <table style="width:100%" id="t01">
                 <tr>
                     <th>Unit</th>
@@ -354,6 +569,160 @@
                 <tr>
                     <td>Square mile</td>
                     <td>sq mi</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_weight_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of Weight</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Microgram</td>
+                    <td>\u00B5g</td>
+                </tr>
+                <tr>
+                    <td>Milligram</td>
+                    <td>mg</td>
+                </tr>
+                <tr>
+                    <td>Gram</td>
+                    <td>g</td>
+                </tr>
+                <tr>
+                    <td>Kilogram</td>
+                    <td>kg</td>
+                </tr>
+                <tr>
+                    <td>Metric ton</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>Ounce</td>
+                    <td>oz</td>
+                </tr>
+                <tr>
+                    <td>Pound</td>
+                    <td>lb</td>
+                </tr>
+                <tr>
+                    <td>Stone</td>
+                    <td>st</td>
+                </tr>
+                <tr>
+                    <td>US ton</td>
+                    <td>US ton</td>
+                </tr>
+                <tr>
+                    <td>Imperial ton</td>
+                    <td>Imp. ton</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_storage_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Units of Storage</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Unit</th>
+                    <th>Abbreviation</th>
+                </tr>
+                <tr>
+                    <td>Byte</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>Kilobyte</td>
+                    <td>kB</td>
+                </tr>
+                <tr>
+                    <td>Megabyte</td>
+                    <td>MB</td>
+                </tr>
+                <tr>
+                    <td>Gigabyte</td>
+                    <td>GB</td>
+                </tr>
+                <tr>
+                    <td>Terabyte</td>
+                    <td>TB</td>
+                </tr>
+                <tr>
+                    <td>Petabyte</td>
+                    <td>PB</td>
+                </tr>
+                <tr>
+                    <td>Bit</td>
+                    <td>bit</td>
+                </tr>
+                <tr>
+                    <td>Kilobit</td>
+                    <td>kbit</td>
+                </tr>
+                <tr>
+                    <td>Megabit</td>
+                    <td>Mbit</td>
+                </tr>
+                <tr>
+                    <td>Gigabit</td>
+                    <td>Gbit</td>
+                </tr>
+                <tr>
+                    <td>Terabit</td>
+                    <td>Tbit</td>
+                </tr>
+                <tr>
+                    <td>Petabit</td>
+                    <td>Pbit</td>
                 </tr>
             </table>
         ]]>

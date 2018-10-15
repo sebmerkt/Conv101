@@ -297,7 +297,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(this, "No application can handle this request."
-                        + " Please install a webbrowser",  Toast.LENGTH_LONG).show();
+                        + " Please install a web browser",  Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
         } else if (id == R.id.nav_rate) {

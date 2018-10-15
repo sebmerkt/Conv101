@@ -38,12 +38,12 @@ public class ConversionTable extends AppCompatActivity {
 
 
         // Get the ViewPager and set it's PagerAdapter so that it can display items
-        ViewPager viewPager = (ViewPager) findViewById(R.id.vp_conv_table);
+        ViewPager viewPager = findViewById(R.id.vp_conv_table);
         viewPager.setAdapter(new SampleFragmentPagerAdapter(getSupportFragmentManager(),
                 ConversionTable.this));
 
         // Give the TabLayout the ViewPager
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tl_conv_table);
+        TabLayout tabLayout = findViewById(R.id.tl_conv_table);
         tabLayout.setupWithViewPager(viewPager);
 
         //TODO: Info icon in app bar with explanation: "Due to the limited screen size of the Wear OS app only abbreviated units can be displayed. Here is a list of the full names of all units."
