@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_info) {
             try {
                 Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://sebmerkt.github.io"));
+                        Uri.parse("https://sebmerkt.github.io/2018/10/09/Android.html"));
                 startActivity(intent);
             } catch (ActivityNotFoundException e) {
                 Toast.makeText(this, "No application can handle this request."

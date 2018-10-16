@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">Convert 101</string>
+    <string name="app_name">Everyday Converter</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_settings">Settings</string>
     <string name="string_unit_converter">Unit converter</string>
     <string name="string_email">sam@android.com</string>
     <string name="string_time">Time</string>
@@ -22,9 +21,26 @@
     <string name="string_conversion_table">Conversion table</string>
     <string name="string_unit_description">Unit description</string>
     <string name="string_settings">Settings</string>
+    <string name="title_activity_info">Info</string>
     <string name="string_color_scheme">Color Scheme</string>
+    <string name="string_communicate">Get in contact</string>
 
     <string name="string_kelvinwarning">Unit Kelvin is defined positive.</string>
+    <string name="string_info_wearos_abbrev">
+    <![CDATA[
+        <head>
+            <style>
+                h2 {
+                    text-align: center;
+                }
+            </style>
+        </head>
+        <h2>Information for Wear OS</h2>
+        <p>Due to the limited screen size of the Wear OS app only abbreviated units can be displayed. Here you will find tables for each category of units where the full names of each unit is listed.</p>
+        </br>
+        <p>In the full Android app the displayed units can be switched between full and abbreviated names. Check the <b>Settings</b> under <b>Unit conversion</b>.</p>
+    ]]>
+    </string>
 
     <!--ConvertUnitTime-->
     <string name="string_nanosecond">Nanosecond</string>
@@ -971,7 +987,6 @@
     <string name="string_info">Find info on the web</string>
     <string name="string_rate_this_app">Rate this app</string>
 
-    <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
 

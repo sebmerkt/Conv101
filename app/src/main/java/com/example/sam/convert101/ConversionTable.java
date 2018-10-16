@@ -1,10 +1,13 @@
 package com.example.sam.convert101;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class ConversionTable extends AppCompatActivity {
 
@@ -46,7 +49,31 @@ public class ConversionTable extends AppCompatActivity {
         TabLayout tabLayout = findViewById(R.id.tl_conv_table);
         tabLayout.setupWithViewPager(viewPager);
 
-        //TODO: Info icon in app bar with explanation: "Due to the limited screen size of the Wear OS app only abbreviated units can be displayed. Here is a list of the full names of all units."
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_conversion_table_info, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_info) {
+            Intent mInfoActivityIntent = new Intent(ConversionTable.this, ConversionTableInfo.class);
+            ConversionTable.this.startActivity(mInfoActivityIntent);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

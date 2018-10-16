@@ -12,7 +12,6 @@
         android:id="@+id/et_conv_number"
         android:layout_width="200dp"
         android:layout_height="55dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
@@ -23,13 +22,24 @@
 
     <Spinner
         android:id="@+id/spinner_select_unit"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="55dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/et_conv_number"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<View-->
+    <!--android:id="@+id/divider_left"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="55dp"-->
+    <!--android:layout_marginEnd="16dp"-->
+    <!--android:layout_marginStart="16dp"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:background="?android:attr/listDivider"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toEndOf="@+id/spinner_select_unit"-->
+    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
 
     <View
@@ -44,10 +54,12 @@
 
     <ListView
         android:id="@+id/lv_convert_units_results"
-        android:layout_width="667dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider" />
 
 
