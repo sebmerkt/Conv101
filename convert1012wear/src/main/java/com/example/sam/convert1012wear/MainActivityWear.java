@@ -93,4 +93,4 @@ public class MainActivityWear extends WearableActivity {
 }
 
 
-//TODO: Need a button for "Open app on phone" for unit explanation etc.
+//TODO: Improvement: Button for "Open app on phone" for unit explanation etc.

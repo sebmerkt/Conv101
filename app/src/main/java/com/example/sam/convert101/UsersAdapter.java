@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 
 class UsersAdapter extends ArrayAdapter<UnitData> {
@@ -32,11 +33,6 @@ class UsersAdapter extends ArrayAdapter<UnitData> {
         // Populate the data into the template view using the data object
         tvUnitValue.setText(unit.roundUnitValue(unit.getUnitValue(),unit.getPrecisionValue()));
         tvUnitType.setText(unit.getUnit());
-
-
-        //TODO: Locale requires different floating point?
-
-
 
         // Return the completed view to render on screen
         return convertView;

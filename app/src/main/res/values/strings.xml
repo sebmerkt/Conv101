@@ -686,7 +686,7 @@
                 }
                 </style>
             </head>
-            <h2>Units of Storage</h2>
+            <h2>Units of Data Storage</h2>
             <table style="width:100%" id="t01">
                 <tr>
                     <th>Unit</th>
@@ -996,7 +996,7 @@
     <!-- Example settings for Units and conversion -->
     <string name="pref_header_units">Unit conversion</string>
 
-    <string name="pref_unit_precision">Result precision</string>
+    <string name="pref_unit_precision">Output precision of the results</string>
 
     <string-array name="default_precision_options">
         <item>2 digits</item>
@@ -1011,5 +1011,16 @@
     </string-array>
 
     <string name="string_use_abbreviations">Use abbreviations for units</string>
+
+    <string-array name="string_arrray_tablists">
+        <item>Length</item>
+        <item>Area</item>
+        <item>Volume</item>
+        <item>Time</item>
+        <item>Speed</item>
+        <item>Temperature</item>
+        <item>Weight</item>
+        <item>Data Storage</item>
+    </string-array>
 
 </resources>

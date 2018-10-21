@@ -20,16 +20,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="16dp"
             android:drawableTint="@color/blue"
             android:drawableTop="@drawable/ic_length_ruler"
             android:text="@string/string_length"
             android:textColor="@color/blue"
-            app:layout_constraintBottom_toTopOf="@+id/button_time"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/button_volume"
+            app:layout_constraintEnd_toStartOf="@+id/button_area"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_area"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
@@ -37,17 +38,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:layout_marginEnd="8dp"
             android:layout_marginTop="40dp"
             android:drawablePadding="16dp"
             android:drawableTint="@color/blue"
             android:drawableTop="@drawable/ic_area"
             android:text="@string/string_area"
             android:textColor="@color/blue"
-            app:layout_constraintBottom_toTopOf="@+id/button_volume"
-            app:layout_constraintEnd_toStartOf="@+id/button_length"
+            app:layout_constraintBottom_toTopOf="@+id/button_time"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_length"
             app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -66,7 +66,7 @@
             app:layout_constraintEnd_toStartOf="@+id/button_time"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_area" />
+            app:layout_constraintTop_toBottomOf="@+id/button_length" />
 
         <Button
             android:id="@+id/button_time"
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_volume"
-            app:layout_constraintTop_toBottomOf="@+id/button_length" />
+            app:layout_constraintTop_toBottomOf="@+id/button_area" />
 
 
         <Button

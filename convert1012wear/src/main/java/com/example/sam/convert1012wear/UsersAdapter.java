@@ -34,10 +34,6 @@ class UsersAdapter extends ArrayAdapter<UnitData> {
 
 
         //TODO: Locale requires different floating point!
-        //TODO: Write formatter class for output:
-        //      - numbers > 10^6? will be displayed as x.xEx
-        //      - numbers < 10^(-6)? will be displayed as x.xE-x
-        //      - keep 6? decimals
 
 
         // Return the completed view to render on screen

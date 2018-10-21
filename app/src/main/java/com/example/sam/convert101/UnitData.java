@@ -6,6 +6,9 @@ import android.content.Context;
 import android.preference.PreferenceManager;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 
 public class UnitData {
 //    private long id;
@@ -53,59 +56,36 @@ public class UnitData {
     }
 
     public String roundUnitValue(double value, int precision){
-        boolean neg = false;
-        if(value<0){
-            neg = true;
-        }
-        BigDecimal bigValue = new BigDecimal(Math.abs(value));
-        if( bigValue.compareTo(new BigDecimal("1000"))==1 ){
-            double tmp = Math.abs(value);
-            int counter = 0;
-            while (tmp>=10){
-                tmp= tmp / 10;
-                counter++;
+        BigDecimal bigValue = new BigDecimal(value);
+        if( ( bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,4))))==1 ) || ( bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,-(precision-2)))))==-1 ) ){
+            NumberFormat numberFormat  = new DecimalFormat("##");
+            if ( precision == 2 ) {
+                numberFormat = new DecimalFormat("0.0#E0");
             }
+            else if ( precision == 4 ) {
+                numberFormat = new DecimalFormat("0.0###E0");
+            }
+            else if ( precision == 6 ) {
+                numberFormat = new DecimalFormat("0.0#####E0");
+            }
+            String returnVal = numberFormat.format(bigValue);
 
-            BigDecimal output = new BigDecimal(tmp).setScale(precision, BigDecimal.ROUND_HALF_UP);
-            String returnVal = removeZeros(output.toString()) + " E " + String.valueOf(counter);
-
-            if(neg) {
-                return "-" + returnVal;
-            }
-            else {
-                return returnVal;
-            }
-        }
-        else if( bigValue.compareTo(new BigDecimal(String.valueOf(Math.pow(10,-precision))))==-1 ){
-            double tmp = Math.abs(value);
-            int counter = 0;
-            while (tmp<1){
-                tmp= tmp * 10;
-                counter++;
-                if (counter>100){
-                    return "0";
-                }
-            }
-
-            BigDecimal output = new BigDecimal(tmp).setScale(precision, BigDecimal.ROUND_HALF_UP);
-            String returnVal = removeZeros(output.toString()) + " E -" + String.valueOf(counter);
-
-            if(neg) {
-                return "-" + returnVal;
-            }
-            else {
-                return returnVal;
-            }
+            return returnVal;
         }
         else{
-            BigDecimal output = new BigDecimal(Math.abs(value)).setScale(precision, BigDecimal.ROUND_HALF_UP);
+            NumberFormat numberFormat  = new DecimalFormat("##");
+            if ( precision == 2 ) {
+                numberFormat = new DecimalFormat("0.00");
+            }
+            else if ( precision == 4 ) {
+                numberFormat = new DecimalFormat("0.0000");
+            }
+            else if ( precision == 6 ) {
+                numberFormat = new DecimalFormat("0.000000");
+            }
+            String returnVal = numberFormat.format(bigValue);
 
-            if(neg) {
-                return "-" + removeZeros(output.toString());
-            }
-            else {
-                return removeZeros(output.toString());
-            }
+            return removeZeros(returnVal);
         }
     }
 

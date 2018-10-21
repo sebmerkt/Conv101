@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputFilter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -65,6 +66,7 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
         // killed and restarted.
 
         EditText editText = findViewById(R.id.et_conv_number);
+        editText.setFilters(new InputFilter[] { new InputFilter.LengthFilter(precision+2) });
         String unitValue = editText.getText().toString();
         savedInstanceState.putString("unitValue", unitValue);
     }

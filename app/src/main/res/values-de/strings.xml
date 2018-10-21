@@ -238,4 +238,15 @@
         <item>Terabit</item>
         <item>Petabit</item>
     </string-array>
+
+    <string-array name="string_arrray_tablists">
+        <item>Länge</item>
+        <item>Fläche</item>
+        <item>Volumen</item>
+        <item>Zeit</item>
+        <item>Geschwindigkeit</item>
+        <item>Temperatur</item>
+        <item>Gewicht</item>
+        <item>Datenspeicher</item>
+    </string-array>
 </resources>

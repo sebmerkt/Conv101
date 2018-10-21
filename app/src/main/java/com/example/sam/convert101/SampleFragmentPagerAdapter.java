@@ -1,6 +1,7 @@
 package com.example.sam.convert101;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -10,13 +11,17 @@ import android.support.v4.app.FragmentPagerAdapter;
  */
 
 public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
-    final int PAGE_COUNT = 8;
-    private String tabTitles[] = new String[] { "Length", "Area", "Volume", "Time", "Speed", "Temperature", "Weight", "Storage" };
+    final private int PAGE_COUNT = 8;
+    private String[] tabTitles={};
     private Context context;
+
+
 
     public SampleFragmentPagerAdapter(FragmentManager fm, Context context) {
         super(fm);
         this.context = context;
+        Resources res = context.getResources();
+        tabTitles = res.getStringArray(R.array.string_arrray_tablists);
     }
 
     @Override
