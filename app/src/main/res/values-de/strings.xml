@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Convert 101</string>
+    <string name="app_name">Everyday Converter</string>
 
     <string name="navigation_drawer_open">Öffne Navigation</string>
     <string name="navigation_drawer_close">Schließe Navigation</string>

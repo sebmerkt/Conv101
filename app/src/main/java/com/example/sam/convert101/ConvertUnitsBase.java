@@ -23,7 +23,7 @@ public abstract class ConvertUnitsBase extends AppCompatActivity {
 
         String colorSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsBase.this)
-                        .getString("pref_color_scheme", "Green");
+                        .getString("pref_color_scheme", "Blue");
 
         if (colorSelector.equals("Blue")) {
             setTheme(R.style.AppThemeBase);

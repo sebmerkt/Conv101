@@ -24,6 +24,9 @@
     <string name="title_activity_info">Info</string>
     <string name="string_color_scheme">Color Scheme</string>
     <string name="string_communicate">Get in contact</string>
+    <string name="string_blog">https://sebmerkt.github.io/2018/10/09/Android.html</string>
+    <string name="string_browser_err_msg1">No application can handle this request.</string>
+    <string name="string_browser_err_msg2"> Please install a web browser</string>
 
     <string name="string_kelvinwarning">Unit Kelvin is defined positive.</string>
     <string name="string_info_wearos_abbrev">

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -17,7 +18,7 @@ public class ConversionTable extends AppCompatActivity {
 
         String colorSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConversionTable.this)
-                        .getString("pref_color_scheme", "Green");
+                        .getString("pref_color_scheme", "Blue");
 
         if (colorSelector.equals("Blue")) {
             setTheme(R.style.AppThemeBase);
@@ -57,6 +58,18 @@ public class ConversionTable extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_conversion_table_info, menu);
+
+        String colorSelector =
+                PreferenceManager.getDefaultSharedPreferences(ConversionTable.this)
+                        .getString("pref_color_scheme", "Blue");
+
+        if(colorSelector.equals("Yellow")) {
+            menu.getItem(0).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_info_outline_black_24dp));
+        }
+        else {
+            menu.getItem(0).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_info_outline_white_24dp));
+
+        }
         return true;
     }
 

@@ -75,13 +75,13 @@ public class UnitData {
         else{
             NumberFormat numberFormat  = new DecimalFormat("##");
             if ( precision == 2 ) {
-                numberFormat = new DecimalFormat("0.00");
+                numberFormat = new DecimalFormat("0.0#");
             }
             else if ( precision == 4 ) {
-                numberFormat = new DecimalFormat("0.0000");
+                numberFormat = new DecimalFormat("0.0###");
             }
             else if ( precision == 6 ) {
-                numberFormat = new DecimalFormat("0.000000");
+                numberFormat = new DecimalFormat("0.0#####");
             }
             String returnVal = numberFormat.format(bigValue);
 

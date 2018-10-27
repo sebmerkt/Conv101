@@ -32,10 +32,6 @@ class UsersAdapter extends ArrayAdapter<UnitData> {
         tvUnitValue.setText(unit.roundUnitValue(unit.getUnitValue(),unit.getPrecisionValue()));
         tvUnitType.setText(unit.getUnit());
 
-
-        //TODO: Locale requires different floating point!
-
-
         // Return the completed view to render on screen
         return convertView;
     }
