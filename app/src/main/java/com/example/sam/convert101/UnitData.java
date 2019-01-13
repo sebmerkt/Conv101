@@ -1,17 +1,10 @@
 package com.example.sam.convert101;
 
-
-
-import android.content.Context;
-import android.preference.PreferenceManager;
-
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 
 public class UnitData {
-//    private long id;
     String unitType;
     String unit;
     double unitValue;

@@ -110,11 +110,12 @@ public class ConvertUnitsVolume extends ConvertUnitsBase implements AdapterView.
             stringArrayUnits = R.array.volume_units;
         }
 
+        String metric_string=getString(R.string.string_metric);
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsVolume.this)
-                        .getString("default_units", "Metric");
+                        .getString("default_units", metric_string);
         int stringVolumeDefault;
-        if(unitSelector.equals("Metric")){
+        if(unitSelector.equals(metric_string)){
             if (useAbbrev) {
                 stringVolumeDefault = R.string.string_liter_abbrev;
             } else {

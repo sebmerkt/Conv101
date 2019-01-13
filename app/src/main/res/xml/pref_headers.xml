@@ -2,10 +2,11 @@
 
     <!-- These settings headers are only used on tablets. -->
 
-    <header
-        android:fragment="com.example.sam.convert101.SettingsActivity$GeneralPreferenceFragment"
-        android:icon="@drawable/ic_info_outline_black_24dp"
-        android:title="@string/pref_header_general" />
+    <!--General preferences, change color theme (WIP)-->
+    <!--<header-->
+        <!--android:fragment="com.example.sam.convert101.SettingsActivity$GeneralPreferenceFragment"-->
+        <!--android:icon="@drawable/ic_info_outline_black_24dp"-->
+        <!--android:title="@string/pref_header_general" />-->
 
     <header
         android:fragment="com.example.sam.convert101.SettingsActivity$UnitsPreferenceFragment"

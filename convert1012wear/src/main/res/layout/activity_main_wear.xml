@@ -94,7 +94,7 @@
             android:drawablePadding="16dp"
             android:drawableTint="@color/blue"
             android:drawableTop="@drawable/ic_speed"
-            android:text="@string/string_speed"
+            android:text="@string/string_speed_short"
             android:textColor="@color/blue"
             app:layout_constraintBottom_toBottomOf="@+id/button_weight"
             app:layout_constraintEnd_toStartOf="@+id/button_temperature"
@@ -128,7 +128,7 @@
             android:drawablePadding="16dp"
             android:drawableTint="@color/blue"
             android:drawableTop="@drawable/ic_weight"
-            android:text="@string/string_weight"
+            android:text="@string/string_weight_short"
             android:textColor="@color/blue"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_storage"
@@ -151,6 +151,22 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_weight"
             app:layout_constraintTop_toBottomOf="@+id/button_temperature" />
+
+
+        <Button
+            android:id="@+id/button_info"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/string_info"
+            android:textAlignment="gravity"
+            android:textColor="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_weight" />
+
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

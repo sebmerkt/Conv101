@@ -110,12 +110,13 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
             stringArrayUnits = R.array.area_units;
         }
 
+        String metric_string=getString(R.string.string_metric);
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsArea.this)
-                        .getString("default_units", "Metric");
+                        .getString("default_units", metric_string);
 
         int stringAreaDefault;
-        if(unitSelector.equals("Metric")){
+        if(unitSelector.equals(metric_string)){
             if (useAbbrev) {
                 stringAreaDefault = R.string.string_squaremeter_abbrev;
             } else {

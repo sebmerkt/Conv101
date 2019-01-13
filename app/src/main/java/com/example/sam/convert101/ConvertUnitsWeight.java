@@ -110,11 +110,12 @@ public class ConvertUnitsWeight extends ConvertUnitsBase implements AdapterView.
             stringArrayUnits = R.array.weight_units;
         }
 
+        String metric_string=getString(R.string.string_metric);
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsWeight.this)
-                        .getString("default_units", "Metric");
+                        .getString("default_units", metric_string);
         int stringWeightDefault;
-        if(unitSelector.equals("Metric")){
+        if(unitSelector.equals(metric_string)){
             if (useAbbrev) {
                 stringWeightDefault = R.string.string_kilogram_abbrev;
             } else {

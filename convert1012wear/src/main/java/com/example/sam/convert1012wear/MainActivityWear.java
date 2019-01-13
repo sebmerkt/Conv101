@@ -1,11 +1,14 @@
 package com.example.sam.convert1012wear;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.android.wearable.intent.RemoteIntent;
 
 public class MainActivityWear extends WearableActivity {
 
@@ -86,6 +89,19 @@ public class MainActivityWear extends WearableActivity {
             public void onClick(View view) {
                 Intent mWeightIntent = new Intent(MainActivityWear.this, ConvertUnitsWeight.class);
                 MainActivityWear.this.startActivity(mWeightIntent);
+            }
+        });
+
+        Button infoButton = findViewById(R.id.button_info);
+        infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent mInfoIntent = new Intent(Intent.ACTION_VIEW)
+                        .addCategory(Intent.CATEGORY_BROWSABLE)
+                        .setData(Uri.parse(getString(R.string.string_blog)));
+
+                RemoteIntent.startRemoteActivity(MainActivityWear.this, mInfoIntent, null);
+
             }
         });
 

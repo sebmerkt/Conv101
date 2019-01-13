@@ -109,11 +109,12 @@ public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.On
             stringArrayUnits = R.array.temp_units;
         }
 
+        String metric_string=getString(R.string.string_metric);
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsTemp.this)
-                        .getString("default_units", "Metric");
+                        .getString("default_units", metric_string);
         int stringTempDefault;
-        if(unitSelector.equals("Metric")){
+        if(unitSelector.equals(metric_string)){
             if (useAbbrev) {
                 stringTempDefault = R.string.string_celsius_abbrev;
             } else {

@@ -110,11 +110,12 @@ public class ConvertUnitsSpeed extends ConvertUnitsBase implements AdapterView.O
             stringArrayUnits = R.array.speed_units;
         }
 
+        String metric_string=getString(R.string.string_metric);
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsSpeed.this)
-                        .getString("default_units", "Metric");
+                        .getString("default_units", metric_string);
         int stringSpeedDefault;
-        if(unitSelector.equals("Metric")){
+        if(unitSelector.equals(metric_string)){
             if (useAbbrev) {
                 stringSpeedDefault = R.string.string_kmph_abbrev;
             } else {

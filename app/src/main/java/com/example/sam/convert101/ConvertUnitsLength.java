@@ -1,8 +1,5 @@
 package com.example.sam.convert101;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -14,8 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -115,12 +110,13 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
             stringArrayUnits = R.array.length_units;
         }
 
+        String metric_string=getString(R.string.string_metric);
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsLength.this)
-                        .getString("default_units", "Metric");
+                        .getString("default_units", metric_string);
 
         int stringLengthDefault;
-        if(unitSelector.equals("Metric")){
+        if(unitSelector.equals(metric_string)){
             if(useAbbrev) {
                 stringLengthDefault = R.string.string_meter_abbrev;
             }

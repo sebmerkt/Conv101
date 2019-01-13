@@ -13,7 +13,8 @@
     <string name="string_weight_short">Weight</string>
     <string name="string_storage">Data Storage</string>
     <string name="string_storage_short">Storage</string>
-
+    <string name="string_info">Open info on phone</string>
+    <string name="string_blog">https://sebmerkt.github.io/everyday_converter.html</string>
 
     <!--ConvertUnitLength-->
     <string name="string_nanometer">Nanometer</string>
@@ -159,20 +160,20 @@
         <item>cu in</item>
         <item>cu ft</item>
         <item>cu yd</item>
-        <item>US tsp</item>
-        <item>US Tbsp</item>
-        <item>US fl oz</item>
-        <item>US cp</item>
-        <item>US pt</item>
-        <item>US qt</item>
-        <item>US gal</item>
-        <item>Imp. tsp</item>
-        <item>Imp. Tbsp</item>
-        <item>Imp. fl oz</item>
-        <item>Imp. cp</item>
-        <item>Imp. pt</item>
-        <item>Imp. qt</item>
-        <item>Imp. gal</item>
+        <item>tsp (US)</item>
+        <item>tbsp (US)</item>
+        <item>fl oz (US)</item>
+        <item>cp (US)</item>
+        <item>pt (US)</item>
+        <item>qt (US)</item>
+        <item>gal (US)</item>
+        <item>tsp (Imp.)</item>
+        <item>tbsp (Imp.)</item>
+        <item>fl oz (Imp.)</item>
+        <item>cp (Imp.)</item>
+        <item>pt (Imp.)</item>
+        <item>qt (Imp.)</item>
+        <item>gal (Imp.)</item>
     </string-array>
 
     <string-array name="temp_units">
@@ -211,8 +212,8 @@
         <item>oz</item>
         <item>lb</item>
         <item>st</item>
-        <item>US ton</item>
-        <item>Imp. ton</item>
+        <item>ton (US)</item>
+        <item>ton (Imp.)</item>
     </string-array>
 
     <string-array name="storage_units">

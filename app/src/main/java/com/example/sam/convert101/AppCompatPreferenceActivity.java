@@ -52,7 +52,7 @@ public abstract class AppCompatPreferenceActivity extends PreferenceActivity {
     public void setContentView(@LayoutRes int layoutResID) {
         String colorSelector =
                 PreferenceManager.getDefaultSharedPreferences(AppCompatPreferenceActivity.this)
-                        .getString("pref_color_scheme", "Green");
+                        .getString("pref_color_scheme", "Blue");
 
         if (colorSelector.equals("Blue")) {
             setTheme(R.style.AppThemeBase);

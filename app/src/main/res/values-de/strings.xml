@@ -1,12 +1,9 @@
+<!-- TODO: translate -->
 <resources>
-    <string name="app_name">Everyday Converter</string>
-
     <string name="navigation_drawer_open">Öffne Navigation</string>
     <string name="navigation_drawer_close">Schließe Navigation</string>
 
     <string name="action_settings">Einstellungen</string>
-    <string name="string_unit_converter">Unit converter</string>
-    <string name="string_email">sam@android.com</string>
     <string name="string_time">Zeit</string>
     <string name="string_length">Länge</string>
     <string name="string_area">Fläche</string>
@@ -20,10 +17,30 @@
     <string name="string_storage">Datenspeicher</string>
     <string name="string_storage_short">Speicher</string>
     <string name="string_conversion_table">Umrechnungstable</string>
+    <string name="string_unit_description">Informationen</string>
     <string name="string_settings">Einstellungen</string>
+    <string name="title_activity_info">Hinweis</string>
     <string name="string_color_scheme">Farbschema</string>
+    <string name="string_communicate">Kontakt aufnehmen</string>
+    <string name="string_browser_err_msg1">Keine kompatieble Anwendung gefunden.</string>
+    <string name="string_browser_err_msg2"> Bitte installieren Sie einen Web Browser</string>
 
     <string name="string_kelvinwarning">Einheit Kelvin ist positiv definiert.</string>
+    <string name="string_info_wearos_abbrev">
+    <![CDATA[
+        <head>
+            <style>
+                h2 {
+                    text-align: center;
+                }
+            </style>
+        </head>
+        <h3>Hinweis zur Wear OS App</h3>
+        <p>Aufgrund der begrenzten Displaygröße der Wear OS Applikation können nur abgekürtze Einheiten angezeigt werden. Hier finden Sie Tabellen für alle gebräuchlichen Einheiten mit ihren vollständigen Bezeichnungen.</p>
+        </br>
+        <p>In der Android Version für Mobiltelefone und Tablets kann die Anzeige der Einheiten zwischen vollständigen und abkekürzten Bezeichnungen gewechselt werden. Gehen Sie hierzu in den <b>Eistellungen</b> unter <b>Umrechnung und Anzeige der Einheiten</b>.</p>
+    ]]>
+    </string>
 
     <!--ConvertUnitTime-->
     <string name="string_nanosecond">Nanosekunde</string>
@@ -69,17 +86,17 @@
     <string name="string_cubicinch">Kubikzoll</string>
     <string name="string_cubicfoot">Kubikfuß</string>
     <string name="string_cubicyard">Kubikyard</string>
-    <string name="string_usliquidgallon">Gallone (US)</string>
-    <string name="string_usliquidquart">Quart (US)</string>
-    <string name="string_usliquidpint">Pint (US)</string>
-    <string name="string_uslegalcup">Cup (US)</string>
+    <string name="string_usgallon">Gallone (US)</string>
+    <string name="string_usquart">Quart (US)</string>
+    <string name="string_uspint">Pint (US)</string>
+    <string name="string_uscup">Cup (US)</string>
     <string name="string_usfluidounce">Flüssigunze (US)</string>
     <string name="string_ustablespoon">Esslöffel (US)</string>
     <string name="string_usteaspoon">Teelöffel (US)</string>
-    <string name="string_imperialliquidgallon">Gallone (Imperial)</string>
-    <string name="string_imperialliquidquart">Quart (Imperial)</string>
-    <string name="string_imperialliquidpint">Pint (Imperial)</string>
-    <string name="string_imperiallegalcup">Cup (Imperial)</string>
+    <string name="string_imperialgallon">Gallone (Imperial)</string>
+    <string name="string_imperialquart">Quart (Imperial)</string>
+    <string name="string_imperialpint">Pint (Imperial)</string>
+    <string name="string_imperialcup">Cup (Imperial)</string>
     <string name="string_imperialfluidounce">Flüssigunze (Imperial)</string>
     <string name="string_imperialtablespoon">Esslöffel (Imperial)</string>
     <string name="string_imperialteaspoon">Teelöffel (Imperial)</string>
@@ -123,16 +140,595 @@
     <string name="string_petabit">Petabit</string>
 
 
-    <string name="string_length_table">
+    <string name="string_length_text">
         <![CDATA[
-            <<table></table><tbody><tr><td> </td><td>mm</td><td>m</td><td>km</td></tr>
-            <tr><td>mm</td><td>1.0</td><td>0.001</td><td>0.000001</td></tr>
-            <tr><td>m</td><td>1000.0</td><td>1.0</td><td>0.001</td></tr>
-            <tr><td>km</td><td>1000000.0</td><td>1000.0</td><td>1.0</td></tr>
-            </tbody></table>
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Längeneinheiten</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Nanometer</td>
+                    <td>nm</td>
+                </tr>
+                <tr>
+                    <td>Mikrometer</td>
+                    <td>\u00B5m</td>
+                </tr>
+                <tr>
+                    <td>Millimeter</td>
+                    <td>mm</td>
+                </tr>
+                <tr>
+                    <td>Zentimeter</td>
+                    <td>cm</td>
+                </tr>
+                <tr>
+                    <td>Meter</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>Kilometer</td>
+                    <td>km</td>
+                </tr>
+                <tr>
+                    <td>Zoll</td>
+                    <td>in</td>
+                </tr>
+                <tr>
+                    <td>Fuß</td>
+                    <td>ft</td>
+                </tr>
+                <tr>
+                    <td>Yard</td>
+                    <td>yd</td>
+                </tr>
+                <tr>
+                    <td>Meile</td>
+                    <td>mi</td>
+                </tr>
+            </table>
         ]]>
     </string>
 
+    <string name="string_volume_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Volumeneinheiten</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Kubikzentimeter</td>
+                    <td>cm\u00B3</td>
+                </tr>
+                <tr>
+                    <td>Milliliter</td>
+                    <td>ml</td>
+                </tr>
+                <tr>
+                    <td>Liter</td>
+                    <td>L</td>
+                </tr>
+                <tr>
+                    <td>Kubikmeter</td>
+                    <td>m\u00B3</td>
+                </tr>
+                <tr>
+                    <td>Kubikzoll</td>
+                    <td>cu in</td>
+                </tr>
+                <tr>
+                    <td>Kubikfuß</td>
+                    <td>cu ft</td>
+                </tr>
+                <tr>
+                    <td>Kubikyard</td>
+                    <td>cu yd</td>
+                </tr>
+                <tr>
+                    <td>Teelöffel (US)</td>
+                    <td>US tsp</td>
+                </tr>
+                <tr>
+                    <td>Esslöffel (US)</td>
+                    <td>US tbsp</td>
+                </tr>
+                <tr>
+                    <td>Flüssigunze (US)</td>
+                    <td>US fl oz</td>
+                </tr>
+                <tr>
+                    <td>Cup (US)</td>
+                    <td>US cp</td>
+                </tr>
+                <tr>
+                    <td>Pint (US)</td>
+                    <td>US pt</td>
+                </tr>
+                <tr>
+                    <td>Quart (US)</td>
+                    <td>US qt</td>
+                </tr>
+                <tr>
+                    <td>Gallone (US)</td>
+                    <td>US gal</td>
+                </tr>
+                <tr>
+                    <td>Teelöffel (Imperial)</td>
+                    <td>Imp. tsp</td>
+                </tr>
+                <tr>
+                    <td>Esslöffel (Imperial)</td>
+                    <td>Imp. tbsp</td>
+                </tr>
+                <tr>
+                    <td>Flüssigunze (Imperial)</td>
+                    <td>Imp. fl oz</td>
+                </tr>
+                <tr>
+                    <td>Cup (Imperial)</td>
+                    <td>Imp. cp</td>
+                </tr>
+                <tr>
+                    <td>Pint (Imperial)</td>
+                    <td>Imp. pt</td>
+                </tr>
+                <tr>
+                    <td>Quart (Imperial)</td>
+                    <td>Imp. qt</td>
+                </tr>
+                <tr>
+                    <td>Gallone (Imperial)</td>
+                    <td>Imp. gal</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_time_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Zeiteinheiten</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Nanosekunde</td>
+                    <td>ns</td>
+                </tr>
+                <tr>
+                    <td>Mikrosekunde</td>
+                    <td>\u00B5s</td>
+                </tr>
+                <tr>
+                    <td>Millisekunde</td>
+                    <td>ms</td>
+                </tr>
+                <tr>
+                    <td>Sekunde</td>
+                    <td>s</td>
+                </tr>
+                <tr>
+                    <td>Minute</td>
+                    <td>min</td>
+                </tr>
+                <tr>
+                    <td>Stunde</td>
+                    <td>h</td>
+                </tr>
+                <tr>
+                    <td>Tag</td>
+                    <td>d</td>
+                </tr>
+                <tr>
+                    <td>Woche</td>
+                    <td>w</td>
+                </tr>
+                <tr>
+                    <td>Monat</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>Jahr</td>
+                    <td>a</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_temp_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Temperatureinheiten</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Kelvin</td>
+                    <td>K</td>
+                </tr>
+                <tr>
+                    <td>Celsius</td>
+                    <td>\u00B0C</td>
+                </tr>
+                <tr>
+                    <td>Fahrenheit</td>
+                    <td>\u00B0F</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_speed_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Geschwindigkeitseinheiten</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Meter pro Sekunde</td>
+                    <td>m/s</td>
+                </tr>
+                <tr>
+                    <td>Kilometer pro Stunde</td>
+                    <td>km/h</td>
+                </tr>
+                <tr>
+                    <td>Fuß pro Sekunde</td>
+                    <td>fps</td>
+                </tr>
+                <tr>
+                    <td>Meilen pro Stunde</td>
+                    <td>mph</td>
+                </tr>
+                <tr>
+                    <td>Knoten</td>
+                    <td>kn</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+
+
+    <string name="string_area_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Flächeneinheiten</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Quadratzentimeter</td>
+                    <td>cm\u00B2</td>
+                </tr>
+                <tr>
+                    <td>Quadratmeter</td>
+                    <td>m\u00B2</td>
+                </tr>
+                <tr>
+                    <td>Ar</td>
+                    <td>a</td>
+                </tr>
+                <tr>
+                    <td>Hektar</td>
+                    <td>ha</td>
+                </tr>
+                <tr>
+                    <td>Quadratkilometer</td>
+                    <td>km\u00B2</td>
+                </tr>
+                <tr>
+                    <td>Quadratzoll</td>
+                    <td>sq in</td>
+                </tr>
+                <tr>
+                    <td>Quadratfuß</td>
+                    <td>sq ft</td>
+                </tr>
+                <tr>
+                    <td>Quadratyard</td>
+                    <td>sq yd</td>
+                </tr>
+                <tr>
+                    <td>Acre</td>
+                    <td>ac</td>
+                </tr>
+                <tr>
+                    <td>Quadratmeile</td>
+                    <td>sq mi</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_weight_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Gewichtseinheiten</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Mikrogram</td>
+                    <td>\u00B5g</td>
+                </tr>
+                <tr>
+                    <td>Milligram</td>
+                    <td>mg</td>
+                </tr>
+                <tr>
+                    <td>Gram</td>
+                    <td>g</td>
+                </tr>
+                <tr>
+                    <td>Kilogram</td>
+                    <td>kg</td>
+                </tr>
+                <tr>
+                    <td>Metrische Tonne</td>
+                    <td>t</td>
+                </tr>
+                <tr>
+                    <td>Unze</td>
+                    <td>oz</td>
+                </tr>
+                <tr>
+                    <td>Pfund</td>
+                    <td>lb</td>
+                </tr>
+                <tr>
+                    <td>Stone</td>
+                    <td>st</td>
+                </tr>
+                <tr>
+                    <td>Tonne (US)</td>
+                    <td>US ton</td>
+                </tr>
+                <tr>
+                    <td>Tonne (Imperial)</td>
+                    <td>Imp. ton</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
+
+    <string name="string_storage_text">
+        <![CDATA[
+            <head>
+                <style>
+                table, th, td {
+                    border: 1px solid black;
+                    border-collapse: collapse;
+                }
+                th, td {
+                    padding: 15px;
+                }
+                td {
+                    text-align: center;
+                }
+                table#t01 {
+                    width: 100%;
+                    background-color: #eee;
+                }
+                h2 {
+                    text-align: center;
+                }
+                </style>
+            </head>
+            <h2>Datenspeicher</h2>
+            <table style="width:100%" id="t01">
+                <tr>
+                    <th>Einheit</th>
+                    <th>Abkürzung</th>
+                </tr>
+                <tr>
+                    <td>Byte</td>
+                    <td>B</td>
+                </tr>
+                <tr>
+                    <td>Kilobyte</td>
+                    <td>kB</td>
+                </tr>
+                <tr>
+                    <td>Megabyte</td>
+                    <td>MB</td>
+                </tr>
+                <tr>
+                    <td>Gigabyte</td>
+                    <td>GB</td>
+                </tr>
+                <tr>
+                    <td>Terabyte</td>
+                    <td>TB</td>
+                </tr>
+                <tr>
+                    <td>Petabyte</td>
+                    <td>PB</td>
+                </tr>
+                <tr>
+                    <td>Bit</td>
+                    <td>bit</td>
+                </tr>
+                <tr>
+                    <td>Kilobit</td>
+                    <td>kbit</td>
+                </tr>
+                <tr>
+                    <td>Megabit</td>
+                    <td>Mbit</td>
+                </tr>
+                <tr>
+                    <td>Gigabit</td>
+                    <td>Gbit</td>
+                </tr>
+                <tr>
+                    <td>Terabit</td>
+                    <td>Tbit</td>
+                </tr>
+                <tr>
+                    <td>Petabit</td>
+                    <td>Pbit</td>
+                </tr>
+            </table>
+        ]]>
+    </string>
 
     <string-array name="length_units">
         <item>Nanometer</item>
@@ -145,6 +741,18 @@
         <item>Fuß</item>
         <item>Yard</item>
         <item>Meile</item>
+    </string-array>
+    <string-array name="length_units_abbrev">
+        <item>nm</item>
+        <item>\u00B5m</item>
+        <item>mm</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+        <item>in</item>
+        <item>ft</item>
+        <item>yd</item>
+        <item>mi</item>
     </string-array>
 
     <string-array name="time_units">
@@ -159,6 +767,18 @@
         <item>Monat</item>
         <item>Jahr</item>
     </string-array>
+    <string-array name="time_units_abbrev">
+        <item>ns</item>
+        <item>\u00B5s</item>
+        <item>ms</item>
+        <item>s</item>
+        <item>min</item>
+        <item>h</item>
+        <item>d</item>
+        <item>w</item>
+        <item>m</item>
+        <item>a</item>
+    </string-array>
 
     <string-array name="area_units">
         <item>Quadratzentimeter</item>
@@ -172,6 +792,18 @@
         <item>Acre</item>
         <item>Quadratmeile</item>
     </string-array>
+    <string-array name="area_units_abbrev">
+        <item>cm\u00B2</item>
+        <item>m\u00B2</item>
+        <item>a</item>
+        <item>ha</item>
+        <item>km\u00B2</item>
+        <item>sq in</item>
+        <item>sq ft</item>
+        <item>sq yd</item>
+        <item>ac</item>
+        <item>sq mi</item>
+    </string-array>
 
     <string-array name="volume_units">
         <item>Kubikzentimeter</item>
@@ -181,26 +813,54 @@
         <item>Kubikzoll</item>
         <item>Kubikfuß</item>
         <item>Kubikyard</item>
-        <item>US Teelöffel</item>
-        <item>US Esslöffel</item>
-        <item>US Flüssigunze</item>
-        <item>US Cup</item>
-        <item>US Liquid Pint</item>
-        <item>US Liquid Quart</item>
-        <item>US Liquid Gallone</item>
-        <item>Imperial Teelöffel</item>
-        <item>Imperial Esslöffel</item>
-        <item>Imperial Flüssigunze</item>
-        <item>Imperial Cup</item>
-        <item>Imperial Pint</item>
-        <item>Imperial Quart</item>
-        <item>Imperial Gallone</item>
+        <item>Teelöffel (US)</item>
+        <item>Esslöffel (US)</item>
+        <item>Flüssigunze (US)</item>
+        <item>Cup (US)</item>
+        <item>Pint (US)</item>
+        <item>Quart (US)</item>
+        <item>Gallone (US)</item>
+        <item>Teelöffel (Imperial)</item>
+        <item>Esslöffel (Imperial)</item>
+        <item>Flüssigunze (Imperial)</item>
+        <item>Cup (Imperial)</item>
+        <item>Pint (Imperial)</item>
+        <item>Quart (Imperial)</item>
+        <item>Gallone (Imperial)</item>
+    </string-array>
+    <string-array name="volume_units_abbrev">
+        <item>cm\u00B3</item>
+        <item>ml</item>
+        <item>L</item>
+        <item>m\u00B3</item>
+        <item>cu in</item>
+        <item>cu ft</item>
+        <item>cu yd</item>
+        <item>US tsp</item>
+        <item>US tbsp</item>
+        <item>US fl oz</item>
+        <item>US cp</item>
+        <item>US pt</item>
+        <item>US qt</item>
+        <item>US gal</item>
+        <item>Imp. tsp</item>
+        <item>Imp. tbsp</item>
+        <item>Imp. fl oz</item>
+        <item>Imp. cp</item>
+        <item>Imp. pt</item>
+        <item>Imp. qt</item>
+        <item>Imp. gal</item>
     </string-array>
 
     <string-array name="temp_units">
         <item>Kelvin</item>
         <item>Celsius</item>
         <item>Fahrenheit</item>
+    </string-array>
+    <string-array name="temp_units_abbrev">
+        <item>K</item>
+        <item>\u00B0C</item>
+        <item>\u00B0F</item>
     </string-array>
 
     <string-array name="speed_units">
@@ -209,6 +869,13 @@
         <item>Fuß pro Sekunde</item>
         <item>Meile pro Stunde</item>
         <item>Knoten</item>
+    </string-array>
+    <string-array name="speed_units_abbrev">
+        <item>m/s</item>
+        <item>km/h</item>
+        <item>fps</item>
+        <item>mph</item>
+        <item>kn</item>
     </string-array>
 
     <string-array name="weight_units">
@@ -220,8 +887,20 @@
         <item>Unze</item>
         <item>Pfund</item>
         <item>Stone</item>
+        <item>Tonne (US)</item>
+        <item>Tonne (Imperial)</item>
+    </string-array>
+    <string-array name="weight_units_abbrev">
+        <item>\u00B5g</item>
+        <item>mg</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>t</item>
+        <item>oz</item>
+        <item>lb</item>
+        <item>st</item>
         <item>US ton</item>
-        <item>Imperial ton</item>
+        <item>Imp. ton</item>
     </string-array>
 
     <string-array name="storage_units">
@@ -238,8 +917,22 @@
         <item>Terabit</item>
         <item>Petabit</item>
     </string-array>
+    <string-array name="storage_units_abbrev">
+        <item>B</item>
+        <item>kB</item>
+        <item>MB</item>
+        <item>GB</item>
+        <item>TB</item>
+        <item>PB</item>
+        <item>bit</item>
+        <item>kbit</item>
+        <item>Mbit</item>
+        <item>Gbit</item>
+        <item>Tbit</item>
+        <item>Pbit</item>
+    </string-array>
 
-    <string-array name="string_arrray_tablists">
+    <string-array name="string_array_tablists">
         <item>Länge</item>
         <item>Fläche</item>
         <item>Volumen</item>
@@ -249,4 +942,58 @@
         <item>Gewicht</item>
         <item>Datenspeicher</item>
     </string-array>
+
+
+    <string name="color_scheme_title">Farbschema auswählen</string>
+    <string-array name="color_scheme_options">
+        <item>Blau</item>
+        <item>Grün</item>
+        <item>Dunkel</item>
+        <item>Rot</item>
+        <item>Gelb</item>
+    </string-array>
+
+    <string name="string_color_scheme_warning">Das Wechseln des Farbschemas befindet sich in der Entwicklungsphase. Wenn das Farbschema geändert wurde, muss das Einstellungsmenü über die Zurücktaste in der linken, oberen Ecke verlassen werden.</string>
+    <string name="string_color_positive_button">OK</string>
+    <string name="string_color_cancel_button">Abbrechen</string>
+
+    <string name="string_choose_default_units">Standardeinheiten auswählen</string>
+    <string name="string_metric">Metrisch</string>
+    <string-array name="default_units_options">
+        <item>Metrisch</item>
+        <item>Imperial</item>
+    </string-array>
+    <string-array name="default_units_options_values">
+        <item>Metrisch</item>
+        <item>Imperial</item>
+    </string-array>
+
+    <string name="string_info">Weitere Informationen im Web</string>
+    <string name="string_rate_this_app">Diese App bewerten</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">Allgemein Einstellungen</string>
+
+    <!-- Example settings for Units and conversion -->
+    <string name="pref_header_units">Umrechnung und Anzeige der Einheiten</string>
+
+    <string name="pref_unit_precision">Angezeigte Genauigkeit der Einheiten</string>
+
+    <string-array name="default_precision_options">
+        <item>2 Nachkommastellen</item>
+        <item>4 Nachkommastellen</item>
+        <item>6 Nachkommastellen</item>
+    </string-array>
+
+    <string-array name="default_precision_options_values">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+    </string-array>
+
+    <string name="string_use_abbreviations">Abkürzungen verwenden</string>
+
+
 </resources>

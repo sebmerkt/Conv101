@@ -21,7 +21,7 @@ public class SampleFragmentPagerAdapter extends FragmentPagerAdapter {
         super(fm);
         this.context = context;
         Resources res = context.getResources();
-        tabTitles = res.getStringArray(R.array.string_arrray_tablists);
+        tabTitles = res.getStringArray(R.array.string_array_tablists);
     }
 
     @Override
