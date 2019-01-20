@@ -36,6 +36,34 @@
             android:name=".ConvertUnitsLength"
             android:label="@string/string_length"
             android:parentActivityName=".MainActivityWear" />
+        <activity
+            android:name=".ConvertUnitsArea"
+            android:label="@string/string_area"
+            android:parentActivityName=".MainActivityWear" />
+        <activity
+            android:name=".ConvertUnitsSpeed"
+            android:label="@string/string_speed"
+            android:parentActivityName=".MainActivityWear" />
+        <activity
+            android:name=".ConvertUnitsStorage"
+            android:label="@string/string_storage_short"
+            android:parentActivityName=".MainActivityWear" />
+        <activity
+            android:name=".ConvertUnitsTemp"
+            android:label="@string/string_temp"
+            android:parentActivityName=".MainActivityWear" />
+        <activity
+            android:name=".ConvertUnitsTime"
+            android:label="@string/string_time"
+            android:parentActivityName=".MainActivityWear" />
+        <activity
+            android:name=".ConvertUnitsVolume"
+            android:label="@string/string_volume"
+            android:parentActivityName=".MainActivityWear" />
+        <activity
+            android:name=".ConvertUnitsWeight"
+            android:label="@string/string_weight"
+            android:parentActivityName=".MainActivityWear" />
     </application>
 
 </manifest>

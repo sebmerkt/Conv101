@@ -1,3 +1,19 @@
+/*
+    Copyright 2019 Sebastian Merkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+
 package com.example.sam.convert101;
 
 import android.content.res.Resources;
@@ -109,11 +125,12 @@ public class ConvertUnitsTemp extends ConvertUnitsBase implements AdapterView.On
             stringArrayUnits = R.array.temp_units;
         }
 
+        String metric_string=getString(R.string.string_metric);
         String unitSelector =
                 PreferenceManager.getDefaultSharedPreferences(ConvertUnitsTemp.this)
-                        .getString("default_units", "Metric");
+                        .getString("default_units", metric_string);
         int stringTempDefault;
-        if(unitSelector.equals("Metric")){
+        if(unitSelector.equals(metric_string)){
             if (useAbbrev) {
                 stringTempDefault = R.string.string_celsius_abbrev;
             } else {

@@ -1,0 +1,250 @@
+<!--
+    Copyright 2019 Sebastian Merkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">Everyday Converter</string>
+
+    <string name="string_time">Zeit</string>
+    <string name="string_length">Länge</string>
+    <string name="string_area">Fläche</string>
+    <string name="string_volume">Volumen</string>
+    <string name="string_temperature">Temperatur</string>
+    <string name="string_temp">Temp.</string>
+    <string name="string_speed">Geschwindigkeit</string>
+    <string name="string_speed_short">Geschw.</string>
+    <string name="string_weight">Gewicht</string>
+    <string name="string_weight_short">Gewicht</string>
+    <string name="string_storage">Datenspeicher</string>
+    <string name="string_storage_short">Speicher</string>
+    <string name="string_info">Infos auf Telefon anzeigen</string>
+
+
+    <!--ConvertUnitLength-->
+    <string name="string_nanometer">Nanometer</string>
+    <string name="string_mircometer">Mikrometer</string>
+    <string name="string_millimeter">Millimeter</string>
+    <string name="string_centimeter">Zentimeter</string>
+    <string name="string_meter">Meter</string>
+    <string name="string_meter_abbrev">m</string>
+    <string name="string_kilometer">Kilometer</string>
+    <string name="string_mile">Milen</string>
+    <string name="string_yard">Yard</string>
+    <string name="string_foot">Fuß</string>
+    <string name="string_inch">Inch</string>
+
+    <!--ConvertUnitArea-->
+    <string name="string_squaremeter">Square meter</string>
+    <string name="string_squaremeter_abbrev">m\u00B2</string>
+    <string name="string_squarekilometer">Square kilometer</string>
+    <string name="string_squarecentimeter">Square centimeter</string>
+    <string name="string_are">Are</string>
+    <string name="string_hectare">Hectare</string>
+    <string name="string_squareinch">Square inch</string>
+    <string name="string_squarefoot">Square foot</string>
+    <string name="string_squarefoot_abbrev">sq ft</string>
+    <string name="string_squareyard">Square yard</string>
+    <string name="string_acre">Acre</string>
+    <string name="string_squaremile">Square mile</string>
+
+    <!--ConvertUnitVolume-->
+    <string name="string_cubiccentimeter">Cubic centimeter</string>
+    <string name="string_milliliter">Milliliter</string>
+    <string name="string_liter">Liter</string>
+    <string name="string_liter_abbrev">l</string>
+    <string name="string_cubicmeter">Cubic meter</string>
+    <string name="string_cubicinch">Cubic inch</string>
+    <string name="string_cubicfoot">Cubic foot</string>
+    <string name="string_cubicyard">Cubic yard</string>
+    <string name="string_usliquidgallon">US liquid gallon</string>
+    <string name="string_usliquidquart">US liquid quart</string>
+    <string name="string_usliquidpint">US liquid pint</string>
+    <string name="string_uslegalcup">US legal cup</string>
+    <string name="string_usfluidounce">US fluid ounce</string>
+    <string name="string_usfluidounce_abbrev">US fl oz</string>
+    <string name="string_ustablespoon">US tablespoon</string>
+    <string name="string_usteaspoon">Imperial teaspoon</string>
+    <string name="string_imperialgallon">Imperial gallon</string>
+    <string name="string_imperialquart">Imperial quart</string>
+    <string name="string_imperialpint">Imperial pint</string>
+    <string name="string_imperialcup">Imperial cup</string>
+    <string name="string_imperialfluidounce">Imperial fluid ounce</string>
+    <string name="string_imperialtablespoon">Imperial tablespoon</string>
+    <string name="string_imperialteaspoon">Imperial teaspoon</string>
+
+    <!--ConvertUnitTemp-->
+    <string name="string_kelvin">Kelvin</string>
+    <string name="string_celsius">Celsius</string>
+    <string name="string_fahrenheit">Fahrenheit</string>
+    <string name="string_celsius_abbrev">\u00B0C</string>
+    <string name="string_fahrenheit_abbrev">\u00B0F</string>
+
+    <!--ConvertUnitTime-->
+    <string name="string_nanosecond">Nanosecond</string>
+    <string name="string_microsecond">Microsecond</string>
+    <string name="string_millisecond">Millisecond</string>
+    <string name="string_second">Second</string>
+    <string name="string_second_abbrev">s</string>
+    <string name="string_minute">Minute</string>
+    <string name="string_hour">Hour</string>
+    <string name="string_day">Day</string>
+    <string name="string_week">Week</string>
+    <string name="string_month">Month</string>
+    <string name="string_year">Year</string>
+
+    <!--ConvertUnitSpeed-->
+    <string name="string_mps">Meter per second</string>
+    <string name="string_kmph">Kilometer per hour</string>
+    <string name="string_kmph_abbrev">kph</string>
+    <string name="string_fps">Foot per second</string>
+    <string name="string_mph">Mile per hour</string>
+    <string name="string_mph_abbrev">mph</string>
+    <string name="string_kn">Knot</string>
+
+    <!--ConvertUnitStorage-->
+    <string name="string_byte">Byte</string>
+    <string name="string_kilobyte">Kilobyte</string>
+    <string name="string_megabyte">Megabyte</string>
+    <string name="string_megabyte_abbrev">MB</string>
+    <string name="string_gigabyte">Gigabyte</string>
+    <string name="string_terabyte">Terabyte</string>
+    <string name="string_petabyte">Petabyte</string>
+    <string name="string_bit">Bit</string>
+    <string name="string_kilobit">Kilobit</string>
+    <string name="string_megabit">Megabit</string>
+    <string name="string_gigabit">Gigabit</string>
+    <string name="string_terabit">Terabit</string>
+    <string name="string_petabit">Petabit</string>
+
+    <!--ConvertUnitWeight-->
+    <string name="string_microgram">Microgram</string>
+    <string name="string_milligram">Milligram</string>
+    <string name="string_gram">Gram</string>
+    <string name="string_kilogram">Kilogram</string>
+    <string name="string_kilogram_abbrev">kg</string>
+    <string name="string_metricton">Metric ton</string>
+    <string name="string_ounce">Ounce</string>
+    <string name="string_pound">Pound</string>
+    <string name="string_pound_abbrev">lb</string>
+    <string name="string_stone">Stone</string>
+    <string name="string_uston">US ton</string>
+    <string name="string_imperialton">Imperial ton</string>
+
+    <string-array name="length_units">
+        <item>nm</item>
+        <item>\u00B5m</item>
+        <item>mm</item>
+        <item>cm</item>
+        <item>m</item>
+        <item>km</item>
+        <item>in</item>
+        <item>ft</item>
+        <item>yd</item>
+        <item>mi</item>
+    </string-array>
+
+    <string-array name="area_units">
+        <item>cm\u00B2</item>
+        <item>m\u00B2</item>
+        <item>a</item>
+        <item>ha</item>
+        <item>km\u00B2</item>
+        <item>sq in</item>
+        <item>sq ft</item>
+        <item>sq yd</item>
+        <item>ac</item>
+        <item>sq mi</item>
+    </string-array>
+
+    <string-array name="volume_units">
+        <item>cm\u00B3</item>
+        <item>ml</item>
+        <item>l</item>
+        <item>m\u00B3</item>
+        <item>cu in</item>
+        <item>cu ft</item>
+        <item>cu yd</item>
+        <item>tsp (US)</item>
+        <item>tbsp (US)</item>
+        <item>fl oz (US)</item>
+        <item>cp (US)</item>
+        <item>pt (US)</item>
+        <item>qt (US)</item>
+        <item>gal (US)</item>
+        <item>tsp (Imp.)</item>
+        <item>tbsp (Imp.)</item>
+        <item>fl oz (Imp.)</item>
+        <item>cp (Imp.)</item>
+        <item>pt (Imp.)</item>
+        <item>qt (Imp.)</item>
+        <item>gal (Imp.)</item>
+    </string-array>
+
+    <string-array name="temp_units">
+        <item>K</item>
+        <item>\u00B0C</item>
+        <item>\u00B0F</item>
+    </string-array>
+
+    <string-array name="time_units">
+        <item>ns</item>
+        <item>\u00B5s</item>
+        <item>ms</item>
+        <item>s</item>
+        <item>min</item>
+        <item>h</item>
+        <item>d</item>
+        <item>w</item>
+        <item>m</item>
+        <item>a</item>
+    </string-array>
+
+    <string-array name="speed_units">
+        <item>mps</item>
+        <item>kph</item>
+        <item>fps</item>
+        <item>mph</item>
+        <item>kn</item>
+    </string-array>
+
+    <string-array name="weight_units">
+        <item>\u00B5g</item>
+        <item>mg</item>
+        <item>g</item>
+        <item>kg</item>
+        <item>t</item>
+        <item>oz</item>
+        <item>lb</item>
+        <item>st</item>
+        <item>ton (US)</item>
+        <item>ton (Imp.)</item>
+    </string-array>
+
+    <string-array name="storage_units">
+        <item>B</item>
+        <item>kB</item>
+        <item>MB</item>
+        <item>GB</item>
+        <item>TB</item>
+        <item>PB</item>
+        <item>bit</item>
+        <item>kbit</item>
+        <item>Mbit</item>
+        <item>Gbit</item>
+        <item>Tbit</item>
+        <item>Pbit</item>
+    </string-array>
+
+</resources>

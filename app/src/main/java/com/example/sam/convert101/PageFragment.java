@@ -1,3 +1,19 @@
+/*
+    Copyright 2019 Sebastian Merkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+
 package com.example.sam.convert101;
 
 import android.content.Context;
@@ -8,6 +24,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,36 +56,39 @@ public class PageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_page_conv_table, container, false);
-        if(mPage == 1) {
-            TextView textView = (TextView) view;
-//            textView.setText("Length");
-
-            String formattedText = "This <i>is</i> a <b>test</b> of <a href='http://foo.com'>html</a>";
-//             or getString(R.string.htmlFormattedText);
-            textView.setText(Html.fromHtml(formattedText));
-
-//            getString(R.string.string_length_table);
-        } else if (mPage == 2) {
-            TextView textView = (TextView) view;
-            textView.setText("Test?");
-        } else if (mPage == 3) {
-            TextView textView = (TextView) view;
-            textView.setText("Volume");
-        }else if (mPage == 4) {
-            TextView textView = (TextView) view;
-            textView.setText("Time");
-        }else if (mPage == 5) {
-            TextView textView = (TextView) view;
-            textView.setText("Speed");
-        }else if (mPage == 6) {
-            TextView textView = (TextView) view;
-            textView.setText("Mass");
-        }else if (mPage == 7) {
-            TextView textView = (TextView) view;
-            textView.setText("Temperature");
+        if(mPage == 1) { //Length
+            String str = getResources().getString(R.string.string_length_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
+        } else if (mPage == 2) { //Area
+            String str = getResources().getString(R.string.string_area_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
+        } else if (mPage == 3) { //Volume
+            String str = getResources().getString(R.string.string_volume_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
+        }else if (mPage == 4) { //Time
+            String str = getResources().getString(R.string.string_time_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
+        }else if (mPage == 5) { //Speed
+            String str = getResources().getString(R.string.string_speed_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
+        }else if (mPage == 6) { //Temperature
+            String str = getResources().getString(R.string.string_temp_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
+        }else if (mPage == 7) { //Weight
+            String str = getResources().getString(R.string.string_weight_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
+        }else if (mPage == 8) { //Storage
+            String str = getResources().getString(R.string.string_storage_text);
+            WebView webView = view.findViewById(R.id.wv_unit_description);
+            webView.loadDataWithBaseURL(null, str, "text/html", "utf-8", null);
         }else {
-            TextView textView = (TextView) view;
-            textView.setText("More");
         }
         return view;
     }

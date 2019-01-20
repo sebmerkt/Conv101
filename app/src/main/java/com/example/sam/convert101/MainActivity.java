@@ -1,9 +1,23 @@
+/*
+    Copyright 2019 Sebastian Merkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+
 package com.example.sam.convert101;
 
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -34,10 +48,20 @@ public class MainActivity extends AppCompatActivity
 
         String colorSelector =
                 PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
-                        .getString("pref_color_scheme", "Green");
+                        .getString("pref_color_scheme", "Blue");
+
+//        Toolbar tb = findViewById(R.id.toolbar);
+//        int titleId = getResources().getIdentifier("action_bar_title", "id", "android");
+
 
         if (colorSelector.equals("Blue")) {
             setTheme(R.style.AppTheme);
+//            TextView abTitle = findViewById(titleId);
+//            abTitle.setTextColor(Color.RED);
+//
+//            if (tb != null)
+//                tb.setTitleTextColor(Color.RED);
+//                tb.setTitleTextColor(getResources().getColor(R.color.white));
         }
         else if (colorSelector.equals("Yellow")) {
             setTheme(R.style.AppThemeYellow);
@@ -258,6 +282,18 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
+        String colorSelector =
+                PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
+                        .getString("pref_color_scheme", "Blue");
+
+        if(colorSelector.equals("Yellow")) {
+            menu.getItem(0).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_settings_black_24dp));
+        }
+        else {
+            menu.getItem(0).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_settings_white_24dp));
+
+        }
         return true;
     }
 
@@ -292,12 +328,14 @@ public class MainActivity extends AppCompatActivity
             MainActivity.this.startActivity(mSettingsActivityIntent);
         } else if (id == R.id.nav_info) {
             try {
+                String blogadr = getResources().getString(R.string.string_blog);
                 Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://sebmerkt.github.io"));
+                        Uri.parse(blogadr));
                 startActivity(intent);
             } catch (ActivityNotFoundException e) {
-                Toast.makeText(this, "No application can handle this request."
-                        + " Please install a webbrowser",  Toast.LENGTH_LONG).show();
+                String browsererrmsg1 = getResources().getString(R.string.string_browser_err_msg1);
+                String browsererrmsg2 = getResources().getString(R.string.string_browser_err_msg2);
+                Toast.makeText(this,browsererrmsg1 + browsererrmsg2,  Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
         } else if (id == R.id.nav_rate) {

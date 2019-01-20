@@ -1,5 +1,24 @@
+/*
+    Copyright 2019 Sebastian Merkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/
+
 package com.example.sam.convert1012wear;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -11,6 +30,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -41,16 +62,16 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.convert_units_base);
+//        setContentView(R.layout.convert_units_base);
 
         Resources res = getResources();
         units = res.getStringArray(R.array.length_units);
+
         //Initialize length units
         lengthData = new UnitData[units.length];
         //Initialize conversion
         updateOutputValues(outputValues, inputValue, convMatrix, selectedUnit);
         fillMatrix (convMatrix, convFactors);
-
 
         // Construct the data source
         ArrayList<UnitData> arrayOfItems = new ArrayList<>();
@@ -64,6 +85,8 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         //Initialize EditText; to input values
         final EditText editText = findViewById(R.id.et_conv_number);
         editText.setText(String.valueOf(inputValue));
+        editText.setSelection(editText.getText().length());
+
 
 
         // EditText: Listen for user input of the EditText and update the results list
@@ -99,18 +122,7 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
         });
 
         int stringArrayUnits = R.array.length_units;
-
-        String unitSelector =
-                PreferenceManager.getDefaultSharedPreferences(ConvertUnitsLength.this)
-                        .getString("default_units", "Metric");
-
-        int stringLengthDefault;
-        if(unitSelector.equals("Metric")){
-            stringLengthDefault = R.string.string_meter;
-        }
-        else {
-            stringLengthDefault = R.string.string_foot;
-        }
+        int stringLengthDefault = R.string.string_meter_abbrev;
 
         // Spinner for base unit selection
         Spinner spinner = findViewById(R.id.spinner_select_unit);
@@ -126,7 +138,6 @@ public class ConvertUnitsLength extends ConvertUnitsBase implements AdapterView.
 
         spinner.setSelection(getIndex(spinner, getString(stringLengthDefault)));
         spinner.setOnItemSelectedListener(this);
-
 
     }
 

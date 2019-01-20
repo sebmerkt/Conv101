@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2019 Sebastian Merkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,7 +34,8 @@
             android:id="@+id/button_area"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
@@ -26,14 +43,15 @@
             android:minHeight="150dp"
             android:minWidth="150dp"
             android:orientation="vertical"
-            android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button_length"
+            android:padding="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_speed"
             app:layout_constraintEnd_toStartOf="@+id/button_volume"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_length"
-            app:layout_constraintTop_toTopOf="@+id/button_length">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/button_iv_area"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_area_white"
@@ -41,6 +59,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_area"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -53,7 +72,7 @@
             android:id="@+id/button_length"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:clickable="true"
             android:elevation="5dp"
@@ -63,12 +82,14 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_time"
             app:layout_constraintEnd_toStartOf="@+id/button_area"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/button_iv_length"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_length_ruler_white"
@@ -76,6 +97,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_length"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -89,7 +111,8 @@
             android:id="@+id/button_volume"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
@@ -98,13 +121,14 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button_area"
+            app:layout_constraintBottom_toTopOf="@+id/button_temp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_area"
-            app:layout_constraintTop_toTopOf="@+id/button_area">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/button_iv_volume"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_volume_white"
@@ -112,6 +136,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_volume"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -125,7 +150,7 @@
             android:id="@+id/button_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
@@ -134,13 +159,14 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button_speed"
+            app:layout_constraintBottom_toTopOf="@+id/button_weight"
             app:layout_constraintEnd_toStartOf="@+id/button_speed"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button_speed">
+            app:layout_constraintTop_toBottomOf="@+id/button_length">
 
             <ImageView
+                android:id="@+id/button_iv_time"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_clock_white"
@@ -148,6 +174,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -161,7 +188,7 @@
             android:id="@+id/button_speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
@@ -170,13 +197,14 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button_temp"
+            app:layout_constraintBottom_toTopOf="@+id/button_storage"
             app:layout_constraintEnd_toStartOf="@+id/button_temp"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_time"
-            app:layout_constraintTop_toTopOf="@+id/button_temp">
+            app:layout_constraintTop_toBottomOf="@+id/button_area">
 
             <ImageView
+                android:id="@+id/button_iv_speed"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_speed_white"
@@ -184,6 +212,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -197,8 +226,7 @@
             android:id="@+id/button_temp"
             android:layout_width="wrap_content"
             android:layout_height="153dp"
-            android:layout_margin="20dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
@@ -207,12 +235,14 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/button_dummy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button_speed"
             app:layout_constraintTop_toBottomOf="@+id/button_volume">
 
             <ImageView
+                android:id="@+id/button_iv_temp"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_temp_white"
@@ -220,6 +250,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_temp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -233,8 +264,6 @@
             android:id="@+id/button_weight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginTop="16dp"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
@@ -243,11 +272,14 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/button_time"
-            app:layout_constraintStart_toStartOf="@+id/button_time"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_storage"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_time">
 
             <ImageView
+                android:id="@+id/button_iv_weight"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_weight_white"
@@ -255,6 +287,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -268,8 +301,6 @@
             android:id="@+id/button_storage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:layout_marginTop="16dp"
             android:clickable="true"
             android:elevation="5dp"
             android:focusable="true"
@@ -278,11 +309,14 @@
             android:minWidth="150dp"
             android:orientation="vertical"
             android:padding="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/button_speed"
-            app:layout_constraintStart_toStartOf="@+id/button_speed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_dummy"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_weight"
             app:layout_constraintTop_toBottomOf="@+id/button_speed">
 
             <ImageView
+                android:id="@+id/button_iv_storage"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/ic_storage_white"
@@ -290,6 +324,7 @@
                 android:textSize="20sp" />
 
             <TextView
+                android:id="@+id/button_tv_storage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -298,9 +333,30 @@
                 android:textSize="25sp" />
         </LinearLayout>
 
-        <!--TODO: Unit = Angles-->
+
+        <LinearLayout
+            android:id="@+id/button_dummy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:elevation="5dp"
+            android:focusable="false"
+            android:gravity="center"
+            android:minHeight="150dp"
+            android:minWidth="150dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button_storage"
+            app:layout_constraintTop_toBottomOf="@+id/button_temp">
+
+        </LinearLayout>
+
 
     </android.support.constraint.ConstraintLayout>
 
 
 </ScrollView>
+
