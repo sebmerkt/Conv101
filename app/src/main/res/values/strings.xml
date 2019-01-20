@@ -74,7 +74,7 @@
     <!--ConvertUnitArea-->
     <!--<string name="string_squaremillimeter">Square millimeter</string>-->
     <string name="string_squaremeter">Square meter</string>
-    <string name="string_squaremeter_abbrev">m^2</string>
+    <string name="string_squaremeter_abbrev">m\u00B2</string>
     <string name="string_squarekilometer">Square kilometer</string>
     <string name="string_squarecentimeter">Square centimeter</string>
     <string name="string_are">Are</string>
@@ -264,7 +264,7 @@
                 </tr>
                 <tr>
                     <td>Milliliter</td>
-                    <td>ml</td>
+                    <td>mL</td>
                 </tr>
                 <tr>
                     <td>Liter</td>
@@ -848,7 +848,7 @@
     </string-array>
     <string-array name="volume_units_abbrev">
         <item>cm\u00B3</item>
-        <item>ml</item>
+        <item>mL</item>
         <item>L</item>
         <item>m\u00B3</item>
         <item>cu in</item>

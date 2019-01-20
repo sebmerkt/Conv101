@@ -154,7 +154,7 @@
 
     <string-array name="volume_units">
         <item>cm\u00B3</item>
-        <item>ml</item>
+        <item>mL</item>
         <item>L</item>
         <item>m\u00B3</item>
         <item>cu in</item>

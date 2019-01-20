@@ -47,7 +47,7 @@
     <string name="string_cubiccentimeter">Cubic centimeter</string>
     <string name="string_milliliter">Milliliter</string>
     <string name="string_liter">Liter</string>
-    <string name="string_liter_abbrev">L</string>
+    <string name="string_liter_abbrev">l</string>
     <string name="string_cubicmeter">Cubic meter</string>
     <string name="string_cubicinch">Cubic inch</string>
     <string name="string_cubicfoot">Cubic foot</string>
@@ -155,7 +155,7 @@
     <string-array name="volume_units">
         <item>cm\u00B3</item>
         <item>ml</item>
-        <item>L</item>
+        <item>l</item>
         <item>m\u00B3</item>
         <item>cu in</item>
         <item>cu ft</item>
