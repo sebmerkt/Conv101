@@ -1,0 +1,50 @@
+<!--
+    Copyright 2019 Sebastian Merkt
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<vector android:autoMirrored="true" android:height="24dp"
+    android:viewportHeight="228.6" android:viewportWidth="228.59999"
+    android:width="24dp" xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#00000000"
+        android:pathData="m80.433,182.033h67.733v0"
+        android:strokeAlpha="1" android:strokeColor="#000000"
+        android:strokeLineCap="round" android:strokeLineJoin="miter" android:strokeWidth="20"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M114.3,179.917L114.3,49.689"
+        android:strokeAlpha="1" android:strokeColor="#000000"
+        android:strokeLineCap="round" android:strokeLineJoin="miter" android:strokeWidth="20"/>
+    <path android:fillColor="#00000000"
+        android:pathData="M52.329,62.389 L176.154,30.639"
+        android:strokeAlpha="1" android:strokeColor="#000000"
+        android:strokeLineCap="round" android:strokeLineJoin="miter" android:strokeWidth="20"/>
+    <path android:fillColor="#00000000"
+        android:pathData="m151.908,75.047 l27.78,-44.407 25.643,44.407"
+        android:strokeAlpha="1" android:strokeColor="#000000"
+        android:strokeLineCap="round" android:strokeLineJoin="round" android:strokeWidth="10.00306606"/>
+    <path android:fillAlpha="1" android:fillColor="#000000"
+        android:fillType="nonZero"
+        android:pathData="m209.872,75.061a31.254,31.758 0,0 1,-15.575 27.578,31.254 31.758,0 0,1 -31.292,0.038 31.254,31.758 0,0 1,-15.64 -27.54"
+        android:strokeAlpha="1" android:strokeColor="#000000"
+        android:strokeLineCap="round" android:strokeLineJoin="round" android:strokeWidth="0.99227685"/>
+    <path android:fillColor="#00000000"
+        android:pathData="m23.306,106.892 l27.78,-44.407 25.643,44.407"
+        android:strokeAlpha="1" android:strokeColor="#000000"
+        android:strokeLineCap="round" android:strokeLineJoin="round" android:strokeWidth="10.00306606"/>
+    <path android:fillAlpha="1" android:fillColor="#000000"
+        android:fillType="nonZero"
+        android:pathData="m81.27,106.906a31.254,31.758 0,0 1,-15.575 27.578,31.254 31.758,0 0,1 -31.292,0.038 31.254,31.758 0,0 1,-15.64 -27.54"
+        android:strokeAlpha="1" android:strokeColor="#000000"
+        android:strokeLineCap="round" android:strokeLineJoin="round" android:strokeWidth="0.99227685"/>
+</vector>

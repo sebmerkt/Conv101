@@ -36,28 +36,51 @@
     <string name="string_conversion_table">Conversion table</string>
     <string name="string_unit_description">Unit information</string>
     <string name="string_settings">Settings</string>
-    <string name="title_activity_info">Info</string>
+    <string name="string_title_activity_info">Info</string>
     <string name="string_color_scheme">Color Scheme</string>
     <string name="string_communicate">Get in contact</string>
     <string name="string_blog">https://sebmerkt.github.io/everyday_converter.html</string>
     <string name="string_browser_err_msg1">No application can handle this request.</string>
     <string name="string_browser_err_msg2"> Please install a web browser</string>
+    <string name="string_browser_info">Find info on the web</string>
+    <string name="string_info">About</string>
+    <string name="string_rate_this_app">Rate this app</string>
+    <string name="string_info_title">Everyday Converter</string>
+    <string name="string_app_info">
+        <![CDATA[
+            <head>
+                <style>
+                    h2 {
+                        text-align: center;
+                    }
+                </style>
+            </head>
+            </br>
+            <p>Contact: <a href="mailto:semerkt@gmail.com?Subject=Hello%20developer">semerkt@gmail.com</a></p>
+            </br>
+            <p>Version: 1.0.0</p>
+            </br>
+            <h3>Further information:</h3>
+            <p>Wear OS version: 1.0.0</p>
+
+        ]]>
+    </string>
 
     <string name="string_kelvinwarning">Unit Kelvin is defined positive.</string>
     <string name="string_info_wearos_abbrev">
-    <![CDATA[
-        <head>
-            <style>
-                h2 {
-                    text-align: center;
-                }
-            </style>
-        </head>
-        <h3>Information for Wear OS</h3>
-        <p>Due to the limited screen size of the Wear OS application only abbreviated units can be displayed. Here you will find tables for each category of units where the full names of each unit is listed.</p>
-        </br>
-        <p>In the Android application for mobile phones and tablets the displayed units can be switched between full and abbreviated names. Check the <b>Settings</b> under <b>Unit conversion</b>.</p>
-    ]]>
+        <![CDATA[
+            <head>
+                <style>
+                    h2 {
+                        text-align: center;
+                    }
+                </style>
+            </head>
+            <h3>Information for Wear OS</h3>
+            <p>Due to the limited screen size of the Wear OS application only abbreviated units can be displayed. Here you will find tables for each category of units where the full names of each unit is listed.</p>
+            </br>
+            <p>In the Android application for mobile phones and tablets the displayed units can be switched between full and abbreviated names. Check the <b>Settings</b> under <b>Unit conversion</b>.</p>
+        ]]>
     </string>
 
     <!--ConvertUnitTime-->
@@ -762,8 +785,6 @@
         ]]>
     </string>
 
-    <!--<string name="string_preference_key">com.example.convert1012.PREFERENCE_FILE_KEY</string>-->
-
     <string-array name="length_units">
         <item>Nanometer</item>
         <item>Micrometer</item>
@@ -996,8 +1017,6 @@
         <item>Imperial</item>
     </string-array>
 
-    <string name="string_info">Find info on the web</string>
-    <string name="string_rate_this_app">Rate this app</string>
 
 
     <!-- Strings related to Settings -->

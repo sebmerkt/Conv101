@@ -20,17 +20,17 @@
 
     <!--General preferences, change color theme (WIP)-->
     <!--<header-->
-        <!--android:fragment="com.example.sam.convert101.SettingsActivity$GeneralPreferenceFragment"-->
+        <!--android:fragment="io.github.sebmerkt.convert101.SettingsActivity$GeneralPreferenceFragment"-->
         <!--android:icon="@drawable/ic_info_outline_black_24dp"-->
         <!--android:title="@string/pref_header_general" />-->
 
     <header
-        android:fragment="com.example.sam.convert101.SettingsActivity$UnitsPreferenceFragment"
+        android:fragment="io.github.sebmerkt.everydayconverter.SettingsActivity$UnitsPreferenceFragment"
         android:icon="@drawable/ic_length_ruler"
         android:title="@string/pref_header_units" />
 
     <!--<header-->
-        <!--android:fragment="com.example.sam.convert101.SettingsActivity$DataSyncPreferenceFragment"-->
+        <!--android:fragment="io.github.sebmerkt.convert101.SettingsActivity$DataSyncPreferenceFragment"-->
         <!--android:icon="@drawable/ic_sync_black_24dp"-->
         <!--android:title="@string/pref_header_data_sync" />-->
 

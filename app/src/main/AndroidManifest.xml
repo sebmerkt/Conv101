@@ -14,8 +14,11 @@
     <!--See the License for the specific language governing permissions and-->
     <!--limitations under the License.-->
 
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sam.convert101">
+    package="io.github.sebmerkt.everydayconverter"
+    android:versionCode="500010000"
+    android:versionName="1.0.0">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
@@ -27,7 +30,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="io.github.sebmerkt.everydayconverter.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,56 +39,56 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ConversionTable"
+            android:name="io.github.sebmerkt.everydayconverter.ConversionTable"
             android:label="@string/string_unit_description"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsLength"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsLength"
             android:label="@string/string_length"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsTime"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsTime"
             android:label="@string/string_time"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsArea"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsArea"
             android:label="@string/string_area"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsTemp"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsTemp"
             android:label="@string/string_temperature"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsVolume"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsVolume"
             android:label="@string/string_volume"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsSpeed"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsSpeed"
             android:label="@string/string_speed"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsWeight"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsWeight"
             android:label="@string/string_weight"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".ConvertUnitsStorage"
+            android:name="io.github.sebmerkt.everydayconverter.ConvertUnitsStorage"
             android:label="@string/string_storage"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="io.github.sebmerkt.everydayconverter.SettingsActivity"
             android:label="@string/string_settings"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sam.convert101.MainActivity" />
+                android:value="io.github.sebmerkt.everydayconverter.MainActivity" />
         </activity>
         <activity
-            android:name=".ConversionTableInfo"
-            android:label="@string/title_activity_info"
-            android:parentActivityName=".ConversionTable">
+            android:name="io.github.sebmerkt.everydayconverter.ConversionTableInfo"
+            android:label="@string/string_title_activity_info"
+            android:parentActivityName="io.github.sebmerkt.everydayconverter.ConversionTable">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sam.convert101.ConversionTable" />
+                android:value="io.github.sebmerkt.everydayconverter.ConversionTable" />
         </activity>
     </application>
 

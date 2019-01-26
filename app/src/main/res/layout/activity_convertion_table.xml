@@ -21,7 +21,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/pager"
-    tools:context="com.example.sam.convert101.ConversionTable"
+    tools:context="io.github.sebmerkt.everydayconverter.ConversionTable"
 
     android:orientation="vertical">
 

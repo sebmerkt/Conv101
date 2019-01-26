@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.sebmerkt.everydayconverterwear"
+    android:versionCode="@string/string_version_code"
+    android:versionName="@string/string_version_name">
+
+    <uses-feature android:name="android.hardware.type.watch" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.MainActivityWear"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsLength"
+            android:label="@string/string_length"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsArea"
+            android:label="@string/string_area"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsSpeed"
+            android:label="@string/string_speed"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsStorage"
+            android:label="@string/string_storage_short"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsTemp"
+            android:label="@string/string_temp"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsTime"
+            android:label="@string/string_time"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsVolume"
+            android:label="@string/string_volume"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+        <activity
+            android:name="io.github.sebmerkt.everydayconverterwear.ConvertUnitsWeight"
+            android:label="@string/string_weight"
+            android:parentActivityName="io.github.sebmerkt.everydayconverterwear.MainActivityWear" />
+    </application>
+
+</manifest>

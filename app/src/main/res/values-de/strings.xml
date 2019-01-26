@@ -18,7 +18,6 @@
     <string name="navigation_drawer_open">Öffne Navigation</string>
     <string name="navigation_drawer_close">Schließe Navigation</string>
 
-    <string name="action_settings">Einstellungen</string>
     <string name="string_time">Zeit</string>
     <string name="string_length">Länge</string>
     <string name="string_area">Fläche</string>
@@ -34,11 +33,33 @@
     <string name="string_conversion_table">Umrechnungstable</string>
     <string name="string_unit_description">Informationen</string>
     <string name="string_settings">Einstellungen</string>
-    <string name="title_activity_info">Hinweis</string>
     <string name="string_color_scheme">Farbschema</string>
     <string name="string_communicate">Kontakt aufnehmen</string>
     <string name="string_browser_err_msg1">Keine kompatieble Anwendung gefunden.</string>
     <string name="string_browser_err_msg2"> Bitte installieren Sie einen Web Browser</string>
+    <string name="string_info">Mehr erfahren</string>
+    <string name="string_browser_info">Weitere Informationen im Web</string>
+    <string name="string_rate_this_app">Diese App bewerten</string>
+    <string name="string_info_title">Everyday Converter</string>
+    <string name="string_app_info">
+        <![CDATA[
+            <head>
+                <style>
+                    h2 {
+                        text-align: center;
+                    }
+                </style>
+            </head>
+            </br>
+            <p>Kontakt: <a href="mailto:semerkt@gmail.com?Subject=Hello%20developer">semerkt@gmail.com</a></p>
+            </br>
+            <p>Version: 1.0.0</p>
+            </br>
+            <h3>Weitere Informationen:</h3>
+            <p>Wear OS Version: 1.0.0</a></p>
+
+        ]]>
+    </string>
 
     <string name="string_kelvinwarning">Einheit Kelvin ist positiv definiert.</string>
     <string name="string_info_wearos_abbrev">
@@ -102,10 +123,10 @@
     <string name="string_cubicinch">Kubikzoll</string>
     <string name="string_cubicfoot">Kubikfuß</string>
     <string name="string_cubicyard">Kubikyard</string>
-    <string name="string_usgallon">Gallone (US)</string>
-    <string name="string_usquart">Quart (US)</string>
-    <string name="string_uspint">Pint (US)</string>
-    <string name="string_uscup">Cup (US)</string>
+    <string name="string_usliquidgallon">Gallone (US)</string>
+    <string name="string_usliquidquart">Quart (US)</string>
+    <string name="string_usliquidpint">Pint (US)</string>
+    <string name="string_uslegalcup">Cup (US)</string>
     <string name="string_usfluidounce">Flüssigunze (US)</string>
     <string name="string_ustablespoon">Esslöffel (US)</string>
     <string name="string_usteaspoon">Teelöffel (US)</string>
@@ -984,8 +1005,6 @@
         <item>Imperial</item>
     </string-array>
 
-    <string name="string_info">Weitere Informationen im Web</string>
-    <string name="string_rate_this_app">Diese App bewerten</string>
 
     <!-- Strings related to Settings -->
 

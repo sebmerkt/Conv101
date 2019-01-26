@@ -14,4 +14,4 @@
     limitations under the License.
 */
 
-include ':app', ':convert1012wear'
+include ':app', ':everydayconverterwear'

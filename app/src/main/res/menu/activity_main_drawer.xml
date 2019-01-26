@@ -34,8 +34,12 @@
         <menu>
             <item
                 android:id="@+id/nav_info"
-                android:icon="@drawable/ic_open_in_browser_black_24dp"
+                android:icon="@drawable/ic_info_outline_black_24dp"
                 android:title="@string/string_info" />
+            <item
+                android:id="@+id/nav_browser_info"
+                android:icon="@drawable/ic_open_in_browser_black_24dp"
+                android:title="@string/string_browser_info" />
             <item
                 android:id="@+id/nav_rate"
                 android:icon="@drawable/ic_rate_review_black_24dp"

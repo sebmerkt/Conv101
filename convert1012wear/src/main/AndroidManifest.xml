@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sam.convert1012wear">
+    package="convert1012wear"
+    android:versionCode="@string/string_version_code"
+    android:versionName="@string/string_version_name">
 
     <uses-feature android:name="android.hardware.type.watch" />
 
@@ -24,7 +26,7 @@
             android:value="true" />
 
         <activity
-            android:name=".MainActivityWear"
+            android:name="com.example.io.everydayconverterwear.MainActivityWear"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,37 +35,37 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ConvertUnitsLength"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsLength"
             android:label="@string/string_length"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
         <activity
-            android:name=".ConvertUnitsArea"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsArea"
             android:label="@string/string_area"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
         <activity
-            android:name=".ConvertUnitsSpeed"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsSpeed"
             android:label="@string/string_speed"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
         <activity
-            android:name=".ConvertUnitsStorage"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsStorage"
             android:label="@string/string_storage_short"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
         <activity
-            android:name=".ConvertUnitsTemp"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsTemp"
             android:label="@string/string_temp"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
         <activity
-            android:name=".ConvertUnitsTime"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsTime"
             android:label="@string/string_time"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
         <activity
-            android:name=".ConvertUnitsVolume"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsVolume"
             android:label="@string/string_volume"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
         <activity
-            android:name=".ConvertUnitsWeight"
+            android:name="com.example.io.everydayconverterwear.ConvertUnitsWeight"
             android:label="@string/string_weight"
-            android:parentActivityName=".MainActivityWear" />
+            android:parentActivityName="com.example.io.everydayconverterwear.MainActivityWear" />
     </application>
 
 </manifest>
