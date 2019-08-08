@@ -17,7 +17,7 @@
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="io.github.sebmerkt.everydayconverter"
-    android:versionCode="500010010"
+    android:versionCode="500010001"
     android:versionName="1.0.1">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
