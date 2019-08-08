@@ -36,7 +36,7 @@ public class ConvertUnitsTime extends ConvertUnitsBase implements AdapterView.On
     ListView listView;
 
     //Conversion factors to go from {ns -> us, us -> ms, ms -> s, s -> min, min -> hours, hours -> days, days -> weeks, weeks -> months}
-    double[] convFactors = {1000.0, 1000.0, 1000.0, 60.0, 60.0, 24.0, 7.0, 4.34524, 12};
+    double[] convFactors = {1000.0, 1000.0, 1000.0, 60.0, 60.0, 24.0, 7.0, 4.34524, 12.0};
 
     //Size of conversion matrix
     int convMatrixDim = convFactors.length+1;

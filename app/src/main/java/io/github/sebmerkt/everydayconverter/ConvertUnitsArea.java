@@ -37,7 +37,7 @@ public class ConvertUnitsArea extends ConvertUnitsBase implements AdapterView.On
     ListView listView;
 
     //Conversion factors to go from {mm^2 -> cm^2, cm^2 -> m^2, m^2 -> are, are -> ha, ha -> km^2, km^2 -> in^2, in^2 -> ft^2, ft^2 -> yd^2, yd^2 -> ac, ac -> mi^2}
-    double[] convFactors = {100.0, 10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
+    double[] convFactors = {10000.0, 100.0, 100.0, 100.0, 0.00000000064516, 144.0, 9.0, 4840.0, 640.0};
 
     //Size of conversion matrix
     int convMatrixDim = convFactors.length+1;
