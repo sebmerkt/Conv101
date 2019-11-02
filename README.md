@@ -2,6 +2,8 @@
 
 Everyday Converter is an easy to use application to convert between different units such as units of length, volume, time or weight. It is available for both Android on mobile phones or tablets and Wear OS for wearable devices and smartwatches.
 
+[Get it in the Play Store!](https://play.google.com/store/apps/details?id=io.github.sebmerkt.everydayconverter)
+
 # Android application
 <img src="phone_main_port_framed.png" width="100">
 
