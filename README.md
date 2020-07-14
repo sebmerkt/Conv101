@@ -26,3 +26,6 @@ In the settings you can change the way Everyday Converter displays the conversio
 1. Output precision of the results: Changes how many digits are shown.
 2. Default units: Controls the default input unit: If you are more likely to convert from metric to imperial units, choose metric. If you are more likely to convert from imperial to metric, choose imperial.
 3. Use abbreviations for units: Choose to show only abbreviated units. Will show *in* instead of *Inch*, *lb* instead of *Pound*.
+
+## More Information
+Get more information on the app in this [blog](https://sebmerkt.github.io/2018/10/09/Android.html) entry and details on the units and their abbreviations [here](https://sebmerkt.github.io/everyday_converter.html).
